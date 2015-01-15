@@ -1,0 +1,25 @@
+/* ------------ *\
+	LISTS
+\* ------------ */
+
+/*
+Adding padding to ul and ol elements
+*/
+
+ul,ol{
+	@include remCalc(padding-left, $spacer--dbl);
+	@include remCalc(margin-bottom, $spacer);
+}
+
+dl{
+	@include remCalc(margin-bottom, $spacer);
+}
+
+dt{
+	font-weight: $weight-heavy;
+}
+
+dd{
+	@include remCalc(padding-left, $spacer--dbl);
+}
+

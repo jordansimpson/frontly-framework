@@ -1,0 +1,23 @@
+/* ------------ *\
+	COLORS
+\* ------------ */
+
+// Brand Colors
+// ---------------
+$brand-red: #ED4466;
+$brand-pink: #E56399;
+$brand-blue: #117393;
+
+
+// Default Colors
+// These are some simple base colors that I have set to 
+// help get things going but can easily be changed.
+// ---------------
+
+$base-text-clr: #222;
+$base-background-clr: #fff;
+$link-clr: lighten($base-text-clr, 20%);
+$link-clr-hover: darken($link-clr, 10%);
+$border-clr: #ddd;
+$pre-background-clr: #eee;
+$pre-text-clr: $base-text-clr;

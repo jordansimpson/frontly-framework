@@ -1,0 +1,183 @@
+/* 
+Grid
+*/
+.grid{
+    width: 100%;
+    max-width: $break-large;
+    margin: 0 auto;
+    padding: $spacer 0;
+    &:before,&:after{
+        line-height: 0;
+        display: table;
+        content: '';
+    }
+    &:after{
+        clear: both;
+    }
+}
+
+
+/* 
+Grid Row
+*/
+.grid__row{
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0 $spacer;
+
+    *zoom: 1;
+    // Catering for nesting of .grid__row within .grid__col 
+    .grid__col .grid__row{
+        padding: 0;
+        .grid__col{
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+    // Centralise .grid__col within .grid__row 
+    &--central{
+        text-align: center;
+        .grid__col{
+            display: block;
+            float: none;
+            margin: 0 auto;
+            text-align: left;
+            &:before{
+                display: table;
+                clear: both;
+                content: '';
+            }
+        }
+    }
+    // Set no gutters if required on row
+    &--no-gutters{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/*
+Grid Columns Widths
+*/
+.grid__col{
+    display: block;
+    float: left;
+    padding: $spacer;
+    &--full{
+        width: 100%;
+    }
+    &--half{
+        width: 50%;
+    }
+    &--one-third{
+        width: 33.3333333332%;
+    }
+    &--two-thirds{
+        width: 66.6666666667%;
+    }
+    &--one-quarter{
+        width: 25%;
+    }
+    &--three-quarters{
+        width: 75%;
+    }
+    &--one-fifth{
+        width: 20%;
+    }
+    &--two-fifths{
+        width: 40%;
+    }
+    &--three-fifths{
+        width: 60%;
+    }
+    &--four-fifths{
+        width: 80%;
+    }
+    &--one-sixth{
+        width: 16.6666666667%;
+    }
+    &--one-eigth{
+        width: 12.5%;
+    }
+}
+
+
+// Helper Classes
+// ------------
+
+.pull-right{
+    float: right;
+}
+
+.pull-left{
+    float: right;
+}
+
+.no-gutters{
+    padding: 0;
+}
+
+// Responsive Styling
+// ------------------
+
+img{
+    float: left;
+    max-width: 100%;
+}
+
+.show-on-phone{
+    display: none;
+}
+
+// Tablet
+
+@media screen and (max-width: $break-large){
+    .full-width-tablet{
+        width: 100% !important;
+        &:first-child{
+            padding-right: 0;
+        }
+        &:last-child{
+            padding-left: 0;
+        }
+    }
+
+    .half-width-tablet{
+        width: 50% !important;
+    }
+
+    .align-center-tablet{
+        text-align: center !important;
+    }
+}
+
+// Phone
+
+@media screen and (max-width: $break-mid){
+    .grid__row{
+        padding-right: emCalc(20px) !important;
+        padding-left: emCalc(20px) !important;
+    }
+
+    .grid__col{
+        width: 100% !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        & > .grid__row{
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+
+    .align-center-phone{
+        text-align: center !important;
+    }
+}
+
+

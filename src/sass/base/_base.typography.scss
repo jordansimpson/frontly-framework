@@ -1,0 +1,107 @@
+/* ------------ *\
+	TYPOGRAPHY
+\* ------------ */
+
+h1,h2,h3,h4,h5{
+	@include remCalc(margin-bottom, $spacer);
+}
+
+h1{
+	@include remCalc(font-size, $alpha);
+}
+
+h2{
+	@include remCalc(font-size, $beta);
+}
+
+h3{
+	@include remCalc(font-size, $gamma);
+}
+
+h4{
+	@include remCalc(font-size, $delta);
+}
+
+h5{
+	@include remCalc(font-size, $epsilon);
+}
+
+p{
+	@include remCalc(margin-bottom, $spacer);
+	@include remCalc(line-height, $base-line-height);
+}
+
+small, .small-print{
+	@include remCalc(font-size, 12px);
+}
+
+a{
+	margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background: transparent;
+	color: $link-clr;
+	text-decoration: underline;
+	&:hover{
+		color: $link-clr-hover;
+	}
+}
+
+sup, sub{
+	@include remCalc(font-size, 10px);
+	line-height: 0;
+	position: relative;
+}
+
+sup{
+	@include remCalc(bottom, -3px);
+}
+
+sub{
+	@include remCalc(top, -5px);
+}
+
+del{
+	text-decoration: 
+}
+
+u{
+	text-decoration: underline;
+}
+
+blockquote{
+	display: block;
+	@include remCalc(font-size, $gamma);
+	@include remCalc(padding-left, $spacer--dbl);
+	@include remCalc(margin-top, $spacer--dbl);
+	@include remCalc(margin-bottom, $spacer--dbl);
+	small{
+		font-style: normal;
+		display: block;
+		@include remCalc(font-size, 12px);
+		@include remCalc(margin-top, $spacer);
+		color: #bbb;
+	}
+}
+
+q{
+	quotes: "'" "'";
+}
+
+q:before{
+	content: open-quotes;
+}
+
+q:after{
+	content: close-quote;
+}
+
+cite{
+	font-weight: $weight-heavy;
+	font-style: italic;
+}
+
+abbr{
+	text-transform: uppercase;
+}
+

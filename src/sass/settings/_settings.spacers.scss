@@ -1,0 +1,15 @@
+/* ------------ *\
+	SPACERS
+\* ------------ */
+
+// Spacer (padding default) settings
+// This is used in the grid for gutters and can be used when 
+// adding padding, mergins, etc.
+// ---------------------------------
+
+$spacer: 10px;
+$spacer--dbl: $spacer*2;
+$spacer--small: $spacer/2;
+$spacer--large: $spacer*4;
+$spacer--xlarge: $spacer*10;
+
