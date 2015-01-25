@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('src/sass/**/*.scss')
+    return gulp.src('src/sass/**/**.scss')
         .pipe(sass())
         .pipe(gulp.dest('dist/css'))
         .pipe(minifyCSS({keepBreaks:false}))

@@ -1,0 +1,94 @@
+/* 
+------------
+OBJECTS.
+LISTS
+------------ 
+*/
+
+/*
+Remove all styling from lists by adding the .no-points class below
+*/
+
+.no-points{
+	list-style-type: none;
+	padding-left: 0;
+}
+
+/*
+There are various list styles and the classes are below to enable you to utilise them.
+*/
+
+.list--numbered{
+	list-style-type: decimal;
+}
+
+.list--circled{
+	list-style-type: circle;
+}
+
+.list--squared{
+	list-style-type: square;
+}
+
+.list--lower-abc{
+	list-style-type: lower-latin;
+}
+
+.list--upper-abc{
+	list-style-type: upper-latin;
+}
+
+/*
+A list doesn't always appear vetically so there are a couple of hortizontal list styles 
+below that can be added by assiging a class.
+*/
+
+// Inline Lists
+
+.list--inline{
+	@extend .no-points;
+	float: left;
+	width: 100%;
+	li{
+		display: inline-block;
+	}
+}
+
+.list--pills{
+	@extend .no-points;
+	@extend .list--inline;
+	margin-bottom: 0;
+	li a{
+		@include remCalc(margin-right, $spacer);
+		@include remCalc(margin-bottom, $spacer);
+		@include remCalc(padding, $spacer);
+		background: #eee;
+		border-radius: $spacer--small;
+		display: inline-block;
+		text-decoration: none;
+	}
+}
+
+.list--stacked{
+	@extend .no-points;
+	li{
+		display: block;
+		a{
+			display: block;
+			text-decoration: none;
+		}
+	}
+	.seperator{
+		@include remCalc(margin-top, $spacer--small);
+		@include remCalc(margin-bottom, $spacer--small);
+		border-bottom: 1px solid $border-clr;
+	}
+	.title{
+		@include remCalc(padding, $spacer--small);
+		@include remCalc(font-size, $epsilon);
+		text-transform: uppercase;
+		letter-spacing: 0.15;
+		font-weight: $weight-heavy;
+	}
+}
+

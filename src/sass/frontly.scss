@@ -3,9 +3,11 @@
 // Version 1.0.0     \\
 //*******************\\
 
-/* ------------ *\
-	SETTINGS
-\* ------------ */
+/* 
+------------
+SETTINGS.
+------------ 
+*/
 
 @import "settings/settings.breakpoints";
 @import "settings/settings.colors";
@@ -13,24 +15,30 @@
 @import "settings/settings.typography";
 @import "settings/settings.z-index";
 
-/* ------------ *\
-	TOOLS
-\* ------------ */
+/* 
+------------
+TOOLS.
+------------ 
+*/
 
 @import "tools/tools.functions";
 @import "tools/tools.mixins";
 
-/* ------------ *\
-	GENERIC
-\* ------------ */
+/* 
+------------
+GENERIC.
+------------ 
+*/
 
 @import "generic/generic.classic-reset";
-@import "generic/generic.defaults";
 @import "generic/generic.box-sizing";
+@import "generic/generic.page";
 
-/* ------------ *\
-	BASE
-\* ------------ */
+/* 
+------------
+BASE.
+------------ 
+*/
 
 @import "base/base.forms";
 @import "base/base.grid";
@@ -39,21 +47,29 @@
 @import "base/base.tables";
 @import "base/base.typography";
 
-/* ------------ *\
-	OBJECTS
-\* ------------ */
+/* 
+------------
+OBJECTS.
+------------ 
+*/
+
+@import "objects/objects.lists";
+@import "objects/objects.dropdowns";
+@import "objects/objects.tables";
 
 
+/* 
+------------
+COMPONENTS.
+------------ 
+*/
 
-/* ------------ *\
-	COMPONENTS
-\* ------------ */
+@import "components/components.frontly-dropdowns";
 
-
-
-/* ------------ *\
-	VETOS
-\* ------------ */
+/* 
+------------
+VETOS.
+------------ 
+*/
 
 @import "vetos/vetos.helpers";
-@import "vetos/vetos.lists";

@@ -1,0 +1,37 @@
+/* 
+------------
+COMPONENTS.
+DROPDOWNS
+------------ 
+*/
+
+.frontly-dropdown{
+	@extend .dropdown;
+	> a{
+		padding: 5px 20px 0 5px;
+	}
+	&:hover > a{
+		background: #ddd;
+	}
+	ul{
+		// background: #eee;
+		width:100px;
+		border: 1px solid $border-clr;
+		li a{
+			padding: $spacer;
+		}
+	}
+	&:after{
+		position: absolute;
+		right: $spacer--small;
+		top: 0;
+		width: $spacer;
+		content: 'v';
+	}
+	li:hover > a{
+		background: #ddd;
+		&:after{
+			
+		}
+	}
+}

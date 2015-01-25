@@ -1,0 +1,15 @@
+/* 
+------------
+GENERIC.
+PAGE
+------------ 
+*/
+
+html,body{
+	background: $base-background-clr;
+	color: $base-text-clr;
+	font-size: $base-font-size;
+	font-family: $sans-serif;
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+}

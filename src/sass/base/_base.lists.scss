@@ -1,15 +1,18 @@
-/* ------------ *\
-	LISTS
-\* ------------ */
-
-/*
-Adding padding to ul and ol elements
+/* 
+------------
+BASE.
+LISTS
+------------ 
 */
+
+// Unordered & Ordered lists
 
 ul,ol{
 	@include remCalc(padding-left, $spacer--dbl);
 	@include remCalc(margin-bottom, $spacer);
 }
+
+// Description lists
 
 dl{
 	@include remCalc(margin-bottom, $spacer);

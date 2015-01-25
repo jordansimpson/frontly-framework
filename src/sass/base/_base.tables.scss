@@ -1,6 +1,9 @@
-/* ------------ *\
-	TABLES
-\* ------------ */
+/* 
+------------
+BASE.
+TABLES
+------------ 
+*/
 
 /*
 Adding padding to ul and ol elements
@@ -9,15 +12,10 @@ Adding padding to ul and ol elements
 table, tbody{
 	width: 100%;
 	text-align: left;
-}
-
-th,td{
-	padding: $spacer;
-	border: 1px solid $border-clr;
+	margin-bottom: $spacer;
 }
 
 caption{
 	text-align: left;
-	@include remCalc(margin-bottom, $spacer);
 }
 

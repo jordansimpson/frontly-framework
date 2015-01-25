@@ -1,6 +1,9 @@
-/* ------------ *\
-	TYPOGRAPHY
-\* ------------ */
+/* 
+------------
+BASE.
+TYPOGRAPHY
+------------ 
+*/
 
 h1,h2,h3,h4,h5{
 	@include remCalc(margin-bottom, $spacer);
@@ -28,7 +31,7 @@ h5{
 
 p{
 	@include remCalc(margin-bottom, $spacer);
-	@include remCalc(line-height, $base-line-height);
+	line-height: $base-line-height;
 }
 
 small, .small-print{
@@ -62,19 +65,22 @@ sub{
 }
 
 del{
-	text-decoration: 
+	text-decoration: line-through;
+	color: $base-text-clr--dull;
 }
 
-u{
+u, ins{
 	text-decoration: underline;
 }
 
 blockquote{
 	display: block;
-	@include remCalc(font-size, $gamma);
+	@include remCalc(font-size, $delta);
 	@include remCalc(padding-left, $spacer--dbl);
 	@include remCalc(margin-top, $spacer--dbl);
 	@include remCalc(margin-bottom, $spacer--dbl);
+	line-height: 1.4;
+	border-left: 1px solid $border-clr;
 	small{
 		font-style: normal;
 		display: block;
@@ -103,5 +109,9 @@ cite{
 
 abbr{
 	text-transform: uppercase;
+}
+
+mark{
+	background: $highlighting-clr;
 }
 

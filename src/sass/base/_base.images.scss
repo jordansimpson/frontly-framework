@@ -1,6 +1,9 @@
-/* ------------ *\
-	IMAGES
-\* ------------ */
+/* 
+------------
+BASE.
+IMAGES
+------------ 
+*/
 
 /*
 Adding padding to ul and ol elements
@@ -16,6 +19,10 @@ img{
 
 img[width], img[height]{
 	max-width: 0;
+}
+
+figure{
+	@include remCalc(margin-bottom, $spacer);
 }
 
 figure img{

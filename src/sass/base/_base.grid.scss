@@ -1,9 +1,16 @@
 /* 
-Grid
+------------
+BASE.
+GRID
+------------ 
+*/
+
+/* 
+Grid Row
 */
 .grid{
     width: 100%;
-    max-width: $break-large;
+    max-width: $break-extra-large;
     margin: 0 auto;
     padding: $spacer 0;
     &:before,&:after{

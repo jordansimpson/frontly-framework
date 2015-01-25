@@ -1,6 +1,9 @@
-/* ------------ *\
-	COLORS
-\* ------------ */
+/* 
+------------
+SETTINGS.
+COLORS
+------------ 
+*/
 
 // Brand Colors
 // ---------------
@@ -15,9 +18,11 @@ $brand-blue: #117393;
 // ---------------
 
 $base-text-clr: #222;
+$base-text-clr--dull: lighten($base-text-clr, 50%);
 $base-background-clr: #fff;
 $link-clr: lighten($base-text-clr, 20%);
 $link-clr-hover: darken($link-clr, 10%);
 $border-clr: #ddd;
 $pre-background-clr: #eee;
 $pre-text-clr: $base-text-clr;
+$highlighting-clr: #FFF9B7;

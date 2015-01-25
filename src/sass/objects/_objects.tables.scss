@@ -1,0 +1,27 @@
+/* 
+------------
+OBJECTS.
+TABLES
+------------ 
+*/
+
+
+th,td{
+	padding: $spacer;
+	border: 1px solid $border-clr;
+}
+
+caption{
+	@include remCalc(margin-bottom, $spacer);
+}
+
+.table-wrap{
+	float: left;
+	width: 100%;
+	overflow-x: scroll;
+	box-shadow: inset -10px 0 5px -5px #ddd;
+	@include remCalc(margin-bottom, $spacer);
+	table{
+		margin-bottom: 0;
+	}
+}

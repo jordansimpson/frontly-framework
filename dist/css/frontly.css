@@ -1,36 +1,66 @@
-/* ------------ *\
-	SETTINGS
-\* ------------ */
-/* -------------- *\
-	BREAK POINTS
-\* -------------- */
-/* ------------ *\
-	COLORS
-\* ------------ */
-/* ------------ *\
-	SPACERS
-\* ------------ */
-/* ------------ *\
-	TYPOGRAPHY
-\* ------------ */
-/* --------- *\
-	Z-INDEX
-\* --------- */
-/* ------------ *\
-	TOOLS
-\* ------------ */
-/* ------------ *\
-	FUNCTIONS
-\* ------------ */
-/* ------------ *\
-	MIXINS
-\* ------------ */
-/* ------------ *\
-	GENERIC
-\* ------------ */
-/* ------------ *\
-	RESET
-\* ------------ */
+/* 
+------------
+SETTINGS.
+------------ 
+*/
+/* 
+------------
+SETTINGS.
+BREAKPOINTS
+------------ 
+*/
+/* 
+------------
+SETTINGS.
+COLORS
+------------ 
+*/
+/* 
+------------
+SETTINGS.
+SPACERS
+------------ 
+*/
+/* 
+------------
+SETTINGS.
+TYPOGRAPHY
+------------ 
+*/
+/* 
+------------
+SETTINGS.
+Z-INDEX
+------------ 
+*/
+/* 
+------------
+TOOLS.
+------------ 
+*/
+/* 
+------------
+TOOLS.
+FUNCTIONS
+------------ 
+*/
+/* 
+------------
+TOOLS.
+MIXINS
+------------ 
+*/
+/* 
+------------
+GENERIC.
+------------ 
+*/
+/* 
+------------
+GENERIC.
+RESET
+------------ 
+*/
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -72,32 +102,41 @@ hr {
   margin: 1rem 0;
   padding: 0; }
 
-/* ------------ *\
-	PAGE DEFAULTS
-\* ------------ */
-html, body {
-  background: #fff;
-  color: #222;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  height: 100%; }
-
-/* ------------ *\
-	BOX SIZING
-\* ------------ */
+/* 
+------------
+GENERIC.
+BOX-SIZING
+------------ 
+*/
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* ------------ *\
-	BASE
-\* ------------ */
-/* ------------ *\
-	FORMS
-\* ------------ */
-/*
-Adding padding to ul and ol elements
+/* 
+------------
+GENERIC.
+PAGE
+------------ 
+*/
+html, body {
+  background: #fff;
+  color: #222;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  -webkit-font-smoothing: antialiased; }
+
+/* 
+------------
+BASE.
+------------ 
+*/
+/* 
+------------
+BASE.
+FORMS
+------------ 
 */
 label, legend {
   display: block;
@@ -143,11 +182,17 @@ textarea {
   padding: 0.3125rem; }
 
 /* 
-Grid
+------------
+BASE.
+GRID
+------------ 
+*/
+/* 
+Grid Row
 */
 .grid {
   width: 100%;
-  max-width: 960px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 10px 0; }
   .grid:before, .grid:after {
@@ -268,9 +313,12 @@ img {
     text-align: center !important; }
  }
 
-/* ------------ *\
-	IMAGES
-\* ------------ */
+/* 
+------------
+BASE.
+IMAGES
+------------ 
+*/
 /*
 Adding padding to ul and ol elements
 */
@@ -283,6 +331,10 @@ img {
 
 img[width], img[height] {
   max-width: 0; }
+
+figure {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
 
 figure img {
   margin-bottom: 0;
@@ -297,11 +349,11 @@ figcaption {
   padding-bottom: 10px;
   padding-bottom: 0.625rem; }
 
-/* ------------ *\
-	LISTS
-\* ------------ */
-/*
-Adding padding to ul and ol elements
+/* 
+------------
+BASE.
+LISTS
+------------ 
 */
 ul, ol {
   padding-left: 20px;
@@ -320,28 +372,29 @@ dd {
   padding-left: 20px;
   padding-left: 1.25rem; }
 
-/* ------------ *\
-	TABLES
-\* ------------ */
+/* 
+------------
+BASE.
+TABLES
+------------ 
+*/
 /*
 Adding padding to ul and ol elements
 */
 table, tbody {
   width: 100%;
-  text-align: left; }
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd; }
+  text-align: left;
+  margin-bottom: 10px; }
 
 caption {
-  text-align: left;
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem; }
+  text-align: left; }
 
-/* ------------ *\
-	TYPOGRAPHY
-\* ------------ */
+/* 
+------------
+BASE.
+TYPOGRAPHY
+------------ 
+*/
 h1, h2, h3, h4, h5 {
   margin-bottom: 10px;
   margin-bottom: 0.625rem; }
@@ -369,8 +422,7 @@ h5 {
 p {
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
-  line-height: 22.4px;
-  line-height: 1.4rem; }
+  line-height: 1.6; }
 
 small, .small-print {
   font-size: 12px;
@@ -400,21 +452,25 @@ sub {
   top: -5px;
   top: -0.3125rem; }
 
-del { }
+del {
+  text-decoration: line-through;
+  color: #a2a2a2; }
 
-u {
+u, ins {
   text-decoration: underline; }
 
 blockquote {
   display: block;
-  font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   padding-left: 20px;
   padding-left: 1.25rem;
   margin-top: 20px;
   margin-top: 1.25rem;
   margin-bottom: 20px;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+  border-left: 1px solid #ddd; }
   blockquote small {
     font-style: normal;
     display: block;
@@ -440,15 +496,176 @@ cite {
 abbr {
   text-transform: uppercase; }
 
-/* ------------ *\
-	OBJECTS
-\* ------------ */
-/* ------------ *\
-	COMPONENTS
-\* ------------ */
-/* ------------ *\
-	VETOS
-\* ------------ */
+mark {
+  background: #FFF9B7; }
+
+/* 
+------------
+OBJECTS.
+------------ 
+*/
+/* 
+------------
+OBJECTS.
+LISTS
+------------ 
+*/
+/*
+Remove all styling from lists by adding the .no-points class below
+*/
+.no-points, .list--inline, .list--pills, .list--stacked {
+  list-style-type: none;
+  padding-left: 0; }
+
+/*
+There are various list styles and the classes are below to enable you to utilise them.
+*/
+.list--numbered {
+  list-style-type: decimal; }
+
+.list--circled {
+  list-style-type: circle; }
+
+.list--squared {
+  list-style-type: square; }
+
+.list--lower-abc {
+  list-style-type: lower-latin; }
+
+.list--upper-abc {
+  list-style-type: upper-latin; }
+
+/*
+A list doesn't always appear vetically so there are a couple of hortizontal list styles 
+below that can be added by assiging a class.
+*/
+.list--inline, .list--pills {
+  float: left;
+  width: 100%; }
+  .list--inline li, .list--pills li {
+    display: inline-block; }
+
+.list--pills {
+  margin-bottom: 0; }
+  .list--pills li a {
+    margin-right: 10px;
+    margin-right: 0.625rem;
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
+    padding: 10px;
+    padding: 0.625rem;
+    background: #eee;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none; }
+
+.list--stacked li {
+  display: block; }
+  .list--stacked li a {
+    display: block;
+    text-decoration: none; }
+.list--stacked .seperator {
+  margin-top: 5px;
+  margin-top: 0.3125rem;
+  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
+  border-bottom: 1px solid #ddd; }
+.list--stacked .title {
+  padding: 5px;
+  padding: 0.3125rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15;
+  font-weight: 900; }
+
+/* 
+------------
+OBJECTS.
+DROPDOWNS
+------------ 
+*/
+.dropdown, .frontly-dropdown {
+  position: relative; }
+  .dropdown a, .frontly-dropdown a {
+    text-decoration: none; }
+  .dropdown ul, .frontly-dropdown ul {
+    display: none;
+    position: absolute;
+    top: auto;
+    left: 0;
+    z-index: 1; }
+  .dropdown:hover > ul, .frontly-dropdown:hover > ul, .dropdown:after:hover > ul, .frontly-dropdown:after:hover > ul {
+    display: block;
+    position: absolute; }
+  .dropdown li, .frontly-dropdown li {
+    width: 100%;
+    float: left;
+    position: relative; }
+    .dropdown li:hover > ul, .frontly-dropdown li:hover > ul {
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 0; }
+
+/* 
+------------
+OBJECTS.
+TABLES
+------------ 
+*/
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd; }
+
+caption {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+
+.table-wrap {
+  float: left;
+  width: 100%;
+  overflow-x: scroll;
+  box-shadow: inset -10px 0 5px -5px #ddd;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+  .table-wrap table {
+    margin-bottom: 0; }
+
+/* 
+------------
+COMPONENTS.
+------------ 
+*/
+/* 
+------------
+COMPONENTS.
+DROPDOWNS
+------------ 
+*/
+.frontly-dropdown > a {
+  padding: 5px 20px 0 5px; }
+.frontly-dropdown:hover > a {
+  background: #ddd; }
+.frontly-dropdown ul {
+  width: 100px;
+  border: 1px solid #ddd; }
+  .frontly-dropdown ul li a {
+    padding: 10px; }
+.frontly-dropdown:after {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  width: 10px;
+  content: 'v'; }
+.frontly-dropdown li:hover > a {
+  background: #ddd; }
+
+/* 
+------------
+VETOS.
+------------ 
+*/
 /* ------------ *\
 	HELPERS
 \* ------------ */
@@ -472,31 +689,3 @@ abbr {
 
 .visible {
   display: block; }
-
-/* ------------ *\
-	LISTS
-\* ------------ */
-/*
-Remove all styling from lists by adding the .no-points class below
-*/
-.no-points {
-  list-style-type: none;
-  padding-left: 0; }
-
-/*
-There are various list styles and the classes below
-*/
-.numbered-list {
-  list-style-type: decimal; }
-
-.circle-list {
-  list-style-type: circle; }
-
-.square-list {
-  list-style-type: square; }
-
-.alphabetical-list--lower {
-  list-style-type: lower-latin; }
-
-.alphabetical-list--upper {
-  list-style-type: upper-latin; }
