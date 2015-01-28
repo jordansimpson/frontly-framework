@@ -3,9 +3,24 @@
 // Version 1.0.0     \\
 //*******************\\
 
+/*
+*
+* The Frontly Framework is a Sass based, OOCSS, front-end framework that 
+* utilises the using Gulp.js task runner that provides all projects with a 
+* great starting platform.
+*
+* It is also based around the ITCSS(Inverted Triangle CSS) methodology 
+* that has been coined by Harry Roberts (@csswizardy) which you will be able 
+* to find out more soon I'm sure at http://itcss.io/ or by watch one of 
+* Harry's talks - https://www.youtube.com/watch?v=1OKZOV-iLj4
+*
+*/
+
 /* 
 ------------
 SETTINGS.
+------------
+The settings files are build up of numerous global variables to be used within a range of different situations. From setting the border colors of inputs by using the or altering the $border-clr variable or by adding a padding by using one of the $spacer variables. Feel free to amend the variables values as you see fit or add you own.
 ------------ 
 */
 
@@ -15,11 +30,15 @@ SETTINGS.
 @import "settings/settings.typography";
 @import "settings/settings.z-index";
 
+
+
+
+
 /* 
 ------------
 TOOLS.
 ------------ 
-*/
+*/ 
 
 @import "tools/tools.functions";
 @import "tools/tools.mixins";
@@ -41,7 +60,6 @@ BASE.
 */
 
 @import "base/base.forms";
-@import "base/base.grid";
 @import "base/base.images";
 @import "base/base.lists";
 @import "base/base.tables";
@@ -53,8 +71,9 @@ OBJECTS.
 ------------ 
 */
 
-@import "objects/objects.lists";
 @import "objects/objects.dropdowns";
+@import "objects/objects.grid";
+@import "objects/objects.lists";
 @import "objects/objects.tables";
 
 

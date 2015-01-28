@@ -1,6 +1,20 @@
+/*
+*
+* The Frontly Framework is a Sass based, OOCSS, front-end framework that 
+* utilises the using Gulp.js task runner that provides all projects with a 
+* great starting platform.
+*
+* It is also based around the ITCSS(Inverted Triangle CSS) methodology 
+* that has been coined by Harry Roberts (@csswizardy) which you will be able 
+* to find out more soon I'm sure at http://itcss.io/ or by watch one of 
+* Harry's talks - https://www.youtube.com/watch?v=1OKZOV-iLj4
+*
+*/
 /* 
 ------------
 SETTINGS.
+------------
+The settings files are build up of numerous global variables to be used within a range of different situations. From setting the border colors of inputs by using the or altering the $border-clr variable or by adding a padding by using one of the $spacer variables. Feel free to amend the variables values as you see fit or add you own.
 ------------ 
 */
 /* 
@@ -180,138 +194,6 @@ textarea {
   vertical-align: top;
   padding: 5px;
   padding: 0.3125rem; }
-
-/* 
-------------
-BASE.
-GRID
------------- 
-*/
-/* 
-Grid Row
-*/
-.grid {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 10px 0; }
-  .grid:before, .grid:after {
-    line-height: 0;
-    display: table;
-    content: ''; }
-  .grid:after {
-    clear: both; }
-
-/* 
-Grid Row
-*/
-.grid__row {
-  display: block;
-  float: left;
-  width: 100%;
-  padding: 0 10px;
-  *zoom: 1; }
-  .grid__row .grid__col .grid__row {
-    padding: 0; }
-    .grid__row .grid__col .grid__row .grid__col:first-child {
-      padding-left: 0; }
-    .grid__row .grid__col .grid__row .grid__col:last-child {
-      padding-right: 0;
-      padding-bottom: 0; }
-  .grid__row--central {
-    text-align: center; }
-    .grid__row--central .grid__col {
-      display: block;
-      float: none;
-      margin: 0 auto;
-      text-align: left; }
-      .grid__row--central .grid__col:before {
-        display: table;
-        clear: both;
-        content: ''; }
-  .grid__row--no-gutters {
-    padding-right: 0;
-    padding-left: 0; }
-
-/*
-Grid Columns Widths
-*/
-.grid__col {
-  display: block;
-  float: left;
-  padding: 10px; }
-  .grid__col--full {
-    width: 100%; }
-  .grid__col--half {
-    width: 50%; }
-  .grid__col--one-third {
-    width: 33.33333%; }
-  .grid__col--two-thirds {
-    width: 66.66667%; }
-  .grid__col--one-quarter {
-    width: 25%; }
-  .grid__col--three-quarters {
-    width: 75%; }
-  .grid__col--one-fifth {
-    width: 20%; }
-  .grid__col--two-fifths {
-    width: 40%; }
-  .grid__col--three-fifths {
-    width: 60%; }
-  .grid__col--four-fifths {
-    width: 80%; }
-  .grid__col--one-sixth {
-    width: 16.66667%; }
-  .grid__col--one-eigth {
-    width: 12.5%; }
-
-.pull-right {
-  float: right; }
-
-.pull-left {
-  float: right; }
-
-.no-gutters {
-  padding: 0; }
-
-img {
-  float: left;
-  max-width: 100%; }
-
-.show-on-phone {
-  display: none; }
-
-@media screen and (max-width: 960px) {
-  .full-width-tablet {
-    width: 100% !important; }
-    .full-width-tablet:first-child {
-      padding-right: 0; }
-    .full-width-tablet:last-child {
-      padding-left: 0; }
-
-  .half-width-tablet {
-    width: 50% !important; }
-
-  .align-center-tablet {
-    text-align: center !important; }
- }
-
-@media screen and (max-width: 767px) {
-  .grid__row {
-    padding-right: emCalc(20px) !important;
-    padding-left: emCalc(20px) !important; }
-
-  .grid__col {
-    width: 100% !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important; }
-    .grid__col > .grid__row {
-      padding-right: 0 !important;
-      padding-left: 0 !important; }
-
-  .align-center-phone {
-    text-align: center !important; }
- }
 
 /* 
 ------------
@@ -507,6 +389,167 @@ OBJECTS.
 /* 
 ------------
 OBJECTS.
+DROPDOWNS
+------------ 
+*/
+.dropdown, .frontly-dropdown {
+  position: relative; }
+  .dropdown a, .frontly-dropdown a {
+    text-decoration: none; }
+  .dropdown ul, .frontly-dropdown ul {
+    display: none;
+    position: absolute;
+    top: auto;
+    left: 0;
+    z-index: 1; }
+  .dropdown:hover > ul, .frontly-dropdown:hover > ul, .dropdown:after:hover > ul, .frontly-dropdown:after:hover > ul {
+    display: block;
+    position: absolute; }
+  .dropdown li, .frontly-dropdown li {
+    width: 100%;
+    float: left;
+    position: relative; }
+    .dropdown li:hover > ul, .frontly-dropdown li:hover > ul {
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 0; }
+
+/* 
+------------
+BASE.
+GRID
+------------ 
+*/
+/* 
+Grid Row
+*/
+.grid {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 10px 0; }
+  .grid:before, .grid:after {
+    line-height: 0;
+    display: table;
+    content: ''; }
+  .grid:after {
+    clear: both; }
+
+/* 
+Grid Row
+*/
+.grid__row {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+  *zoom: 1; }
+  .grid__row .grid__col .grid__row {
+    padding: 0; }
+    .grid__row .grid__col .grid__row .grid__col:first-child {
+      padding-left: 0; }
+    .grid__row .grid__col .grid__row .grid__col:last-child {
+      padding-right: 0;
+      padding-bottom: 0; }
+  .grid__row--central {
+    text-align: center; }
+    .grid__row--central .grid__col {
+      display: block;
+      float: none;
+      margin: 0 auto;
+      text-align: left; }
+      .grid__row--central .grid__col:before {
+        display: table;
+        clear: both;
+        content: ''; }
+  .grid__row--no-gutters {
+    padding-right: 0;
+    padding-left: 0; }
+
+/*
+Grid Columns Widths
+*/
+.grid__col {
+  display: block;
+  float: left;
+  padding: 10px; }
+  .grid__col--full {
+    width: 100%; }
+  .grid__col--half {
+    width: 50%; }
+  .grid__col--one-third {
+    width: 33.33333%; }
+  .grid__col--two-thirds {
+    width: 66.66667%; }
+  .grid__col--one-quarter {
+    width: 25%; }
+  .grid__col--three-quarters {
+    width: 75%; }
+  .grid__col--one-fifth {
+    width: 20%; }
+  .grid__col--two-fifths {
+    width: 40%; }
+  .grid__col--three-fifths {
+    width: 60%; }
+  .grid__col--four-fifths {
+    width: 80%; }
+  .grid__col--one-sixth {
+    width: 16.66667%; }
+  .grid__col--one-eigth {
+    width: 12.5%; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: right; }
+
+.no-gutters {
+  padding: 0; }
+
+img {
+  float: left;
+  max-width: 100%; }
+
+.show-on-phone {
+  display: none; }
+
+@media screen and (max-width: 960px) {
+  .full-width-tablet {
+    width: 100% !important; }
+    .full-width-tablet:first-child {
+      padding-right: 0; }
+    .full-width-tablet:last-child {
+      padding-left: 0; }
+
+  .half-width-tablet {
+    width: 50% !important; }
+
+  .align-center-tablet {
+    text-align: center !important; }
+ }
+
+@media screen and (max-width: 767px) {
+  .grid__row {
+    padding-right: emCalc(20px) !important;
+    padding-left: emCalc(20px) !important; }
+
+  .grid__col {
+    width: 100% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important; }
+    .grid__col > .grid__row {
+      padding-right: 0 !important;
+      padding-left: 0 !important; }
+
+  .align-center-phone {
+    text-align: center !important; }
+ }
+
+/* 
+------------
+OBJECTS.
 LISTS
 ------------ 
 */
@@ -578,35 +621,6 @@ below that can be added by assiging a class.
   text-transform: uppercase;
   letter-spacing: 0.15;
   font-weight: 900; }
-
-/* 
-------------
-OBJECTS.
-DROPDOWNS
------------- 
-*/
-.dropdown, .frontly-dropdown {
-  position: relative; }
-  .dropdown a, .frontly-dropdown a {
-    text-decoration: none; }
-  .dropdown ul, .frontly-dropdown ul {
-    display: none;
-    position: absolute;
-    top: auto;
-    left: 0;
-    z-index: 1; }
-  .dropdown:hover > ul, .frontly-dropdown:hover > ul, .dropdown:after:hover > ul, .frontly-dropdown:after:hover > ul {
-    display: block;
-    position: absolute; }
-  .dropdown li, .frontly-dropdown li {
-    width: 100%;
-    float: left;
-    position: relative; }
-    .dropdown li:hover > ul, .frontly-dropdown li:hover > ul {
-      display: block;
-      position: absolute;
-      left: 100%;
-      top: 0; }
 
 /* 
 ------------

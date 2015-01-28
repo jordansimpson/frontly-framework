@@ -1,13 +1,20 @@
 // Include gulp
 var gulp = require('gulp'); 
 
-// Include Our Plugins
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var minifyCSS = require('gulp-minify-css');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+// Include all required plugins
+var jshint = require('gulp-jshint'),
+    sass = require('gulp-sass'),
+    minifyCSS = require('gulp-minify-css'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    livereload = require('gulp-livereload');
+
+// Error Log Function to handle errors without disrupting watch
+function errorLog(error) {
+    console.error.bind(error);
+    this.emit('end');
+}
 
 // Lint Task
 gulp.task('lint', function() {
@@ -23,7 +30,8 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('dist/css'))
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(rename('frontly.min.css'))
-        .pipe(gulp.dest('dist/css/min'));
+        .pipe(gulp.dest('dist/css/min'))
+        .pipe(livereload());
 });
 
 // Concatenate & Minify JS
@@ -38,8 +46,11 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
+
+    var server = livereload();
     gulp.watch('src/scripts/*.js', ['lint', 'scripts']);
     gulp.watch('src/sass/*.scss', ['sass']);
+    livereload.listen();
 });
 
 // Default Task
