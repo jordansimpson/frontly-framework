@@ -8,7 +8,7 @@ var jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    livereload = require('gulp-livereload');
+    browserSync = require('browser-sync');
 
 // Error Log Function to handle errors without disrupting watch
 function errorLog(error) {
@@ -23,6 +23,15 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
+// Initiate Browser Sync 
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "./"
+        }
+    });
+});
+
 // Compile Our Sass
 gulp.task('sass', function() {
     return gulp.src('src/sass/**/*.scss')
@@ -31,7 +40,7 @@ gulp.task('sass', function() {
         .pipe(minifyCSS({keepBreaks:false}))
         .pipe(rename('frontly.min.css'))
         .pipe(gulp.dest('dist/css/min'))
-        .pipe(livereload());
+        .pipe(browserSync.reload({stream:true}));
 });
 
 // Concatenate & Minify JS
@@ -44,14 +53,12 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/scripts/min'));
 });
 
+
 // Watch Files For Changes
 gulp.task('watch', function() {
-
-    var server = livereload();
     gulp.watch('src/scripts/*.js', ['lint', 'scripts']);
-    gulp.watch('src/sass/*.scss', ['sass']);
-    livereload.listen();
+    gulp.watch('src/sass/*.scss', ['sass', 'browser-sync']);
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'browser-sync', 'watch']);
