@@ -1,0 +1,171 @@
+/* 
+------------
+COMPONENTS.
+FRONTLY NAV
+------------ 
+*/
+
+/* 
+.frontly-nav 
+------------ 
+* This is the default navigation block of the frontly framework.
+* The colors that are set for the default browser are set in the 
+* settings.colors.scss file and assigned to $nav-clr.
+* 
+*/
+
+.frontly-nav{
+	@include remCalc(margin-bottom, $spacer);
+	float: left;
+	width: 100%;
+	background: $nav-clr;
+	&:first-child{
+		border-left: none;
+	}
+	&:last-child{
+		border-right: none;
+	}
+	ul{
+		@extend .list--no-points;
+		margin: 0;
+		padding: 0;
+		float: left;
+	}
+	ul li{
+		display: block;
+		float: left;
+		&:last-child a{
+			border-right: 0;
+		}
+	} 
+	ul li a, a{
+		@include remCalc(padding, $spacer);
+		@include remCalc(font-size, $base-font-size);
+		color: set-contrast-color($nav-clr);
+		display: block;
+		float: left;
+		text-decoration: none;
+		@include transition(all ease 0.25s);
+		&:hover{
+			background: darken($nav-clr, 20%);
+		}
+	}
+	.frontly-dropdown{
+		&:hover > a{
+			background: darken($nav-clr, 20%);
+		}
+		a{
+			padding-right: $spacer--dbl;
+		}
+	}
+	.frontly-dropdown ul{
+		top: 36px;
+		border: none;
+		background: darken($nav-clr, 15%);
+		li:hover > a{
+			background: darken($nav-clr, 20%);
+		}
+	}
+	.frontly-dropdown a{
+		@include remCalc(padding-right, $spacer--dbl);
+	}
+	.frontly-dropdown:after{
+		right: $spacer--small;
+		top: 35%;
+		color: set-contrast-color($nav-clr);
+	}
+}
+
+/* 
+.frontly-nav--branded 
+--------------------- 
+The branded frontly nav is a great way to incorporate your brands colors into
+the naviagtions style. It utilises the $brand-clr variable that is set in the
+setting.colors.scss file.
+*/
+
+.frontly-nav--branded{
+	background: $brand-clr;
+	ul li a, a{
+		color: set-contrast-color($brand-clr);
+		&:hover{
+			background: darken($brand-clr, 20%)
+		}
+	}
+	.frontly-dropdown{
+		&:hover > a{
+			background: darken($brand-clr, 20%);
+		}
+	}
+	.frontly-dropdown ul{
+		background: darken($brand-clr, 15%);
+		li:hover > a{
+			background: darken($brand-clr, 20%);
+		}
+	}
+	.frontly-dropdown:after{
+		color: set-contrast-color($brand-clr);
+	}
+}
+
+.frontly-nav--big{
+	ul li a, .frontly-nav__text, a{
+		@include remCalc(padding, $spacer--dbl);
+	}
+	.frontly-dropdown{
+		&:after{
+			right: $spacer--dbl;
+			top: 40%;
+		}
+		a{
+			padding-right: $spacer--large;
+		}
+		ul{
+			top: 56px;
+		}
+	}
+}
+
+/* 
+.frontly-nav--right
+--------------------- 
+* Should you wish to use a right aligned list in your navigation, this helper 
+* class enables you to do that. By assigning it to the <ul> tag you are able 
+* to pull it to the right of the frontly nav.
+* 
+*/
+
+ul.frontly-nav--right{
+	float: right;
+}
+
+	.frontly-nav--right .frontly-dropdown ul{
+		left: auto;
+		right: 0;
+		li:hover ul{
+			left: -100%;
+		}
+	}
+
+/* 
+.frontly-nav__text
+---------------------
+* A navigation may sometimes require a bit of text that isn't wrapped in an <a>
+* tag. This class enables you to do just that.
+* 
+*/
+
+.frontly-nav__text{
+	float: left;
+	width: auto;
+	margin: 0;
+	font-size: $base-font-size;
+	@include remCalc(padding, $spacer);
+	line-height: $base-font-size;
+	line-height: 1rem;
+}
+
+	.frontly-nav__text--brand-name{
+		font-weight: bold;
+		text-transform: uppercase;
+	}

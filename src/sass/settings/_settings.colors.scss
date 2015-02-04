@@ -10,6 +10,7 @@ COLORS
 $brand-red: #ED4466;
 $brand-pink: #E56399;
 $brand-blue: #117393;
+$brand-clr: $brand-blue;
 
 
 // Default Colors
@@ -26,3 +27,7 @@ $border-clr: #ddd;
 $pre-background-clr: #eee;
 $pre-text-clr: $base-text-clr;
 $highlighting-clr: #FFF9B7;
+
+// Frontly Navigation Colors
+$nav-clr: #f6f6f6; 
+$nav-link-clr: #fff; 

@@ -14,24 +14,24 @@ DROPDOWNS
 		background: #ddd;
 	}
 	ul{
-		// background: #eee;
-		width:100px;
+		width:200px;
 		border: 1px solid $border-clr;
 		li a{
 			padding: $spacer;
+			width: 100%;
+			position: relative;
 		}
 	}
 	&:after{
 		position: absolute;
 		right: $spacer--small;
-		top: 0;
+		top: 35%;
+		@include remCalc(font-size, 10px);
 		width: $spacer;
-		content: 'v';
+		color: lighten($base-text-clr, 60%);
+		content: "\25bc";
 	}
 	li:hover > a{
 		background: #ddd;
-		&:after{
-			
-		}
 	}
 }

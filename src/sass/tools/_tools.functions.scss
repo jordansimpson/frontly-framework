@@ -10,6 +10,21 @@ FUNCTIONS
 // Used for remCalc mixin
 
 @function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+/*
+Set contrast color function.
+----------------------------
+* Setting a contrasting color can be a pain sometimes if you don't know what color you're going to use. This function helps deal with the use of color variables and check the contrast of the colors.
+*/
+
+@function set-contrast-color($color) {
+    @if (lightness($color) > 50) {
+        @return darken($color, 40%); // Lighter backgorund, return dark color
+    } 
+    @else {
+        @return lighten($color, 40%); // Darker background, return light color
+    }
 }
