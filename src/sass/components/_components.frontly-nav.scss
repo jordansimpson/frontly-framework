@@ -19,12 +19,6 @@ FRONTLY NAV
 	float: left;
 	width: 100%;
 	background: $nav-clr;
-	&:first-child{
-		border-left: none;
-	}
-	&:last-child{
-		border-right: none;
-	}
 	ul{
 		@extend .list--no-points;
 		margin: 0;
@@ -34,9 +28,6 @@ FRONTLY NAV
 	ul li{
 		display: block;
 		float: left;
-		&:last-child a{
-			border-right: 0;
-		}
 	} 
 	ul li a, a{
 		@include remCalc(padding, $spacer);
@@ -73,6 +64,22 @@ FRONTLY NAV
 		right: $spacer--small;
 		top: 35%;
 		color: set-contrast-color($nav-clr);
+	}
+}
+
+.frontly-nav--basic{
+	background: none;
+	ul li a, a{
+		@include remCalc(padding, $spacer);
+		@include remCalc(font-size, $base-font-size);
+		color: $base-text-clr;
+		display: block;
+		float: left;
+		text-decoration: none;
+		@include transition(all ease 0.25s);
+		&:hover{
+			background: darken($nav-clr, 20%);
+		}
 	}
 }
 

@@ -69,6 +69,21 @@ TOOLS.
 MIXINS
 ------------ 
 */
+/*
+* Media Query mixins
+*
+* Usage example:
+* .class{
+    width: 25%;
+*   @include respond-to(tablet){
+*       width: 50%; 
+*   }
+*   @include respond-to(mobile){
+*       width: 100%;    
+*   }
+* }
+*  
+*/
 /* 
 ------------
 GENERIC.
@@ -704,10 +719,6 @@ FRONTLY NAV
   float: left;
   width: 100%;
   background: #f6f6f6; }
-  .frontly-nav:first-child {
-    border-left: none; }
-  .frontly-nav:last-child {
-    border-right: none; }
   .frontly-nav ul {
     margin: 0;
     padding: 0;
@@ -715,8 +726,6 @@ FRONTLY NAV
   .frontly-nav ul li {
     display: block;
     float: left; }
-    .frontly-nav ul li:last-child a {
-      border-right: 0; }
   .frontly-nav ul li a, .frontly-nav a {
     padding: 10px;
     padding: 0.625rem;
@@ -750,6 +759,24 @@ FRONTLY NAV
     top: 35%;
     color: #909090; }
 
+.frontly-nav--basic {
+  background: none; }
+  .frontly-nav--basic ul li a, .frontly-nav--basic a {
+    padding: 10px;
+    padding: 0.625rem;
+    font-size: 16px;
+    font-size: 1rem;
+    color: #222;
+    display: block;
+    float: left;
+    text-decoration: none;
+    -moz-transition: all ease 0.25s;
+    -o-transition: all ease 0.25s;
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s; }
+    .frontly-nav--basic ul li a:hover, .frontly-nav--basic a:hover {
+      background: #c3c3c3; }
+
 /* 
 .frontly-nav--branded 
 --------------------- 
@@ -758,19 +785,19 @@ the naviagtions style. It utilises the $brand-clr variable that is set in the
 setting.colors.scss file.
 */
 .frontly-nav--branded {
-  background: #117393; }
+  background: #ED4466; }
   .frontly-nav--branded ul li a, .frontly-nav--branded a {
-    color: #80d5f0; }
+    color: #5c091a; }
     .frontly-nav--branded ul li a:hover, .frontly-nav--branded a:hover {
-      background: #062b38; }
+      background: #b91233; }
   .frontly-nav--branded .frontly-dropdown:hover > a {
-    background: #062b38; }
+    background: #b91233; }
   .frontly-nav--branded .frontly-dropdown ul {
-    background: #093d4e; }
+    background: #d0143a; }
     .frontly-nav--branded .frontly-dropdown ul li:hover > a {
-      background: #062b38; }
+      background: #b91233; }
   .frontly-nav--branded .frontly-dropdown:after {
-    color: #80d5f0; }
+    color: #5c091a; }
 
 .frontly-nav--big ul li a, .frontly-nav--big .frontly-nav__text, .frontly-nav--big a {
   padding: 20px;
