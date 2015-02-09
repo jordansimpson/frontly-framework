@@ -1,0 +1,18 @@
+/* 
+------------
+COMPONENTS.
+TABLES
+------------ 
+*/
+
+.striped-table{
+	tbody tr:nth-child(odd){
+		background: #f6f6f6;
+	}
+}
+
+.striped-table--branded{
+	tbody tr:nth-child(odd){
+		background: lighten($brand-clr, 30%);
+	}
+}

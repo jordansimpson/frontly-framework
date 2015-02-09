@@ -280,9 +280,6 @@ BASE.
 TABLES
 ------------ 
 */
-/*
-Adding padding to ul and ol elements
-*/
 table, tbody {
   width: 100%;
   text-align: left;
@@ -673,6 +670,77 @@ COMPONENTS.
 /* 
 ------------
 COMPONENTS.
+BUTTONS
+------------ 
+*/
+.btn {
+  padding: 10px;
+  padding: 0.625rem;
+  margin-right: 10px;
+  margin-right: 0.625rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  border: 1px solid #ddd;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background: #f6f6f6;
+  letter-spacing: 0.05rem;
+  text-decoration: none;
+  display: inline-block;
+  float: left; }
+  .btn:hover {
+    background: #ddd; }
+
+.btn--smooth {
+  border-radius: 5px; }
+
+.btn--rounded {
+  border-radius: 50px;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+  padding-left: 20px;
+  padding-left: 1.25rem; }
+
+.btn--disabled {
+  color: #ddd;
+  background: #f6f6f6; }
+  .btn--disabled:hover {
+    cursor: not-allowed;
+    background: #f6f6f6;
+    color: #ddd; }
+
+.btn-group {
+  float: left;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  margin-right: 10px;
+  margin-right: 0.625rem; }
+
+.btn-group .btn {
+  margin: 0; }
+  .btn-group .btn:not(:first-child) {
+    border-left: 0; }
+
+.btn-group--smooth .btn:first-child {
+  border-radius: 5px 0px 0px 5px; }
+.btn-group--smooth .btn:last-child {
+  border-radius: 0px 5px 5px 0px; }
+
+.btn-group--rounded .btn:first-child {
+  border-radius: 50px 0px 0px 50px;
+  padding-left: 20px;
+  padding-left: 1.25rem; }
+.btn-group--rounded .btn:last-child {
+  border-radius: 0px 50px 50px 0px;
+  padding-right: 20px;
+  padding-right: 1.25rem; }
+
+/* 
+------------
+COMPONENTS.
 DROPDOWNS
 ------------ 
 */
@@ -723,9 +791,16 @@ FRONTLY NAV
     margin: 0;
     padding: 0;
     float: left; }
+    @media only screen and (max-width: 400px) {
+      .frontly-nav ul {
+        width: 100%;
+        display: none; } }
   .frontly-nav ul li {
     display: block;
     float: left; }
+    @media only screen and (max-width: 400px) {
+      .frontly-nav ul li {
+        width: 100%; } }
   .frontly-nav ul li a, .frontly-nav a {
     padding: 10px;
     padding: 0.625rem;
@@ -739,16 +814,32 @@ FRONTLY NAV
     -o-transition: all ease 0.25s;
     -webkit-transition: all ease 0.25s;
     transition: all ease 0.25s; }
+    @media only screen and (max-width: 400px) {
+      .frontly-nav ul li a, .frontly-nav a {
+        width: 100%; }
+        .frontly-nav ul li a.frontly-nav__menu-link, .frontly-nav a.frontly-nav__menu-link {
+          width: auto; } }
     .frontly-nav ul li a:hover, .frontly-nav a:hover {
       background: #c3c3c3; }
   .frontly-nav .frontly-dropdown:hover > a {
     background: #c3c3c3; }
   .frontly-nav .frontly-dropdown a {
     padding-right: 20px; }
+  @media only screen and (max-width: 400px) {
+    .frontly-nav .frontly-dropdown:after {
+      display: none; }
+ }
   .frontly-nav .frontly-dropdown ul {
+    -moz-transition: all ease 2s;
+    -o-transition: all ease 2s;
+    -webkit-transition: all ease 2s;
+    transition: all ease 2s;
     top: 36px;
     border: none;
     background: #d0d0d0; }
+    @media only screen and (max-width: 400px) {
+      .frontly-nav .frontly-dropdown ul {
+        display: none; } }
     .frontly-nav .frontly-dropdown ul li:hover > a {
       background: #c3c3c3; }
   .frontly-nav .frontly-dropdown a {
@@ -850,6 +941,75 @@ ul.frontly-nav--right {
 
 /* 
 ------------
+COMPONENTS.
+PANELS
+------------ 
+*/
+.panel {
+  width: 100%;
+  float: left;
+  clear: both;
+  border: 1px solid #ddd;
+  padding: 10px;
+  padding: 0.625rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+  .panel > * {
+    margin: 0; }
+
+.panel--mid {
+  padding: 20px;
+  padding: 1.25rem; }
+
+.panel--large {
+  padding: 40px;
+  padding: 2.5rem; }
+
+.panel--dark {
+  background: #222;
+  border: none;
+  color: #fff; }
+
+.panel--error {
+  background: #FF5666;
+  border: none;
+  color: #fff; }
+
+.panel--attention {
+  background: #FF6F59;
+  border: none;
+  color: #fff; }
+
+.panel--success {
+  background: #68D68D;
+  border: none;
+  color: #fff; }
+
+.panel--can-close {
+  position: relative; }
+
+.panel--can-close__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #fff; }
+
+/* 
+------------
+COMPONENTS.
+TABLES
+------------ 
+*/
+.striped-table tbody tr:nth-child(odd) {
+  background: #f6f6f6; }
+
+.striped-table--branded tbody tr:nth-child(odd) {
+  background: #fad0d8; }
+
+/* 
+------------
 VETOS.
 ------------ 
 */
@@ -872,7 +1032,23 @@ VETOS.
   font-weight: 900 !important; }
 
 .hidden {
-  display: none; }
+  display: none !important; }
 
-.visible {
-  display: block; }
+@media only screen and (min-width: 401px) and (max-width: 959px) {
+  .display--tablet {
+    display: block !important; }
+
+  .hidden--talet {
+    display: none !important; }
+ }
+
+@media only screen and (max-width: 400px) {
+  .display--mobile {
+    display: block !important; }
+
+  .hidden--mobile {
+    display: none !important; }
+ }
+
+.active {
+  color: green; }

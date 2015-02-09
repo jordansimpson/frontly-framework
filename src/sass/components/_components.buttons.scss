@@ -1,0 +1,76 @@
+/* 
+------------
+COMPONENTS.
+BUTTONS
+------------ 
+*/
+
+.btn{
+	@include remCalc(padding, $spacer);
+	@include remCalc(margin-right, $spacer);
+	@include remCalc(margin-bottom, $spacer);
+	border: 1px solid $border-clr;
+	@include transition(.25s);
+	background: #f6f6f6;
+	letter-spacing: .05rem;
+	text-decoration: none;
+	display: inline-block;
+	float: left;
+	&:hover{
+		background: #ddd;
+	}
+}
+
+.btn--smooth{
+	border-radius: 5px;
+}
+
+.btn--rounded{
+	border-radius: 50px;
+	@include remCalc(padding-right, $spacer--dbl);
+	@include remCalc(padding-left, $spacer--dbl);
+}
+
+.btn--disabled{
+	color: #ddd;
+	background: #f6f6f6;
+	&:hover{
+		cursor: not-allowed;
+		background: #f6f6f6;
+		color: #ddd;
+	}
+}
+
+.btn-group{
+	float: left;
+	display: inline-block;
+	@include remCalc(margin-bottom, $spacer);
+	@include remCalc(margin-right, $spacer);
+}
+
+.btn-group .btn{
+	margin: 0;
+	&:not(:first-child){
+		border-left: 0;
+	}
+}
+
+.btn-group--smooth{
+	.btn:first-child{
+		border-radius: 5px 0px 0px 5px;
+	}
+	.btn:last-child{
+		border-radius: 0px 5px 5px 0px;
+	}
+}
+
+.btn-group--rounded{
+	.btn:first-child{
+		border-radius: 50px 0px 0px 50px;
+		@include remCalc(padding-left, $spacer--dbl);
+	}
+	.btn:last-child{
+		border-radius: 0px 50px 50px 0px;
+		@include remCalc(padding-right, $spacer--dbl);
+	}
+}

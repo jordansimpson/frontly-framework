@@ -24,10 +24,17 @@ FRONTLY NAV
 		margin: 0;
 		padding: 0;
 		float: left;
+		@include respond-to(mobile){
+			width: 100%;
+			display: none;
+		}
 	}
 	ul li{
 		display: block;
 		float: left;
+		@include respond-to(mobile){
+			width: 100%;
+		}
 	} 
 	ul li a, a{
 		@include remCalc(padding, $spacer);
@@ -37,6 +44,12 @@ FRONTLY NAV
 		float: left;
 		text-decoration: none;
 		@include transition(all ease 0.25s);
+		@include respond-to(mobile){
+			width: 100%;
+			&.frontly-nav__menu-link{
+				width: auto;
+			}
+		}
 		&:hover{
 			background: darken($nav-clr, 20%);
 		}
@@ -48,11 +61,20 @@ FRONTLY NAV
 		a{
 			padding-right: $spacer--dbl;
 		}
+		@include respond-to(mobile){
+			&:after{
+				display: none;
+			}
+		}
 	}
 	.frontly-dropdown ul{
+		@include transition(all ease 2s);
 		top: 36px;
 		border: none;
 		background: darken($nav-clr, 15%);
+		@include respond-to(mobile){
+			display: none;
+		}
 		li:hover > a{
 			background: darken($nav-clr, 20%);
 		}

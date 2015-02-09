@@ -29,14 +29,31 @@
 	font-weight: $weight-heavy !important;
 }
 
-// Hide and Seek
+// Hide and Display
 
 .hidden{
-	display: none;
+	display: none !important;
 }
 
-.visible{
-	display: block;
+@include respond-to(tablet){
+	.display--tablet{
+		display: block !important;
+	}
+	.hidden--talet{
+		display: none !important;
+	}
 }
 
+@include respond-to(mobile){
+	.display--mobile{
+		display: block !important;
+	}
+	.hidden--mobile{
+		display: none !important;
+	}
+}
+
+.active{
+	color: green;
+}
 

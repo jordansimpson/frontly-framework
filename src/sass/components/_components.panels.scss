@@ -1,0 +1,62 @@
+/* 
+------------
+COMPONENTS.
+PANELS
+------------ 
+*/
+
+.panel{
+	width: 100%;
+	float: left;
+	clear: both;
+	border: 1px solid $border-clr;
+	@include remCalc(padding, $spacer);
+	@include remCalc(margin-bottom, $spacer);
+	> *{
+		margin: 0;
+	}
+}
+
+.panel--mid{
+	@include remCalc(padding, $spacer--dbl);
+}
+
+.panel--large{
+	@include remCalc(padding, $spacer--large);
+}
+
+.panel--dark{
+	background: $base-text-clr;
+	border: none;
+	color: #fff;
+}
+
+.panel--error{
+	background: $error-clr;
+	border: none;
+	color: #fff;
+}
+
+.panel--attention{
+	background: $attention-clr;
+	border: none;
+	color: #fff;
+}
+
+.panel--success{
+	background: $success-clr;
+	border: none;
+	color: #fff;
+}
+
+.panel--can-close{
+	position: relative;
+}
+
+.panel--can-close__btn{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	@include remCalc(font-size, 20px);
+	color: #fff;
+}

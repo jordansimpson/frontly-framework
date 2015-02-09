@@ -46,18 +46,18 @@ gulp.task('sass', function() {
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('src/scripts/*.js')
-        .pipe(concat('all.js'))
+        .pipe(concat('fronlty-scripts.js'))
         .pipe(gulp.dest('dist/scripts'))
-        .pipe(rename('all.min.js'))
         .pipe(uglify())
+        .pipe(rename('fronlty-scripts.min.js'))
         .pipe(gulp.dest('dist/scripts/min'));
 });
 
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('src/scripts/*.js', ['lint', 'scripts']);
     gulp.watch('src/sass/*.scss', ['sass', 'browser-sync']);
+    gulp.watch('src/scripts/*.js', ['lint', 'scripts']);
 });
 
 // Default Task
