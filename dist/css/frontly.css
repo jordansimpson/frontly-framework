@@ -673,6 +673,16 @@ COMPONENTS.
 BUTTONS
 ------------ 
 */
+/*
+*
+* The Button (.btn) Class
+* -----------------------
+*
+* All buttons must include the .btn class as this ensures that the basic 
+* styling is applied.
+*
+*
+*/
 .btn {
   padding: 10px;
   padding: 0.625rem;
@@ -686,12 +696,51 @@ BUTTONS
   -webkit-transition: 0.25s;
   transition: 0.25s;
   background: #f6f6f6;
+  text-align: center;
   letter-spacing: 0.05rem;
   text-decoration: none;
   display: inline-block;
   float: left; }
   .btn:hover {
     background: #ddd; }
+  .btn i {
+    font-size: 0.9rem; }
+
+/*
+*
+* Button Display Styles
+* ---------------------
+*
+* The classes below are used to change the way that the button is displayed 
+* physically e.g. the example below sets the button as disabled, preventing a 
+* user from clicking it.
+*
+* Example:
+*
+* <a class="btn btn--disabled">Button</a>
+*
+*
+*/
+.btn--small {
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding: 5px;
+  padding: 0.3125rem; }
+
+.btn--large {
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding: 20px;
+  padding: 1.25rem; }
+
+.btn--x-large {
+  font-size: 36px;
+  font-size: 2.25rem;
+  padding: 40px;
+  padding: 2.5rem; }
+
+.btn--full-width {
+  width: 100%; }
 
 .btn--smooth {
   border-radius: 5px; }
@@ -703,6 +752,10 @@ BUTTONS
   padding-left: 20px;
   padding-left: 1.25rem; }
 
+.btn--bordered, .btn-group--bordered .btn {
+  background: #fff;
+  border: 3px solid #ddd; }
+
 .btn--disabled {
   color: #ddd;
   background: #f6f6f6; }
@@ -711,6 +764,26 @@ BUTTONS
     background: #f6f6f6;
     color: #ddd; }
 
+/*
+*
+* Button Groups
+* -------------
+*
+* Button groups are a great way to provide a user with a selection of buttons 
+* while keeping them within a cluster. This is particularly handy for 
+* pagination.
+*
+* Example:
+*
+* <div class="btn-group">
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* </div>
+*
+*
+*/
 .btn-group {
   float: left;
   display: inline-block;
@@ -719,6 +792,28 @@ BUTTONS
   margin-right: 10px;
   margin-right: 0.625rem; }
 
+/*
+*
+* Button Group Styles
+* -------------------
+*
+* The button group styles follow on the from the button styles. This enables
+* you to assign the same styling achieved on the button styling without having
+* to assign the class to each individual .btn within the group. The example
+* below would provide you with the smooth corners on the .btn-group apposed to 
+* each individual .btn element.
+*
+* Example:
+*
+* <div class="btn-group btn-group--smooth">
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* </div>
+*
+*
+*/
 .btn-group .btn {
   margin: 0; }
   .btn-group .btn:not(:first-child) {
@@ -737,6 +832,74 @@ BUTTONS
   border-radius: 0px 50px 50px 0px;
   padding-right: 20px;
   padding-right: 1.25rem; }
+
+.btn-group--bordered .btn:hover {
+  background: #ddd; }
+
+/*
+*
+* Buttons Colored
+* ---------------
+*
+* The button colors are a set of deafults and can be customised were required 
+* by creating a new class e.g. .btn--custom-class{ background: purple }. 
+* The buttons utilise a number of color variables set in the 
+* _settings.colors.scss file and it is recommended that if you wish to create 
+* a custom .btn that you create a variable in that file to call where required.
+*
+* Example:
+*
+* <a class="btn btn--success">Button</a>
+*
+*
+*/
+.btn--success {
+  background: #68D68D;
+  border-color: #40cb6f;
+  color: #fff; }
+  .btn--success:hover {
+    background: #40cb6f;
+    color: #fff; }
+
+.btn--success.btn--bordered, .btn-group--bordered .btn--success.btn, .btn--bordered.btn--success, .btn-group--bordered .btn--success.btn {
+  border-color: #68D68D;
+  color: #68D68D;
+  background: none; }
+  .btn--success.btn--bordered:hover, .btn-group--bordered .btn--success.btn:hover, .btn--bordered.btn--success:hover, .btn-group--bordered .btn--success.btn:hover {
+    background: #68D68D;
+    color: #fff; }
+
+.btn--error {
+  background: #FF5666;
+  border-color: #ff2338;
+  color: #fff; }
+  .btn--error:hover {
+    background: #ff2338;
+    color: #fff; }
+
+.btn--error.btn--bordered, .btn-group--bordered .btn--error.btn, .btn--bordered.btn--error, .btn-group--bordered .btn--error.btn {
+  border-color: #FF5666;
+  color: #FF5666;
+  background: none; }
+  .btn--error.btn--bordered:hover, .btn-group--bordered .btn--error.btn:hover, .btn--bordered.btn--error:hover, .btn-group--bordered .btn--error.btn:hover {
+    background: #FF5666;
+    color: #fff; }
+
+.btn--attention {
+  background: #FF6F59;
+  border-color: #ff4326;
+  color: #fff; }
+  .btn--attention:hover {
+    background: #ff4326;
+    color: #fff; }
+
+.btn--attention.btn--bordered, .btn-group--bordered .btn--attention.btn, .btn--bordered.btn--attention, .btn-group--bordered .btn--attention.btn {
+  border-color: #FF6F59;
+  color: #FF6F59;
+  background: none; }
+  .btn--attention.btn--bordered:hover, .btn-group--bordered .btn--attention.btn:hover, .btn--bordered.btn--attention:hover, .btn-group--bordered .btn--attention.btn:hover {
+    background: #FF6F59;
+    color: #fff; }
 
 /* 
 ------------

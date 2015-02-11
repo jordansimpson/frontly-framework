@@ -5,6 +5,17 @@ BUTTONS
 ------------ 
 */
 
+/*
+*
+* The Button (.btn) Class
+* -----------------------
+*
+* All buttons must include the .btn class as this ensures that the basic 
+* styling is applied.
+*
+*
+*/
+
 .btn{
 	@include remCalc(padding, $spacer);
 	@include remCalc(margin-right, $spacer);
@@ -12,6 +23,7 @@ BUTTONS
 	border: 1px solid $border-clr;
 	@include transition(.25s);
 	background: #f6f6f6;
+	text-align: center;
 	letter-spacing: .05rem;
 	text-decoration: none;
 	display: inline-block;
@@ -19,6 +31,43 @@ BUTTONS
 	&:hover{
 		background: #ddd;
 	}
+	i{
+		font-size: .9rem;
+	}
+}
+
+/*
+*
+* Button Display Styles
+* ---------------------
+*
+* The classes below are used to change the way that the button is displayed 
+* physically e.g. the example below sets the button as disabled, preventing a 
+* user from clicking it.
+*
+* Example:
+*
+* <a class="btn btn--disabled">Button</a>
+*
+*
+*/
+
+.btn--small{
+	@include remCalc(font-size, 12px);
+	@include remCalc(padding, $spacer--small);
+}
+
+.btn--large{
+	@include remCalc(font-size, 24px);
+	@include remCalc(padding, $spacer--dbl);
+}
+.btn--x-large{
+	@include remCalc(font-size, 36px);	
+	@include remCalc(padding, $spacer--large);
+}
+
+.btn--full-width{
+	width: 100%;
 }
 
 .btn--smooth{
@@ -31,6 +80,11 @@ BUTTONS
 	@include remCalc(padding-left, $spacer--dbl);
 }
 
+.btn--bordered{
+	background: #fff;
+	border: 3px solid #ddd;
+}
+
 .btn--disabled{
 	color: #ddd;
 	background: #f6f6f6;
@@ -41,12 +95,56 @@ BUTTONS
 	}
 }
 
+/*
+*
+* Button Groups
+* -------------
+*
+* Button groups are a great way to provide a user with a selection of buttons 
+* while keeping them within a cluster. This is particularly handy for 
+* pagination.
+*
+* Example:
+*
+* <div class="btn-group">
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* </div>
+*
+*
+*/
+
 .btn-group{
 	float: left;
 	display: inline-block;
 	@include remCalc(margin-bottom, $spacer);
 	@include remCalc(margin-right, $spacer);
 }
+
+/*
+*
+* Button Group Styles
+* -------------------
+*
+* The button group styles follow on the from the button styles. This enables
+* you to assign the same styling achieved on the button styling without having
+* to assign the class to each individual .btn within the group. The example
+* below would provide you with the smooth corners on the .btn-group apposed to 
+* each individual .btn element.
+*
+* Example:
+*
+* <div class="btn-group btn-group--smooth">
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* 	<a class="btn">Button</a>
+* </div>
+*
+*
+*/
 
 .btn-group .btn{
 	margin: 0;
@@ -72,5 +170,90 @@ BUTTONS
 	.btn:last-child{
 		border-radius: 0px 50px 50px 0px;
 		@include remCalc(padding-right, $spacer--dbl);
+	}
+}
+
+.btn-group--bordered .btn{
+	@extend .btn--bordered;
+	&:hover{
+		background: #ddd;
+	}
+}
+
+/*
+*
+* Buttons Colored
+* ---------------
+*
+* The button colors are a set of deafults and can be customised were required 
+* by creating a new class e.g. .btn--custom-class{ background: purple }. 
+* The buttons utilise a number of color variables set in the 
+* _settings.colors.scss file and it is recommended that if you wish to create 
+* a custom .btn that you create a variable in that file to call where required.
+*
+* Example:
+*
+* <a class="btn btn--success">Button</a>
+*
+*
+*/
+
+.btn--success{
+	background: $success-clr;
+	border-color: darken($success-clr, 10%);
+	color: #fff;
+	&:hover{
+		background: darken($success-clr, 10%);
+		color: #fff;
+	}
+}
+
+.btn--success.btn--bordered, .btn--bordered.btn--success{
+	border-color: $success-clr;
+	color: $success-clr;
+	background: none;
+	&:hover{
+		background: $success-clr;
+		color: #fff;
+	}
+}
+
+.btn--error{
+	background: $error-clr;
+	border-color: darken($error-clr, 10%);
+	color: #fff;
+	&:hover{
+		background: darken($error-clr, 10%);
+		color: #fff;
+	}
+}
+
+.btn--error.btn--bordered, .btn--bordered.btn--error{
+	border-color: $error-clr;
+	color: $error-clr;
+	background: none;
+	&:hover{
+		background: $error-clr;
+		color: #fff;
+	}
+}
+
+.btn--attention{
+	background: $attention-clr;
+	border-color: darken($attention-clr, 10%);
+	color: #fff;
+	&:hover{
+		background: darken($attention-clr, 10%);
+		color: #fff;
+	}
+}
+
+.btn--attention.btn--bordered, .btn--bordered.btn--attention{
+	border-color: $attention-clr;
+	color: $attention-clr;
+	background: none;
+	&:hover{
+		background: $attention-clr;
+		color: #fff;
 	}
 }
