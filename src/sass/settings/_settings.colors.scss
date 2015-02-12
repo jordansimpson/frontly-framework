@@ -20,6 +20,7 @@ $brand-clr: $brand-red;
 
 $base-text-clr: #222;
 $base-text-clr--dull: lighten($base-text-clr, 50%);
+$sub-headline-clr: $base-text-clr--dull;
 $base-background-clr: #fff;
 $link-clr: lighten($base-text-clr, 20%);
 $link-clr-hover: darken($link-clr, 10%);

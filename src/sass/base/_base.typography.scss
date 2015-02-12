@@ -29,6 +29,10 @@ h5{
 	@include remCalc(font-size, $epsilon);
 }
 
+.sub-headline{
+	color: $sub-headline-clr;
+}
+
 p{
 	@include remCalc(margin-bottom, $spacer);
 	line-height: $base-line-height;

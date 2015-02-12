@@ -69,47 +69,17 @@ Grid Row
 }
 
 /*
-Grid Columns Widths
+Grid Columns
 */
 .grid__col{
     display: block;
     float: left;
     padding: $spacer;
-    &--full{
-        width: 100%;
-    }
-    &--half{
-        width: 50%;
-    }
-    &--one-third{
-        width: 33.3333333332%;
-    }
-    &--two-thirds{
-        width: 66.6666666667%;
-    }
-    &--one-quarter{
-        width: 25%;
-    }
-    &--three-quarters{
-        width: 75%;
-    }
-    &--one-fifth{
-        width: 20%;
-    }
-    &--two-fifths{
-        width: 40%;
-    }
-    &--three-fifths{
-        width: 60%;
-    }
-    &--four-fifths{
-        width: 80%;
-    }
-    &--one-sixth{
-        width: 16.6666666667%;
-    }
-    &--one-eigth{
-        width: 12.5%;
+}
+
+@for $i from 1 through $grid-column-count{
+    .grid__col--#{$i}-#{$grid-column-count}{
+        @include grid_col($i);
     }
 }
 

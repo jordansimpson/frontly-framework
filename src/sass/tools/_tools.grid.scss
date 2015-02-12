@@ -1,0 +1,24 @@
+/* 
+------------
+TOOLS.
+GRID
+------------ 
+*/
+
+/**
+*
+* Grids are great for structuring a websites layout so the mixins below enable 
+* you to utilise a grid system symantically or, if you wish to, you can use 
+* the grid system that has been put together in the _objects.grid.scss file.
+* 
+* Frontly by default utlises a 8 column grid but this can be amended by 
+* changing the $grid-column-count variable in the _settings.grid.scss file.
+*
+*
+*/
+
+$grid-column-count: 12;
+
+@mixin grid_col($col-size){
+	width:((100 / $grid-column-count) * $col-size)*1%;
+}

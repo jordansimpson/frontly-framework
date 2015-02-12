@@ -66,6 +66,23 @@ Set contrast color function.
 /* 
 ------------
 TOOLS.
+GRID
+------------ 
+*/
+/**
+*
+* Grids are great for structuring a websites layout so the mixins below enable 
+* you to utilise a grid system symantically or, if you wish to, you can use 
+* the grid system that has been put together in the _objects.grid.scss file.
+* 
+* Frontly by default utlises a 8 column grid but this can be amended by 
+* changing the $grid-column-count variable in the _settings.grid.scss file.
+*
+*
+*/
+/* 
+------------
+TOOLS.
 MIXINS
 ------------ 
 */
@@ -318,6 +335,9 @@ h5 {
   font-size: 18px;
   font-size: 1.125rem; }
 
+.sub-headline {
+  color: #a2a2a2; }
+
 p {
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
@@ -484,36 +504,48 @@ Grid Row
     padding-left: 0; }
 
 /*
-Grid Columns Widths
+Grid Columns
 */
 .grid__col {
   display: block;
   float: left;
   padding: 10px; }
-  .grid__col--full {
-    width: 100%; }
-  .grid__col--half {
-    width: 50%; }
-  .grid__col--one-third {
-    width: 33.33333%; }
-  .grid__col--two-thirds {
-    width: 66.66667%; }
-  .grid__col--one-quarter {
-    width: 25%; }
-  .grid__col--three-quarters {
-    width: 75%; }
-  .grid__col--one-fifth {
-    width: 20%; }
-  .grid__col--two-fifths {
-    width: 40%; }
-  .grid__col--three-fifths {
-    width: 60%; }
-  .grid__col--four-fifths {
-    width: 80%; }
-  .grid__col--one-sixth {
-    width: 16.66667%; }
-  .grid__col--one-eigth {
-    width: 12.5%; }
+
+.grid__col--1-12 {
+  width: 8.33333%; }
+
+.grid__col--2-12 {
+  width: 16.66667%; }
+
+.grid__col--3-12 {
+  width: 25%; }
+
+.grid__col--4-12 {
+  width: 33.33333%; }
+
+.grid__col--5-12 {
+  width: 41.66667%; }
+
+.grid__col--6-12 {
+  width: 50%; }
+
+.grid__col--7-12 {
+  width: 58.33333%; }
+
+.grid__col--8-12 {
+  width: 66.66667%; }
+
+.grid__col--9-12 {
+  width: 75%; }
+
+.grid__col--10-12 {
+  width: 83.33333%; }
+
+.grid__col--11-12 {
+  width: 91.66667%; }
+
+.grid__col--12-12 {
+  width: 100%; }
 
 .pull-right {
   float: right; }
