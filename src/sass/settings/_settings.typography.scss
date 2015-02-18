@@ -8,7 +8,7 @@ TYPOGRAPHY
 // By using these variable your are able to amend the type of the website with ease.
 // e.g. font-family: $sans-serif;
 // ---------------------
-$sans-serif: Arial, sans-serif !default;
+$sans-serif: 'Roboto', Arial, sans-serif !default;
 $serif: Georgia, "Times New Roman", serif !default;
 $base-font-size: 16px !default;
 $base-line-height: 1.6;
@@ -25,4 +25,5 @@ $epsilon: 18px;
 // ---------------------
 $weight-light: 100;
 $weight-normal: 400;
-$weight-heavy: 900;
+$weight-heavy: 700;
+$weight-x-heavy: 900;

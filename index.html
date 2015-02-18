@@ -3,13 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><!-- Enter Title --></title>
+	<title>Frontly</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="PATH/TO/favicon.ico">
 	<link rel="stylesheet" href="dist/css/min/frontly.min.css">
 	<!-- Font Awesome CDN -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,900' rel='stylesheet' type='text/css'>
 	<!--[if lte IE 8]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
@@ -38,11 +40,16 @@
 				<div class="grid__col grid__col--12-12">
 					<div class="grid__row">
 						<div class="grid__col grid__col--6-12">
-							<h1>Frontly Header</h1>
-							<h2>Frontly Header</h2>
-							<h3>Frontly Header</h3>
-							<h4>Frontly Header</h4>
-							<h5>Frontly Header</h5>
+							<h1>h1</h1>
+							<h1 class="sub-header">h1.sub-header</h1>
+							<h2>h2</h2>
+							<h2 class="sub-header">h2.sub-header</h2>
+							<h3>h3</h3>
+							<h3 class="sub-header">h3.sub-header</h3>
+							<h4>h4</h4>
+							<h4 class="sub-header">h4.sub-header</h4>
+							<h5>h5</h5>
+							<h5 class="sub-header">h5.sub-header</h5>
 							<h2>Forms</h2>
 							<form action="">
 								<fieldset>
@@ -81,6 +88,7 @@
 						<div class="grid__col grid__col--6-12">
 							<h1>Example Content</h1>
 							<p>This is a demo page for the <strong>Frontly</strong> template file. You can now go ahead and start <em>adding your</em> own code to build a <a href="">fantastic website</a>.</p>
+							<h3 class="sub-header">Quote</h3>
 							<blockquote>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, sint nemo accusantium officia dolores sapiente voluptate eligendi. Quos, consequuntur quo facilis, obcaecati natus assumenda impedit nihil molestias optio iusto molestiae?
 								<small>- Latest Person</small>
@@ -646,7 +654,7 @@
 			</div>
 			<div class="grid__row">
 				<div class="grid__col grid__col--12-12">
-					<h2 class="sub-headline">Buttons - Colors</h2>
+					<h2 class="sub-header">Buttons - Colors</h2>
 					<a href="#" class="btn btn--success"> .btn .btn--success</a>
 					<a href="#" class="btn btn--error"> .btn .btn--error</a>
 					<a href="#" class="btn btn--attention"> .btn .btn--attention</a>
@@ -658,7 +666,7 @@
 			</div>
 			<div class="grid__row">
 				<div class="grid__col grid__col--12-12">
-					<h2 class="sub-headline">Buttons - Sizes</h2>
+					<h2 class="sub-header">Buttons - Sizes</h2>
 					<a href="#" class="btn btn--x-large"> .btn .btn--x-large</a>
 					<a href="#" class="btn btn--large"> .btn .btn--large</a>
 					<a href="#" class="btn"> .btn (standard)</a>
@@ -668,7 +676,7 @@
 			</div>
 			<div class="grid__row">
 				<div class="grid__col grid__col--12-12">
-					<h2 class="sub-headline">Button Groups</h2>
+					<h2 class="sub-header">Button Groups</h2>
 				</div>
 				<div class="grid__col grid__col--4-12">
 					<h5>.btn-group</h5>
@@ -774,6 +782,144 @@
 			</div>
 		</div>
 	</section>
+	<section>
+		<div class="grid">
+			<div class="grid__row">
+				<div class="grid__col grid__col--6-12">
+					<h2>Frontly Forms</h2>
+					<form action="" class="frontly-form">
+						<fieldset>
+							<label for="username">Username</label>
+							<span class="frontly-form__prepend frontly-form__prepend--user">
+								<input id="username" type="text">
+							</span>
+							<label for="password">Password</label>
+							<span class="frontly-form__prepend frontly-form__prepend--password">
+								<input id="password" type="text">
+							</span>
+							<label for="phonenumber">Contact Number</label>
+							<span class="frontly-form__prepend frontly-form__prepend--phone">
+								<input id="phonenumber" type="text">
+							</span>
+							<label for="email">Email Address</label>
+							<span class="frontly-form__prepend frontly-form__prepend--email">
+								<input id="email" type="text">
+							</span>
+							<label for="dollars">Payment Amount <small>dollars</small></label>
+							<span class="frontly-form__prepend frontly-form__prepend--dollars">
+								<input id="dollars" type="text">
+							</span>
+							<label for="euros">Payment Amount <small>euros</small></label>
+							<span class="frontly-form__prepend frontly-form__prepend--euros">
+								<input id="euros" type="text">
+							</span>
+							<label for="pounds">Payment Amount <small>pounds</small></label>
+							<span class="frontly-form__prepend frontly-form__prepend--pounds">
+								<input id="pounds" type="text">
+							</span>
+							<label for="address">Address</label>
+							<span class="frontly-form__prepend frontly-form__prepend--address">
+								<input id="address" type="text">
+							</span>
+						</fieldset>
+						<fieldset>
+							<label for="">Select</label>
+							<select name="" id="">
+								<option value="">Option 1</option>
+								<option value="">Option 2</option>
+								<option value="">Option 3</option>
+								<option value="">Option 4</option>
+							</select>
+						</fieldset>
+						<fieldset>
+							<label for="">Checkboxes</label>
+							<input type="checkbox" name="check" value="check1" checked="checked"> check1
+							<input type="checkbox" name="check" value="check2"> check2
+							<input type="checkbox" name="check" value="check3"> check3
+						</fieldset>
+						<fieldset>
+							<label for="">Radio Buttons</label>
+							<input type="radio" name="radio" value="radio1" checked="checked"> radio1
+							<input type="radio" name="radio" value="radio2"> radio2
+							<input type="radio" name="radio" value="radio3"> radio3
+						</fieldset>
+						<fieldset>
+							<label for="file">File Upload</label>
+							<span class="frontly-form__prepend frontly-form__prepend--file">
+								<input id="file" type="file">
+							</span>
+						</fieldset>
+						<label for="message">Your Message</label>
+						<textarea name="" id="message" cols="30" rows="10"></textarea>
+						<input class="btn btn--large btn--full-width btn--success btn--smooth" type="submit">
+					</form>
+					<form action="" class="frontly-form">
+						<span class="frontly-form__search frontly-form__prepend frontly-form__prepend--search">
+							<input type="text">
+							<button class="btn btn--attention">search</button>
+						</span>
+					</form>
+				</div>
+				<div class="grid__col grid__col--6-12">
+					<h2>Image Styles</h2>
+					<figure class="image--polaroid">
+						<img src="http://placehold.it/350x350" alt="">
+						<figcaption>.polaroid style</figcaption>
+					</figure>
+					<div class="grid__row">
+						<div class="grid__col grid__col--6-12">
+							<img class="image--round" src="http://placehold.it/350x350" alt="">
+						</div>
+						<div class="grid__col grid__col--6-12">
+							<img class="image--smooth" src="http://placehold.it/350x350" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- <section>
+		<div class="grid">
+			<div class="grid__row">
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-file-o"></i> Well Documented</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-mobile"></i> Responsive</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-eye"></i> Retina Ready</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-file-o"></i> Well Documented</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-facebook-square"></i> Responsive</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-css3"></i> Retina Ready</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-html5"></i> Well Documented</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-mobile"></i> Responsive</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+				<div class="grid__col grid__col--4-12">
+					<h5><i class="fa fa-fw fa-eye"></i> Retina Ready</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quod dolorem voluptates earum deleniti, nulla excepturi impedit sapiente, corporis harum nihil neque nostrum! Facere voluptates, aliquam ad ratione minima itaque.</p>
+				</div>
+			</div>
+		</div>
+	</section> -->
 
 	<!-- Include Scripts -->	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

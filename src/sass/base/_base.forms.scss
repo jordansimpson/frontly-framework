@@ -5,14 +5,15 @@ FORMS
 ------------ 
 */
 
-label, legend{
+label, 
+legend{
 	display: block;
 	cursor: point;
 	@include remCalc(margin-bottom, $spacer--small);
 }
 
 input:not([type=button]):not([type=reset]):not([type=submit]), 
-select, textarea {
+select, textarea{
 	vertical-align: middle;
 	border: 1px solid $border-clr;
 	@include remCalc(margin-bottom, $spacer);
@@ -45,7 +46,8 @@ input[type="submit"]{
 	@include remCalc(padding, $spacer);
 }
 
-select, option{
+select, 
+option{
 	cursor: pointer;
 	@include remCalc(padding, $spacer--small);
 }

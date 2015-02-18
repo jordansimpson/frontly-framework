@@ -86,7 +86,7 @@ TOOLS.
 MIXINS
 ------------ 
 */
-/*
+/**
 * Media Query mixins
 *
 * Usage example:
@@ -174,7 +174,7 @@ html, body {
   background: #fff;
   color: #222;
   font-size: 16px;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   height: 100%;
   -webkit-font-smoothing: antialiased; }
 
@@ -243,7 +243,7 @@ Adding padding to ul and ol elements
 */
 img {
   max-width: 100%;
-  height: 100%;
+  height: auto;
   vertical-align: middle;
   margin-bottom: 10px;
   margin-bottom: 0.625rem; }
@@ -285,7 +285,7 @@ dl {
   margin-bottom: 0.625rem; }
 
 dt {
-  font-weight: 900; }
+  font-weight: 700; }
 
 dd {
   padding-left: 20px;
@@ -335,7 +335,7 @@ h5 {
   font-size: 18px;
   font-size: 1.125rem; }
 
-.sub-headline {
+.sub-header {
   color: #a2a2a2; }
 
 p {
@@ -409,7 +409,7 @@ q:after {
   content: close-quote; }
 
 cite {
-  font-weight: 900;
+  font-weight: 700;
   font-style: italic; }
 
 abbr {
@@ -668,7 +668,7 @@ below that can be added by assiging a class.
   font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 0.15;
-  font-weight: 900; }
+  font-weight: 700; }
 
 /* 
 ------------
@@ -735,6 +735,9 @@ BUTTONS
   float: left; }
   .btn:hover {
     background: #ddd; }
+  .btn:active {
+    background: #ccc;
+    color: #555555; }
   .btn i {
     font-size: 0.9rem; }
 
@@ -778,11 +781,7 @@ BUTTONS
   border-radius: 5px; }
 
 .btn--rounded {
-  border-radius: 50px;
-  padding-right: 20px;
-  padding-right: 1.25rem;
-  padding-left: 20px;
-  padding-left: 1.25rem; }
+  border-radius: 50px; }
 
 .btn--bordered, .btn-group--bordered .btn {
   background: #fff;
@@ -857,21 +856,17 @@ BUTTONS
   border-radius: 0px 5px 5px 0px; }
 
 .btn-group--rounded .btn:first-child {
-  border-radius: 50px 0px 0px 50px;
-  padding-left: 20px;
-  padding-left: 1.25rem; }
+  border-radius: 50px 0px 0px 50px; }
 .btn-group--rounded .btn:last-child {
-  border-radius: 0px 50px 50px 0px;
-  padding-right: 20px;
-  padding-right: 1.25rem; }
+  border-radius: 0px 50px 50px 0px; }
 
 .btn-group--bordered .btn:hover {
   background: #ddd; }
 
 /*
 *
-* Buttons Colored
-* ---------------
+* Buttons Colors
+* --------------
 *
 * The button colors are a set of deafults and can be customised were required 
 * by creating a new class e.g. .btn--custom-class{ background: purple }. 
@@ -961,6 +956,160 @@ DROPDOWNS
   content: "\25bc"; }
 .frontly-dropdown li:hover > a {
   background: #ddd; }
+
+/* 
+------------
+COMPONENTS.
+FRONTLY FORM
+------------ 
+*/
+.frontly-form {
+  background: #f6f6f6;
+  padding: 20px;
+  padding: 1.25rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  float: left;
+  width: 100%; }
+
+.frontly-form label, .frontly-form legend {
+  float: left;
+  width: 100%; }
+  .frontly-form label small, .frontly-form legend small {
+    margin-left: 5px;
+    margin-left: 0.3125rem;
+    font-weight: 400;
+    float: right; }
+
+.frontly-form input:not([type="submit"]), .frontly-form textarea, .frontly-form select {
+  padding: 10px;
+  padding: 0.625rem;
+  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
+  border-radius: 5px;
+  background: #fff;
+  float: left;
+  position: relative;
+  -moz-transition: all ease 0.25s;
+  -o-transition: all ease 0.25s;
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s; }
+
+.frontly-form--inline input {
+  display: inline-block;
+  float: none;
+  width: auto; }
+
+/**
+*
+* Frontly Form - Search
+*
+* Some input fields have a specific input type. You can specify the data that
+* you wish the user to input using the label tag but you can accompany this 
+* with an input prepend or append. Below there are a number of classes that
+* enable you to assign a prepend or append icon to the input fields to help
+* users identify what is required.
+*
+* [!] Usage Example
+* -----------------
+* <form>
+*     <span class="frontly-form__search">
+*         <input type="search">
+*         <button>Search</button>
+*     </span>
+* </form>
+*
+*
+*/
+.frontly-form .frontly-form__search {
+  width: 100%;
+  float: left; }
+  .frontly-form .frontly-form__search input {
+    width: 75%;
+    border-radius: 5px 0 0 5px; }
+  .frontly-form .frontly-form__search button, .frontly-form .frontly-form__search .btn {
+    margin: 0;
+    float: left;
+    width: 25%;
+    border-radius: 0 5px 5px 0;
+    border-left: 0; }
+
+/**
+*
+* Frontly Form - Prepending and Appending inputs
+*
+* Some input fields have a specific input type. You can specify the data that
+* you wish the user to input using the label tag but you can accompany this 
+* with an input prepend or append. Below there are a number of classes that
+* enable you to assign a prepend or append icon to the input fields to help
+* users identify what is required.
+*
+* [!] Usage Example
+* -----------------
+* <form>
+*     <label>Username</label>
+*     <span class="frontly-form__append frontly-form__append--user">
+*         <input type="text">
+*     </span>
+* </form>
+*
+*
+*/
+.frontly-form .frontly-form__prepend {
+  position: relative;
+  float: left;
+  width: 100%; }
+  .frontly-form .frontly-form__prepend:after {
+    font-family: "fontawesome";
+    color: #ddd;
+    position: absolute;
+    top: 10px;
+    left: 10px; }
+  .frontly-form .frontly-form__prepend input {
+    padding-left: 30px; }
+
+.frontly-form .frontly-form__append {
+  position: relative;
+  float: left;
+  width: 100%; }
+  .frontly-form .frontly-form__append:after {
+    font-family: "fontawesome";
+    color: #ddd;
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+  .frontly-form .frontly-form__append input {
+    padding-right: 30px; }
+
+.frontly-form__append--address:after, .frontly-form__prepend--address:after {
+  content: '\f041'; }
+
+.frontly-form__append--dollars:after, .frontly-form__prepend--dollars:after {
+  content: '\f155'; }
+
+.frontly-form__append--email:after, .frontly-form__prepend--email:after {
+  content: '\f0e0'; }
+
+.frontly-form__append--euros:after, .frontly-form__prepend--euros:after {
+  content: '\f153'; }
+
+.frontly-form__append--file:after, .frontly-form__prepend--file:after {
+  content: '\f114'; }
+
+.frontly-form__append--password:after, .frontly-form__prepend--password:after {
+  content: '\f023'; }
+
+.frontly-form__append--phone:after, .frontly-form__prepend--phone:after {
+  content: '\f095'; }
+
+.frontly-form__append--pounds:after, .frontly-form__prepend--pounds:after {
+  content: '\f154'; }
+
+.frontly-form__append--search:after, .frontly-form__prepend--search:after {
+  content: '\f002'; }
+
+.frontly-form__append--user:after, .frontly-form__prepend--user:after {
+  content: '\f007'; }
 
 /* 
 ------------
@@ -1137,6 +1286,37 @@ ul.frontly-nav--right {
 /* 
 ------------
 COMPONENTS.
+IMAGE STYLES
+------------ 
+*/
+.image--polaroid {
+  padding: 20px;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  float: left;
+  width: 100%; }
+  .image--polaroid img {
+    border: 1px solid #ddd; }
+  .image--polaroid figcaption, .image--polaroid .caption {
+    padding-top: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
+    border: none;
+    text-align: center; }
+
+.image--round {
+  border-radius: 100%;
+  float: left; }
+
+.image--smooth {
+  border-radius: 5px;
+  float: left; }
+
+/* 
+------------
+COMPONENTS.
 PANELS
 ------------ 
 */
@@ -1224,7 +1404,7 @@ VETOS.
   font-weight: 400 !important; }
 
 .weight--heavy {
-  font-weight: 900 !important; }
+  font-weight: 700 !important; }
 
 .hidden {
   display: none !important; }

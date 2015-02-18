@@ -1,0 +1,33 @@
+/* 
+------------
+COMPONENTS.
+IMAGE STYLES
+------------ 
+*/
+
+.image--polaroid{
+	@include remCalc(padding, $spacer--dbl);
+	background: #fff;
+	border: 1px solid #ddd;
+	float: left;
+	width: 100%;
+	img{
+		border: 1px solid #ddd;
+	}
+	figcaption, .caption{
+		@include remCalc(padding-top, $spacer--dbl);
+		@include remCalc(padding-bottom, $spacer);
+		border: none;
+		text-align: center;
+	}
+}
+
+.image--round{
+	border-radius: 100%;
+	float: left;
+}
+
+.image--smooth{
+	border-radius: 5px;
+	float: left;
+}

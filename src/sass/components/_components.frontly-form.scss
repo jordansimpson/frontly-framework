@@ -1,0 +1,193 @@
+/* 
+------------
+COMPONENTS.
+FRONTLY FORM
+------------ 
+*/
+
+.frontly-form{
+    background: #f6f6f6;
+    @include remCalc(padding, $spacer--dbl);
+    @include remCalc(margin-bottom, $spacer);
+    float: left;
+    width: 100%;
+}
+
+.frontly-form label, 
+.frontly-form legend{
+    float: left;
+    width: 100%;
+    small{
+        @include remCalc(margin-left, $spacer--small);
+        font-weight: $weight-normal;
+        float: right;
+    }
+}
+
+.frontly-form input:not([type="submit"]),
+.frontly-form textarea, 
+.frontly-form select{
+    @include remCalc(padding, $spacer);
+    @include remCalc(margin-bottom, $spacer--small);
+    border-radius: 5px;
+    background: #fff;
+    float: left;
+    position: relative;
+    @include transition(all ease .25s);
+    &:focus{
+        
+    }
+}
+
+.frontly-form--inline{
+    input{
+        display: inline-block;
+        float: none;
+        width: auto;
+    }
+}
+
+/**
+*
+* Frontly Form - Search
+*
+* Some input fields have a specific input type. You can specify the data that
+* you wish the user to input using the label tag but you can accompany this 
+* with an input prepend or append. Below there are a number of classes that
+* enable you to assign a prepend or append icon to the input fields to help
+* users identify what is required.
+*
+* [!] Usage Example
+* -----------------
+* <form>
+*     <span class="frontly-form__search">
+*         <input type="search">
+*         <button>Search</button>
+*     </span>
+* </form>
+*
+*
+*/
+
+.frontly-form .frontly-form__search{
+    width: 100%;
+    float: left;
+    input{
+        width:75%;
+        border-radius: 5px 0 0 5px;
+    }
+    button, .btn{
+        margin: 0;
+        float: left;
+        width: 25%;
+        border-radius: 0 5px 5px 0;
+        border-left: 0;
+    }
+}
+
+/**
+*
+* Frontly Form - Prepending and Appending inputs
+*
+* Some input fields have a specific input type. You can specify the data that
+* you wish the user to input using the label tag but you can accompany this 
+* with an input prepend or append. Below there are a number of classes that
+* enable you to assign a prepend or append icon to the input fields to help
+* users identify what is required.
+*
+* [!] Usage Example
+* -----------------
+* <form>
+*     <label>Username</label>
+*     <span class="frontly-form__append frontly-form__append--user">
+*         <input type="text">
+*     </span>
+* </form>
+*
+*
+*/
+
+.frontly-form .frontly-form__prepend{
+    position: relative;
+    float: left;
+    width: 100%;
+    &:after{
+        font-family: "fontawesome";
+        color: #ddd;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    input{
+        padding-left: 30px;
+    }
+}
+
+.frontly-form .frontly-form__append{
+    position: relative;
+    float: left;
+    width: 100%;
+    &:after{
+        font-family: "fontawesome";
+        color: #ddd;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    input{
+        padding-right: 30px;
+    }
+}
+
+.frontly-form__append--address:after,
+.frontly-form__prepend--address:after{
+    content:'\f041';
+}
+
+.frontly-form__append--dollars:after,
+.frontly-form__prepend--dollars:after{
+    content:'\f155';
+}
+
+.frontly-form__append--email:after,
+.frontly-form__prepend--email:after{
+    content:'\f0e0';
+}
+
+.frontly-form__append--euros:after,
+.frontly-form__prepend--euros:after{
+    content:'\f153';
+}
+
+.frontly-form__append--file:after,
+.frontly-form__prepend--file:after{
+    content:'\f114';
+}
+
+.frontly-form__append--password:after,
+.frontly-form__prepend--password:after{
+    content:'\f023';
+}
+
+.frontly-form__append--phone:after,
+.frontly-form__prepend--phone:after
+{
+    content:'\f095';
+}
+
+.frontly-form__append--pounds:after,
+.frontly-form__prepend--pounds:after
+{
+    content:'\f154';
+}
+
+.frontly-form__append--search:after,
+.frontly-form__prepend--search:after
+{
+    content:'\f002';
+}
+
+.frontly-form__append--user:after, 
+.frontly-form__prepend--user:after{
+    content:'\f007';
+}
