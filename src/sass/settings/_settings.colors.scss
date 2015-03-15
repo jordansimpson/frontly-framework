@@ -6,17 +6,25 @@ COLORS
 */
 
 // Brand Colors
-// ---------------
+// ------------
 $brand-red: #ED4466;
 $brand-pink: #E56399;
 $brand-blue: #117393;
 $brand-clr: $brand-red;
+$brand-gold: #CCAD5C;
+$brand-dark: #252525;
+$brand-orange: #F7A310;
 
 
 // Default Colors
+// ----------------------------------------------------
 // These are some simple base colors that I have set to 
 // help get things going but can easily be changed.
-// ---------------
+// ----------------------------------------------------
+
+$light-grey: #f6f6f6;
+$grey: #e5e5e5;
+$dark-grey: #999;
 
 $base-text-clr: #222;
 $base-text-clr--dull: lighten($base-text-clr, 50%);
@@ -24,15 +32,52 @@ $sub-headline-clr: $base-text-clr--dull;
 $base-background-clr: #fff;
 $link-clr: lighten($base-text-clr, 20%);
 $link-clr-hover: darken($link-clr, 10%);
-$border-clr: #ddd;
-$pre-background-clr: #eee;
+$border-clr: $grey;
+$pre-background-clr: $light-grey;
 $pre-text-clr: $base-text-clr;
-$highlighting-clr: #FFF9B7;
+$highlighting-clr: #fff9B7;
 
-$error-clr: #FF5666;
-$attention-clr: #FF6F59;
-$success-clr: #68D68D;
+
+$error-clr: #ff5666;
+$attention-clr: #ff6F59;
+$success-clr: #68d68d;
+$neutral-clr: #5DA9E9;
 
 // Frontly Navigation Colors
-$nav-clr: #f6f6f6; 
-$nav-link-clr: #fff; 
+// -------------------------
+// Alter the colors set for 
+// the frontly navgiation should 
+// you need to.
+// -------------------------
+$nav-clr: $light-grey; 
+$nav-link-clr: $base-text-clr; 
+$nav-link-hover-clr: $grey; 
+$nav-border-clr: $grey; 
+
+// Company Brand Colors
+// -----------------------------------
+// These are some commonly used colors 
+// that are used on most websites.
+// -----------------------------------
+$behance: #1769ff;
+$bitbucket-blue: #205081;
+$dribbble: #ea4c89;
+$etsy: #d5641c;
+$facebook: #3b5998;
+$flickr-blue: #0063dc;
+$flickr-pink: #ff0084;
+$github-blue: #4183c4;
+$google-plus: #dd4b39;
+$instagram: #3f729b;
+$linkedin: #0976b4;
+$paypal-blue: #003087;
+$paypal-light-blue: #009cde;
+$pinterest: #cc2127;
+$rss: #f26522;
+$skype: #00aff0;
+$twitter: #55acee;
+$vimeo-black: #162221;
+$vimeo-blue: #1ab7ea;
+$vine: #00b488;
+$youtube-red: #e52d27;
+$youtube-dark-red: #b31217; 

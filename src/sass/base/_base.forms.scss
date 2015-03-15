@@ -8,7 +8,7 @@ FORMS
 label, 
 legend{
 	display: block;
-	cursor: point;
+	cursor: pointer;
 	@include remCalc(margin-bottom, $spacer--small);
 }
 
@@ -17,6 +17,7 @@ select, textarea{
 	vertical-align: middle;
 	border: 1px solid $border-clr;
 	@include remCalc(margin-bottom, $spacer);
+	@include remCalc(font-size, $base-font-size);
 }
 
 input[type=email],
@@ -41,9 +42,10 @@ input[type="submit"]{
 	-webkit-appearance: none; // Removes default browser behaviour for Safari
 	-moz-appearance: none; // Removes default browser behaviour for Firefox
 	vertical-align: middle;
-	border: none;
 	cursor: pointer;
-	@include remCalc(padding, $spacer);
+	float: left;
+	letter-spacing: 0;
+	@include remCalc(font-size, $base-font-size);
 }
 
 select, 
@@ -56,6 +58,6 @@ textarea{
 	width: 100%;
 	max-width: 100%;
 	vertical-align: top;
-	@include remCalc(padding, $spacer--small);
+	@include remCalc(padding, $spacer);
 }
 

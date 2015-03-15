@@ -19,17 +19,79 @@
 </head>
 <body>
 	<!--[if lte IE 8]>
-	<p>We have noticed you are using an older browser. We recommend you <a href="http://outdatedbrowser.com/">update it</a> to a newer version.</p>
+	<div class="panel">
+		<div class="grid">
+			<div class="grid__row">
+				<div class="grid__col grid__col--12-12">
+					<p>We have noticed you are using an older browser. We recommend you <a href="http://outdatedbrowser.com/">update it</a> to a newer version.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	<![endif]-->
 
 	<!-- Enter your code here -->
-	<header>
+	<header class="main-header">
 		<div class="grid">
-			<div class="grid__row grid__row--central">
-				<div class="grid__col grid__col--12-12">
+			<div class="grid__row">
+				<div class="grid__col grid__col--4-12">
 					<h1>Frontly</h1>
-					<p>Start your site with the basic blocks.</p>
-					<hr>
+				</div>
+				<div class="grid__col grid__col--6-12 float--right">
+					<nav class="frontly-nav">
+						<a href="" class="frontly-nav__menu-link float--right hidden display--mobile">
+							<i class="fa fa-fw fa-bars"></i> Menu
+						</a>
+						<ul class="frontly-nav--right">
+							<li><a href="">Documentation</a></li>
+							<li><a href="">About</a></li>
+							<li class="dropdown frontly-dropdown">
+								<a href="">Hello</a>
+								<ul class="list--stacked">
+									<li><a href="">Hello</a></li>
+									<li>
+										<a href="">Hello</a>
+										<ul class="list--stacked">
+											<li>
+												<a href="">Hello</a>
+												<ul class="list--stacked">
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li class="seperator"></li>
+													<li><a href="">Hello</a></li>
+												</ul>
+											</li>
+											<li><a href="">Hello</a></li>
+											<li><a href="">Hello</a></li>
+											<li><a href="">Hello</a></li>
+											<li><a href="">Hello</a></li>
+											<li>
+												<a href="">Hello</a>
+												<ul class="list--stacked">
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+													<li><a href="">Hello</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="">Hello</a></li>
+									<li><a href="">Hello</a></li>
+									<li><a href="">Hello</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="grid__row">
+				<div class="grid__col grid__col--6-12">
+					<p>The Frontly Framework is a Sass based, OOCSS, front-end framework that utilises the using Gulp.js task runner that provides all projects with a great starting platform.</p>
 				</div>
 			</div>
 		</div>
@@ -94,7 +156,7 @@
 								<small>- Latest Person</small>
 							</blockquote>
 							<p><i>Lorem ipsum dolor sit amet</i>, consectetur adipisicing elit. Aut dignissimos tenetur <del>quos similique nihil</del> expedita odio recusandae nesciunt voluptatem aliquid quas, atque autem harum cumque quaerat repudiandae alias ipsum nisi.</p>
-							<p>Lorem ipsum dolor sit amet, <mark>consectetur adipisicing</mark> elit. Enim excepturi libero sapiente reiciendis numquam tempore eaque labore deserunt dignissimos, nisi mollitia<sub>1</sub> a veniam sunt laborum harum accusamus facilis temporibus veritatis!</p>
+							<p>Lorem ipsum dolor sit amet, <mark>consectetur adipisicing</mark> elit. Enim excepturi libero sapiente reiciendis numquam tempore eaque labore <span class="has-tooltip">deserunt dignissimos<span class="tooltip--bottom tooltip--error">tooltiped</span></span>, nisi mollitia<sub>1</sub> a veniam sunt laborum harum accusamus facilis temporibus veritatis!</p>
 							<p class="small-print">This is the small print to test.</p>
 							<figure>
 								<img src="http://placehold.it/350x150" alt="">
@@ -129,7 +191,7 @@
 						<li>Hello</li>
 						<li>Hello</li>
 					</ol>
-					<ul class="list--no-points">
+					<ul class="list--unstyled">
 						<li>Hello</li>
 						<li>Hello</li>
 						<li>Hello</li>
@@ -326,13 +388,13 @@
 			</div>
 		</div>
 	</section>
-	<section style="height: 500px">
+	<section>
 		<div class="grid">
 			<div class="grid__row">
 				<div class="grid__col grid__col--12-12">
-					<nav class="frontly-nav frontly-nav--big">
+					<nav class="frontly-nav frontly-nav--big frontly-nav--bordered">
 						<span class="frontly-nav__text frontly-nav__text--brand-name">Brand Name</span>
-						<a href="" class="frontly-nav__menu-link pull--right hidden display--mobile">
+						<a href="" class="frontly-nav__menu-link float--right hidden display--mobile">
 							<i class="fa fa-fw fa-bars"></i> Menu
 						</a>
 						<ul>
@@ -391,9 +453,9 @@
 			</div>
 			<div class="grid__row">
 				<div class="grid__col grid__col--12-12">
-					<nav class="frontly-nav">
+					<nav class="frontly-nav frontly-nav--underlined">
 						<span class="frontly-nav__text frontly-nav__text--brand-name">Brand Name</span>
-						<a href="" class="frontly-nav__menu-link pull--right hidden display--mobile">
+						<a href="" class="frontly-nav__menu-link float--right hidden display--mobile">
 							<i class="fa fa-fw fa-bars"></i> Menu
 						</a>
 						<ul>
@@ -454,68 +516,7 @@
 				<div class="grid__col grid__col--12-12">
 					<nav class="frontly-nav frontly-nav--branded frontly-nav--big">
 						<span class="frontly-nav__text frontly-nav__text--brand-name">Brand Name</span>
-						<a href="" class="frontly-nav__menu-link pull--right hidden display--mobile">
-							<i class="fa fa-fw fa-bars"></i> Menu
-						</a>
-						<ul>
-							<li><a href="">Hello</a></li>
-							<li><a href="">Hello</a></li>
-							<li><a href="">Hello</a></li>
-							<li class="frontly-dropdown">
-								<a href="">Hello</a>
-								<ul>
-									<li><a href="">Hello</a></li>
-									<li><a href="">Hello</a></li>
-									<li>
-										<a href="">Hello</a>
-										<ul>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-										</ul>
-									</li>
-									<li><a href="">Hello</a></li>
-									<li><a href="">Hello</a></li>
-									<li><a href="">Hello</a></li>
-								</ul>
-							</li>
-							<li><a href="">Hello</a></li>
-						</ul>
-						<ul class="frontly-nav--right">
-							<li class="frontly-dropdown">
-								<a href="">Hello</a>
-								<ul>
-									<li><a href="">Hello</a></li>
-									<li><a href="">Hello</a></li>
-									<li>
-										<a href="">Hello</a>
-										<ul>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-											<li><a href="">Hello</a></li>
-										</ul>
-									</li>
-									<li><a href="">Hello</a></li>
-									<li><a href="">Hello</a></li>
-									<li><a href="">Hello</a></li>
-								</ul>
-							</li>
-							<li><a href="">Hello</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-			<div class="grid__row">
-				<div class="grid__col grid__col--12-12">
-					<nav class="frontly-nav frontly-nav--basic">
-						<span class="frontly-nav__text frontly-nav__text--brand-name">Brand Name</span>
-						<a href="" class="frontly-nav__menu-link pull--right hidden display--mobile">
+						<a href="" class="frontly-nav__menu-link float--right hidden display--mobile">
 							<i class="fa fa-fw fa-bars"></i> Menu
 						</a>
 						<ul>
@@ -574,34 +575,38 @@
 			</div>
 		</div>
 	</section>
+	<hr>
 	<section>
 		<div class="grid">
 			<div class="grid__row">
 				<div class="grid__col grid__col--12-12">
-					<table class="striped-table">
-						<thead>
-							<tr>
-								<th>.Striped Table</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>.Striped Table</td>
-							</tr>
-							<tr>
-								<td>.Striped Table</td>
-							</tr>
-							<tr>
-								<td>.Striped Table</td>
-							</tr>
-							<tr>
-								<td>.Striped Table</td>
-							</tr>
-							<tr>
-								<td>.Striped Table</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="table-wrap">
+						<table class="striped-table">
+							<thead>
+								<tr>
+									<th>.Striped Table</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>.Striped Table</td>
+								</tr>
+								<tr>
+									<td>.Striped Table</td>
+								</tr>
+								<tr>
+									<td>.Striped Table</td>
+								</tr>
+								<tr>
+									<td>.Striped Table</td>
+								</tr>
+								<tr>
+									<td>.Striped Table</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="table-wrap">
 					<table class="striped-table--branded">
 						<thead>
 							<tr>
@@ -613,9 +618,6 @@
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
-							</tr>
-							<tr>
-								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 							</tr>
@@ -623,23 +625,38 @@
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
+							</tr>
+							<tr>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
 							</tr>
 							<tr>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
 							</tr>
 							<tr>
+								<td>.Striped Table</td>
+								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 								<td>.Striped Table</td>
 							</tr>
 						</tbody>
 					</table>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<hr>
 	<section>
 		<div class="grid">
 			<div class="grid__row">
@@ -658,6 +675,7 @@
 					<a href="#" class="btn btn--success"> .btn .btn--success</a>
 					<a href="#" class="btn btn--error"> .btn .btn--error</a>
 					<a href="#" class="btn btn--attention"> .btn .btn--attention</a>
+					<a href="#" class="btn btn--neutral"> .btn .btn--neutral</a>
 					<a href="#" class="btn btn--attention btn--rounded"> .btn .btn--attention .btn--rounded</a>
 					<a href="#" class="btn btn--attention btn--bordered"> .btn .btn--attention .btn--bordered</a>
 					<a href="#" class="btn btn--success btn--bordered btn--rounded"> .btn .btn--attention .btn--bordered</a>
@@ -671,7 +689,7 @@
 					<a href="#" class="btn btn--large"> .btn .btn--large</a>
 					<a href="#" class="btn"> .btn (standard)</a>
 					<a href="#" class="btn btn--small"> .btn .btn--small</a>
-					<a href="#" class="btn btn--large btn--full-width"> .btn .btn--large .btn--full-width</a>
+					<a href="#" class="btn btn--large btn--block"> .btn .btn--large .btn--block</a>
 				</div>
 			</div>
 			<div class="grid__row">
@@ -741,6 +759,7 @@
 			</div>
 		</div>
 	</section>
+	<hr>
 	<section>
 		<div class="grid">
 			<div class="grid__row">
@@ -790,7 +809,7 @@
 					<form action="" class="frontly-form">
 						<fieldset>
 							<label for="username">Username</label>
-							<span class="frontly-form__prepend frontly-form__prepend--user">
+							<span class="frontly-form__append frontly-form__append--password">
 								<input id="username" type="text">
 							</span>
 							<label for="password">Password</label>
@@ -822,7 +841,7 @@
 								<input id="address" type="text">
 							</span>
 						</fieldset>
-						<fieldset>
+						<!-- <fieldset>
 							<label for="">Select</label>
 							<select name="" id="">
 								<option value="">Option 1</option>
@@ -830,37 +849,229 @@
 								<option value="">Option 3</option>
 								<option value="">Option 4</option>
 							</select>
+						</fieldset> -->
+						<fieldset class="frontly-form__checkbox">
+							<legend>Checkboxes</legend>
+							<input type="checkbox" id="check1" checked="checked">
+							<label for="check1">Checkboxes</label>
+							<input type="checkbox" id="check2" checked="checked">
+							<label for="check2">Checkboxes</label>
+							<input type="checkbox" id="check3" checked="checked">
+							<label for="check3">Checkboxes</label>
+							<input type="checkbox" id="check4" checked="checked">
+							<label for="check4">Checkboxes</label>
+							<input type="checkbox" id="check5" checked="checked">
+							<label for="check5">Checkboxes</label>
+							<input type="checkbox" id="check6" checked="checked">
+							<label for="check6">Checkboxes</label>
+						</fieldset> 
+						<fieldset class="frontly-form__checkbox frontly-form__checkbox--btn">
+							<legend>Checkboxes Buttons</legend>
+							<input type="checkbox" id="check1-1" checked="checked">
+							<label for="check1-1">Checkboxes</label>
+							<input type="checkbox" id="check2-1" checked="checked">
+							<label for="check2-1">Checkboxes</label>
+							<input type="checkbox" id="check3-1" checked="checked">
+							<label for="check3-1">Checkboxes</label>
+							<input type="checkbox" id="check4-1" checked="checked">
+							<label for="check4-1">Checkboxes</label>
+							<input type="checkbox" id="check5-1" checked="checked">
+							<label for="check5-1">Checkboxes</label>
+							<input type="checkbox" id="check6-1" checked="checked">
+							<label for="check6-1">Checkboxes</label>
+						</fieldset>
+						<fieldset class="frontly-form__radio">
+							<legend>Radio Buttons</legend>
+							<input type="radio" id="radio1" name="radio">
+							<label for="radio1">Radio 1</label>
+							<input type="radio" id="radio2" name="radio">
+							<label for="radio2">Radio 2</label>
+							<input type="radio" id="radio3" name="radio">
+							<label for="radio3">Radio 3</label>
+						</fieldset>
+						<fieldset class="frontly-form__radio frontly-form__radio--btn">
+							<legend>Radio Buttons</legend>
+							<input type="radio" id="radio1-1" name="radio">
+							<label for="radio1-1">Radio 1</label>
+							<input type="radio" id="radio2-1" name="radio">
+							<label for="radio2-1">Radio 2</label>
+							<input type="radio" id="radio3-1" name="radio">
+							<label for="radio3-1">Radio 3</label>
 						</fieldset>
 						<fieldset>
-							<label for="">Checkboxes</label>
-							<input type="checkbox" name="check" value="check1" checked="checked"> check1
-							<input type="checkbox" name="check" value="check2"> check2
-							<input type="checkbox" name="check" value="check3"> check3
+							<label for="">Select Options</label>
+							<select name="" id="">
+								<option value="option1">Option 1</option>
+								<option value="option2">Option 2</option>
+								<option value="option3">Option 3</option>
+							</select>
 						</fieldset>
-						<fieldset>
-							<label for="">Radio Buttons</label>
-							<input type="radio" name="radio" value="radio1" checked="checked"> radio1
-							<input type="radio" name="radio" value="radio2"> radio2
-							<input type="radio" name="radio" value="radio3"> radio3
-						</fieldset>
+						<!-- 
 						<fieldset>
 							<label for="file">File Upload</label>
 							<span class="frontly-form__prepend frontly-form__prepend--file">
 								<input id="file" type="file">
 							</span>
-						</fieldset>
+						</fieldset>-->
 						<label for="message">Your Message</label>
 						<textarea name="" id="message" cols="30" rows="10"></textarea>
-						<input class="btn btn--large btn--full-width btn--success btn--smooth" type="submit">
+						<input class="btn btn--large btn--block btn--success btn--smooth" type="submit">
 					</form>
 					<form action="" class="frontly-form">
-						<span class="frontly-form__search frontly-form__prepend frontly-form__prepend--search">
-							<input type="text">
-							<button class="btn btn--attention">search</button>
-						</span>
+						<div class="grid__row grid__row--no-gutters">
+							<div class="grid__col grid__col--5-12">
+								<span class="frontly-form__prepend frontly-form__prepend--user">
+									<input type="text">
+								</span>
+							</div>
+							<div class="grid__col grid__col--5-12">
+								<span class="frontly-form__prepend frontly-form__prepend--password">
+									<input type="text">
+								</span>
+							</div>
+							<div class="grid__col grid__col--2-12">
+								<button class="btn btn--attention btn--block">submit</button>
+							</div>
+						</div>
 					</form>
 				</div>
 				<div class="grid__col grid__col--6-12">
+					<h2>Frontly Forms</h2>
+					<form action="" class="frontly-form frontly-form--smooth">
+						<fieldset class="frontly-form__group frontly-form__group--underlined">
+							<div class="grid__row grid__row--tiled-2-col">
+								<div class="grid__col grid__col--6-12">
+									<label for="username">Username</label>
+									<span class="frontly-form__prepend frontly-form__prepend--user">
+										<input id="username" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="password">Password</label>
+									<span class="frontly-form__prepend frontly-form__prepend--password">
+										<input id="password" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="phonenumber">Contact Number</label>
+									<span class="frontly-form__prepend frontly-form__prepend--phone">
+										<input id="phonenumber" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="email">Email Address</label>
+									<span class="frontly-form__prepend frontly-form__prepend--email">
+										<input id="email" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="dollars">Payment Amount <small>dollars</small></label>
+									<span class="frontly-form__prepend frontly-form__prepend--dollars">
+										<input id="dollars" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="euros">Payment Amount <small>euros</small></label>
+									<span class="frontly-form__prepend frontly-form__prepend--euros">
+										<input id="euros" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="pounds">Payment Amount <small>pounds</small></label>
+									<span class="frontly-form__prepend frontly-form__prepend--pounds">
+										<input id="pounds" type="text">
+									</span>
+								</div>
+								<div class="grid__col grid__col--6-12">
+									<label for="address">Address</label>
+									<span class="frontly-form__prepend frontly-form__prepend--address">
+										<input id="address" type="text">
+									</span>
+								</div>
+							</div>
+						</fieldset>
+						<!-- <fieldset>
+							<label for="">Select</label>
+							<select name="" id="">
+								<option value="">Option 1</option>
+								<option value="">Option 2</option>
+								<option value="">Option 3</option>
+								<option value="">Option 4</option>
+							</select>
+						</fieldset> -->
+						<fieldset class="frontly-form__checkbox frontly-form__group frontly-form__group--underlined">
+							<legend>Checkboxes</legend>
+							<input type="checkbox" id="check1" checked="checked">
+							<label for="check1">Checkboxes</label>
+							<input type="checkbox" id="check2" checked="checked">
+							<label for="check2">Checkboxes</label>
+							<input type="checkbox" id="check3" checked="checked">
+							<label for="check3">Checkboxes</label>
+							<input type="checkbox" id="check4" checked="checked">
+							<label for="check4">Checkboxes</label>
+							<input type="checkbox" id="check5" checked="checked">
+							<label for="check5">Checkboxes</label>
+							<input type="checkbox" id="check6" checked="checked">
+							<label for="check6">Checkboxes</label>
+						</fieldset> 
+						<fieldset class="frontly-form__checkbox frontly-form__checkbox--btn frontly-form__group frontly-form__group--underlined">
+							<legend>Checkboxes Buttons</legend>
+							<input type="checkbox" id="check1-1" checked="checked">
+							<label for="check1-1">Checkboxes</label>
+							<input type="checkbox" id="check2-1" checked="checked">
+							<label for="check2-1">Checkboxes</label>
+							<input type="checkbox" id="check3-1" checked="checked">
+							<label for="check3-1">Checkboxes</label>
+							<input type="checkbox" id="check4-1" checked="checked">
+							<label for="check4-1">Checkboxes</label>
+							<input type="checkbox" id="check5-1" checked="checked">
+							<label for="check5-1">Checkboxes</label>
+							<input type="checkbox" id="check6-1" checked="checked">
+							<label for="check6-1">Checkboxes</label>
+						</fieldset>
+						<fieldset class="frontly-form__radio frontly-form__group frontly-form__group--underlined">
+							<legend>Radio Buttons</legend>
+							<input type="radio" id="radio1" name="radio">
+							<label for="radio1">Radio 1</label>
+							<input type="radio" id="radio2" name="radio">
+							<label for="radio2">Radio 2</label>
+							<input type="radio" id="radio3" name="radio">
+							<label for="radio3">Radio 3</label>
+						</fieldset>
+						<fieldset class="frontly-form__radio frontly-form__radio--btn frontly-form__group frontly-form__group--underlined">
+							<legend>Radio Buttons</legend>
+							<input type="radio" id="radio1-1" name="radio">
+							<label for="radio1-1">Radio 1</label>
+							<input type="radio" id="radio2-1" name="radio">
+							<label for="radio2-1">Radio 2</label>
+							<input type="radio" id="radio3-1" name="radio">
+							<label for="radio3-1">Radio 3</label>
+						</fieldset>
+						<!-- 
+						<fieldset>
+							<label for="file">File Upload</label>
+							<span class="frontly-form__prepend frontly-form__prepend--file">
+								<input id="file" type="file">
+							</span>
+						</fieldset>-->
+						<label for="message">Your Message</label>
+						<textarea name="" id="message" cols="30" rows="10"></textarea>
+						<input class="btn btn--large btn--block btn--success btn--smooth" type="submit">
+					</form>
+					<form action="" class="frontly-form">
+						<div class="grid__row grid__row--no-gutters">
+							<div class="grid__col grid__col--8-12">
+								<span class="frontly-form__prepend frontly-form__prepend--password">
+									<input type="text">
+								</span>
+							</div>
+							<div class="grid__col grid__col--4-12">
+								<button class="btn btn--attention btn--block">submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- <div class="grid__col grid__col--6-12">
 					<h2>Image Styles</h2>
 					<figure class="image--polaroid">
 						<img src="http://placehold.it/350x350" alt="">
@@ -874,6 +1085,101 @@
 							<img class="image--smooth" src="http://placehold.it/350x350" alt="">
 						</div>
 					</div>
+				</div> -->
+			</div>
+		</div>
+		<div class="grid">
+			<div class="grid__row">
+				<h1>Grid</h1>
+				<div class="grid__col grid__col--12-12">
+					<div class="grid__row grid__row--tiled-4-col">
+						<div class="grid__col grid__col--3-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quaerat, quod maxime fugit dolorum expedita eos eaque! Quaerat officiis reiciendis vitae est numquam hic voluptates doloribus necessitatibus similique harum! Minus.</p></span>
+						</div>
+						<div class="grid__col grid__col--3-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum assumenda commodi odit rem reprehenderit unde libero vitae eaque recusandae consequuntur. Tempore, velit illo dolore culpa, eaque facere modi sint in.</p></span>
+						</div>
+						<div class="grid__col grid__col--3-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias laudantium itaque, veritatis necessitatibus deserunt. Sunt, odit modi ducimus minima, harum possimus quibusdam eligendi accusantium, similique id earum sint quidem.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias laudantium itaque, veritatis necessitatibus deserunt. Sunt, odit modi ducimus minima, harum possimus quibusdam eligendi accusantium, similique id earum sint quidem.</p></span>
+						</div>
+						<div class="grid__col grid__col--3-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptates dolorem velit aperiam soluta, ea recusandae fugiat quidem itaque inventore aliquam voluptate ipsa amet labore vel! Quis mollitia reprehenderit, repudiandae!</p></span>
+						</div>
+						<div class="grid__col grid__col--3-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sed provident excepturi quidem molestias dolorem accusamus itaque ratione, corporis beatae magnam quibusdam voluptate, est perferendis deserunt mollitia facilis autem placeat.</p></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<h3>3 Column tiling</h3>
+				<div class="grid__col grid__col--12-12">
+					<div class="grid__row grid__row--tiled-3-col">
+						<div class="grid__col grid__col--4-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quaerat, quod maxime fugit dolorum expedita eos eaque! Quaerat officiis reiciendis vitae est numquam hic voluptates doloribus necessitatibus similique harum! Minus.</p></span>
+						</div>
+						<div class="grid__col grid__col--4-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum assumenda commodi odit rem reprehenderit unde libero vitae eaque recusandae consequuntur. Tempore, velit illo dolore culpa, eaque facere modi sint in.</p></span>
+						</div>
+						<div class="grid__col grid__col--4-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias laudantium itaque, veritatis necessitatibus deserunt. Sunt, odit modi ducimus minima, harum possimus quibusdam eligendi accusantium, similique id earum sint quidem.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias laudantium itaque, veritatis necessitatibus deserunt. Sunt, odit modi ducimus minima, harum possimus quibusdam eligendi accusantium, similique id earum sint quidem.</p></span>
+						</div>
+						<!-- <div class="grid__col grid__col--4-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptates dolorem velit aperiam soluta, ea recusandae fugiat quidem itaque inventore aliquam voluptate ipsa amet labore vel! Quis mollitia reprehenderit, repudiandae!</p></span>
+						</div>
+						<div class="grid__col grid__col--4-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sed provident excepturi quidem molestias dolorem accusamus itaque ratione, corporis beatae magnam quibusdam voluptate, est perferendis deserunt mollitia facilis autem placeat.</p></span>
+						</div> -->
+					</div>
+				</div>
+			</div>
+			<div class="grid__row">
+				<h3>2 Column tiling</h3>
+				<div class="grid__col grid__col--12-12">
+					<div class="grid__row grid__row--tiled-2-col">
+						<div class="grid__col grid__col--6-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quaerat, quod maxime fugit dolorum expedita eos eaque! Quaerat officiis reiciendis vitae est numquam hic voluptates doloribus necessitatibus similique harum! Minus.</p></span>
+						</div>
+						<div class="grid__col grid__col--6-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum assumenda commodi odit rem reprehenderit unde libero vitae eaque recusandae consequuntur. Tempore, velit illo dolore culpa, eaque facere modi sint in.</p></span>
+						</div>
+						<div class="grid__col grid__col--6-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptates dolorem velit aperiam soluta, ea recusandae fugiat quidem itaque inventore aliquam voluptate ipsa amet labore vel! Quis mollitia reprehenderit, repudiandae!</p></span>
+						</div>
+						<div class="grid__col grid__col--6-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias laudantium itaque, veritatis necessitatibus deserunt. Sunt, odit modi ducimus minima, harum possimus quibusdam eligendi accusantium, similique id earum sint quidem.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita alias laudantium itaque, veritatis necessitatibus deserunt. Sunt, odit modi ducimus minima, harum possimus quibusdam eligendi accusantium, similique id earum sint quidem.</p></span>
+						</div>
+						<div class="grid__col grid__col--6-12">
+							<span class="grid-box"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sed provident excepturi quidem molestias dolorem accusamus itaque ratione, corporis beatae magnam quibusdam voluptate, est perferendis deserunt mollitia facilis autem placeat.</p></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<section>
+		<div class="grid">
+			<div class="grid__row">
+				<div class="grid__col grid__col--4-12">
+					<ul class="list--unstyled">
+						<li>Badge Example <span class="badge">12</span></li>
+						<li>Badge Example <span class="badge badge--smooth">smooth</span></li>
+						<li><a href="">Badge Example <span class="badge badge--rounded"><i class="fa fa-fw fa-file-o"></i>rounded</span></a></li>
+						<li><a href="">Badge Example <span class="badge badge--smooth badge--success">success</span></a></li>
+						<li><a href="">Badge Example <span class="badge badge--attention">success</span></a></li>
+					</ul>
+				</div>
+				<div class="grid__col grid__col--8-12">
+					<h1>Testing Header Badge <span class="badge badge--neutral">New!</span></h1>
+					<h2>Testing Header Badge <span class="badge">New!</span></h2>
+					<h3>Testing Header Badge <span class="badge">New!</span></h3>
+					<h4>Testing Header Badge <span class="badge">New!</span></h4>
+					<h5>Testing Header Badge <span class="badge">New!</span></h5>
+					<h6>Testing Header Badge <span class="badge">New!</span></h6>
 				</div>
 			</div>
 		</div>

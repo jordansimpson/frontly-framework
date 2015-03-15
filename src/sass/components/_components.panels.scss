@@ -10,15 +10,16 @@ PANELS
 	float: left;
 	clear: both;
 	border: 1px solid $border-clr;
-	@include remCalc(padding, $spacer);
+	background: #f6f6f6;
+	@include remCalc(padding, $spacer--dbl);
 	@include remCalc(margin-bottom, $spacer);
 	> *{
 		margin: 0;
 	}
 }
 
-.panel--mid{
-	@include remCalc(padding, $spacer--dbl);
+.panel--small{
+	@include remCalc(padding, $spacer);
 }
 
 .panel--large{
@@ -29,6 +30,10 @@ PANELS
 	background: $base-text-clr;
 	border: none;
 	color: #fff;
+}
+
+.panel--hollow{
+	background: none;
 }
 
 .panel--error{
@@ -47,6 +52,10 @@ PANELS
 	background: $success-clr;
 	border: none;
 	color: #fff;
+}
+
+.panel--smooth{
+	border-radius: 5px;
 }
 
 .panel--can-close{

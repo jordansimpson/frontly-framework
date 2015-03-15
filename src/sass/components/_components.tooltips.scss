@@ -1,0 +1,91 @@
+/* 
+------------
+COMPONENTS.
+TOOLTIPS
+------------ 
+*/
+
+.has-tooltip{
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted $base-text-clr--dull;
+	&:hover{
+		cursor: help;
+		.tooltip, .tooltip--bottom{
+			display: block;
+		}
+	}
+}
+
+.tooltip{
+	@extend %smooth;
+	display: none;
+	position: absolute;
+	text-align: center;
+	bottom: 130%;
+	left: 0;
+	padding: $spacer--small;
+	background: #bbb;
+	width: 100%;
+	&:after{
+		@include remCalc(font-size, 24px);
+		bottom: -13px;
+		position: absolute;
+		content:'\25be';
+		color: #bbb;
+		left: 45%;
+		line-height: 1;
+	}
+}
+.tooltip--bottom{
+	display: none;
+	position: absolute;
+	text-align: center;
+	top: 150%;
+	left: 0;
+	padding: $spacer--small;
+	background: #bbb;
+	border-radius: 5px;
+	width: 100%;
+	&:after{
+		@include remCalc(font-size, 36px);
+		top: -23px;
+		position: absolute;
+		content:'\25b4';
+		color: #bbb;
+		left: 45%;
+		line-height: 1;
+	}
+}
+
+.tooltip--error{
+	background: $error-clr;
+	color: #fff;
+	&:after{
+		color: $error-clr;
+	}
+}
+
+.tooltip--attention{
+	background: $attention-clr;
+	color: #fff;
+	&:after{
+		color: $attention-clr;
+	}
+}
+
+.tooltip--success{
+	background: $success-clr;
+	color: #fff;
+	&:after{
+		color: $success-clr;
+	}
+}
+
+.tooltip--neutral{
+	background: $neutral-clr;
+	color: #fff;
+	&:after{
+		color: $neutral-clr;
+	}
+}

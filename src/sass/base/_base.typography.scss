@@ -119,3 +119,13 @@ mark{
 	background: $highlighting-clr;
 }
 
+pre{
+	background: $pre-background-clr;
+	border: 1px solid #ccc;
+	white-space: pre-wrap;
+	float: left;
+	display: block;
+	padding: $spacer;
+	overflow: scroll;
+}
+

@@ -6,8 +6,6 @@ FRONTLY FORM
 */
 
 .frontly-form{
-    background: #f6f6f6;
-    @include remCalc(padding, $spacer--dbl);
     @include remCalc(margin-bottom, $spacer);
     float: left;
     width: 100%;
@@ -27,24 +25,189 @@ FRONTLY FORM
 .frontly-form input:not([type="submit"]),
 .frontly-form textarea, 
 .frontly-form select{
+    @include remCalc(font-size, $base-font-size);
+    @include remCalc(margin-bottom, $spacer);
     @include remCalc(padding, $spacer);
-    @include remCalc(margin-bottom, $spacer--small);
-    border-radius: 5px;
+    @include transition(all ease .25s);
     background: #fff;
     float: left;
     position: relative;
-    @include transition(all ease .25s);
+    &:hover{
+        border-color: $base-text-clr--dull;
+    }
     &:focus{
-        
+        outline: none;
+        border-color: $base-text-clr;
     }
 }
 
-.frontly-form--inline{
-    input{
-        display: inline-block;
-        float: none;
-        width: auto;
+.frontly-form select{
+    width: 100%;
+}
+
+.frontly-form--padded{
+    background: #f6f6f6;
+    @include remCalc(padding, $spacer--dbl);
+}
+
+.frontly-form--smooth input:not([type="submit"]),
+.frontly-form--smooth textarea,
+.frontly-form--smooth select{
+    @extend %smooth;
+}
+
+.frontly-form .grid__col{
+    padding-top:0;
+    padding-bottom:0;
+}
+
+.frontly-form__group{
+    display: block;
+    @include remCalc(padding-bottom, $spacer);
+    @include remCalc(margin-bottom, $spacer--dbl);
+}
+
+.frontly-form__group--underlined{
+    border-bottom: 1px solid $border-clr;
+}
+
+/**
+* Frontly Form - Checkbox & Radio Buttons
+* ---------------------------------------
+*
+* The Frontly form comes with some custom checkbox & radio button styling.
+* These styles utilise the :check psuedo element and as Frontly is intended to 
+* support IE8 the styling is dependant on the use of the Selectivizr script 
+* which is included in the Frontly HTML template so make sure that this is 
+* included if you aren't using the Frontly HTML template file.
+*
+*
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+* <fieldset class="frontly-form__checkbox">
+*     <legend>Example Checkbox</legend>
+*     <input type="checkbox" id="check1-1" checked="checked">
+*     <label for="check1-1">Checkboxes</label>
+* </fieldset>
+*
+*/
+
+.frontly-form__checkbox input[type="checkbox"],
+.frontly-form__radio input[type="radio"]{
+    position: absolute;
+    left: -200%;
+}
+
+/**
+* Checkboxes
+* ----------
+*/
+
+.frontly-form__checkbox input[type="checkbox"] + label{
+    @include remCalc(margin-right, $spacer);
+    @include remCalc(padding-left, $spacer--dbl);
+    width: auto;
+    position: relative;
+    &:before{
+        font-family: 'fontawesome';
+        content: '\f096';
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include transition(.25s);
+        color: $base-text-clr--dull;  
     }
+    &:hover{
+        border-color: $base-text-clr--dull;
+        &:before{
+            color: $base-text-clr--dull;
+        }
+    }
+}
+
+.frontly-form__checkbox input[type="checkbox"]:checked + label:before{
+    content: '\f046';
+    color: $base-text-clr;
+}
+
+.frontly-form__checkbox--btn input[type="checkbox"] + label{
+    @extend %btn;
+    @extend %smooth;
+    @include remCalc(padding-left, 35px);
+    background: #fff;
+    &:before{
+        font-family: 'fontawesome';
+        content: '\f096';
+        position: absolute;
+        left: $spacer;
+        top: $spacer;
+    }
+}
+
+.frontly-form__checkbox--btn input[type="checkbox"]:checked + label{
+    border-color: $base-text-clr;
+}
+
+.frontly-form__checkbox--btn input[type="checkbox"]:checked + label:before{
+    color: $base-text-clr;
+} 
+
+
+/**
+* Radio Buttons
+* -------------
+*/
+
+.frontly-form__radio input[type="radio"] + label{
+    @include remCalc(margin-right, $spacer);
+    @include remCalc(padding-left, $spacer--dbl);
+    width: auto;
+    position: relative;
+    @include transition(.25s);
+    &:before{
+        font-family: 'fontawesome';
+        content: '\f10c';
+        @include remCalc(width, 15px);
+        @include remCalc(height, 15px);
+        position: absolute;
+        border-radius: 5px;
+        left: 0;
+        top: 0;
+        color: $base-text-clr--dull;  
+    }
+}
+
+.frontly-form__radio input[type="radio"]:checked + label:before{
+    content: '\f192';
+    color: $base-text-clr;
+}
+
+.frontly-form__radio--btn input[type="radio"] + label{
+    @extend %btn;
+    @extend %smooth;
+    @include remCalc(padding-left, 35px);
+    background: #fff;
+    &:before{
+        font-family: 'fontawesome';
+        content: '\f10c';
+        @include remCalc(width, 15px);
+        @include remCalc(height, 15px);
+        position: absolute;
+        left: $spacer;
+        top: $spacer;  
+    }
+    &:hover{
+        border-color: $base-text-clr--dull;
+    }
+}
+
+.frontly-form__radio--btn input[type="radio"]:checked + label{
+    border-color: $base-text-clr;
+}
+
+.frontly-form__radio--btn input[type="radio"]:checked + label:before{
+    color: $base-text-clr;
 }
 
 /**
@@ -63,18 +226,16 @@ FRONTLY FORM
 *
 */
 
-.frontly-form .frontly-form__search{
-    width: 100%;
+.frontly-form.frontly-form--inline{
     float: left;
-    input{
-        width:75%;
-        border-radius: 5px 0 0 5px;
+    .frontly-form__append,.frontly-form__prepend{
+        width: auto;
+        margin-right: $spacer--small;
     }
     button, .btn{
         margin: 0;
         float: left;
-        width: 25%;
-        border-radius: 0 5px 5px 0;
+        width: 15%;
         border-left: 0;
     }
 }
@@ -109,11 +270,11 @@ FRONTLY FORM
         font-family: "fontawesome";
         color: #ddd;
         position: absolute;
-        top: 10px;
+        top: 12px;
         left: 10px;
     }
     input{
-        padding-left: 30px;
+        @include remCalc(padding-left, 30px);
     }
 }
 
@@ -125,11 +286,11 @@ FRONTLY FORM
         font-family: "fontawesome";
         color: #ddd;
         position: absolute;
-        top: 10px;
+        top: 12px;
         right: 10px;
     }
     input{
-        padding-right: 30px;
+        @include remCalc(padding-right, 30px);
     }
 }
 

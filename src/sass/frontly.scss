@@ -20,7 +20,7 @@
 ------------
 SETTINGS.
 ------------
-The settings files are build up of numerous global variables to be used within a range of different situations. From setting the border colors of inputs by using the or altering the $border-clr variable or by adding a padding by using one of the $spacer variables. Feel free to amend the variables values as you see fit or add you own.
+The settings files are built up of numerous global variables to be used within a range of different situations. From setting the border colors of inputs by using the or altering the $border-clr variable or by adding a padding by using one of the $spacer variables. Feel free to amend the variables values as you see fit or add you own.
 ------------ 
 */
 
@@ -31,12 +31,11 @@ The settings files are build up of numerous global variables to be used within a
 @import "settings/settings.z-index";
 
 
-
-
-
 /* 
 ------------
 TOOLS.
+------------ 
+The tools files consist of a number of useful functions and mixins that are used throughout the framework and can be utilised to build new components.
 ------------ 
 */ 
 
@@ -44,9 +43,12 @@ TOOLS.
 @import "tools/tools.grid";
 @import "tools/tools.mixins";
 
+
 /* 
 ------------
 GENERIC.
+------------ 
+The generic files are what they say on the tin. They are the basic starting generic stylings that set the basis of the framework, starting with the css reset to remove browser specific styling.
 ------------ 
 */
 
@@ -54,9 +56,12 @@ GENERIC.
 @import "generic/generic.box-sizing";
 @import "generic/generic.page";
 
+
 /* 
 ------------
 BASE.
+------------ 
+The base files consist of the general styling that has been set after the generic files have done their job. This helps to set things back in a more structured and globally consistant manor.
 ------------ 
 */
 
@@ -66,9 +71,12 @@ BASE.
 @import "base/base.tables";
 @import "base/base.typography";
 
+
 /* 
 ------------
 OBJECTS.
+------------ 
+The object files consist of styling for non specific UI blocks e.g. lists. These help to enable you to create customised components with useful present structure.
 ------------ 
 */
 
@@ -82,8 +90,11 @@ OBJECTS.
 ------------
 COMPONENTS.
 ------------ 
+The components files are the UI styling files. You can create UI blocks with more specificty within this collect of files e.g. you may wish to create a new set of buttons for your project. You can either do this by adding a new class within the buttons.scss file or by creating a new file that is for a specific UI component on your website.
+------------
 */
 
+@import "components/components.badges";
 @import "components/components.buttons";
 @import "components/components.frontly-dropdowns";
 @import "components/components.frontly-form";
@@ -91,11 +102,18 @@ COMPONENTS.
 @import "components/components.image-styles";
 @import "components/components.panels";
 @import "components/components.tables";
+@import "components/components.tooltips";
+
 
 /* 
 ------------
 VETOS.
+------------
+The vetos files, a.k.a the naughty files, consist of the additional overriding classes that you may need to utilise or add should you need a specific class changed based on a certain sitiation e.g. you can utilise the .float--right veto class to float a .btn element to the right within having to create a 
+.btn--right class and causing duplication of a styling method.
 ------------ 
 */
 
 @import "vetos/vetos.helpers";
+
+

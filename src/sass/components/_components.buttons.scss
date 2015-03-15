@@ -17,16 +17,7 @@ BUTTONS
 */
 
 .btn{
-	@include remCalc(padding, $spacer);
-	@include remCalc(margin-right, $spacer);
-	@include remCalc(margin-bottom, $spacer);
-	border: 1px solid $border-clr;
-	@include transition(.25s);
-	background: #f6f6f6;
-	text-align: center;
-	letter-spacing: .05rem;
-	text-decoration: none;
-	display: inline-block;
+	@extend %btn;
 	float: left;
 	&:hover{
 		background: #ddd;
@@ -49,7 +40,8 @@ BUTTONS
 * physically e.g. the example below sets the button as disabled, preventing a 
 * user from clicking it.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <a class="btn btn--disabled">Button</a>
 *
@@ -70,12 +62,12 @@ BUTTONS
 	@include remCalc(padding, $spacer--large);
 }
 
-.btn--full-width{
+.btn--block{
 	width: 100%;
 }
 
 .btn--smooth{
-	border-radius: 5px;
+	@extend %smooth;
 }
 
 .btn--rounded{
@@ -83,7 +75,7 @@ BUTTONS
 }
 
 .btn--bordered{
-	background: #fff;
+	background: none;
 	border: 3px solid #ddd;
 }
 
@@ -106,7 +98,8 @@ BUTTONS
 * while keeping them within a cluster. This is particularly handy for 
 * pagination.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <div class="btn-group">
 * 	<a class="btn">Button</a>
@@ -136,7 +129,8 @@ BUTTONS
 * below would provide you with the smooth corners on the .btn-group apposed to 
 * each individual .btn element.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <div class="btn-group btn-group--smooth">
 * 	<a class="btn">Button</a>
@@ -191,7 +185,8 @@ BUTTONS
 * _settings.colors.scss file and it is recommended that if you wish to create 
 * a custom .btn that you create a variable in that file to call where required.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <a class="btn btn--success">Button</a>
 *
@@ -254,6 +249,26 @@ BUTTONS
 	background: none;
 	&:hover{
 		background: $attention-clr;
+		color: #fff;
+	}
+}
+
+.btn--neutral{
+	background: $neutral-clr;
+	border-color: darken($neutral-clr, 10%);
+	color: #fff;
+	&:hover{
+		background: darken($neutral-clr, 10%);
+		color: #fff;
+	}
+}
+
+.btn--neutral.btn--bordered, .btn--bordered.btn--neutral{
+	border-color: $neutral-clr;
+	color: $neutral-clr;
+	background: none;
+	&:hover{
+		background: $neutral-clr;
 		color: #fff;
 	}
 }

@@ -1,16 +1,50 @@
 /* 
 ------------
-BASE.
+OBJECT.
 GRID
 ------------ 
 */
 
-/* 
-Grid Row
+/**
+*
+* The Frontly grid is a great basis for any project. The layout of a design is 
+* important and there isn't any better way than a grid.
+* 
+* So how does it work?
+* --------------------
+* Well if you'd like to find see examples of the grid then visit 
+* http://frontly.co.uk/grid and you will be able to see it in illustrated in 
+* action.
+* 
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row">
+*         <div class="grid__col grid__col--12-12">
+*             <h1>Frontly grid</h1>
+*         </div>
+*     </div>
+* </div>
+*
 */
+
+/**
+*
+* .grid (a.k.a container, wrapper etc...)
+* ---------------------------------------
+* To get you started you will need to wrap your grid elements in a div or 
+* section with the class of .grid as this will be your wrapper, container,
+* whatever you may call it. The naming choice has been made to make it easier 
+* to assciate it with what it is you're trying to acheive. The maximum width 
+* of the .grid element is set as the $break-extra-large in the 
+* _settings.breakpoints.scss field which will set the max-width value of your 
+* website.
+*
+*/
+
 .grid{
     width: 100%;
-    max-width: $break-extra-large;
+    max-width: $break-extra-large; // Set in _settings.breakpoints.scss
     margin: 0 auto;
     padding: $spacer 0;
     &:before,&:after{
@@ -24,16 +58,24 @@ Grid Row
 }
 
 
-/* 
-Grid Row
+/**
+*
+* .grid__row
+* ----------
+* The .grid__row element is required to wrap the .grid__col elements.
+*
 */
+
 .grid__row{
     display: block;
     float: left;
     width: 100%;
     padding: 0 $spacer;
     *zoom: 1;
-    // Catering for nesting of .grid__row within .grid__col 
+
+    // The code below caters for nesting of .grid__row elements within the 
+    // .grid__col elements.
+
     .grid__col .grid__row{
         padding: 0;
         .grid__col{
@@ -42,35 +84,143 @@ Grid Row
             }
             &:last-child{
                 padding-right: 0;
-                padding-bottom: 0;
             }
         }
-    }
-    // Centralise .grid__col within .grid__row 
-    &--central{
-        text-align: center;
-        .grid__col{
-            display: block;
-            float: none;
-            margin: 0 auto;
-            text-align: left;
-            &:before{
-                display: table;
-                clear: both;
-                content: '';
-            }
-        }
-    }
-    // Set no gutters if required on row
-    &--no-gutters{
-        padding-right: 0;
-        padding-left: 0;
     }
 }
 
-/*
-Grid Columns
+/**
+*
+* .grid__row--central - Centering .grid_col within the .grid__row element
+* -----------------------------------------------------------------------
+* Some projects require you to have centered elements and a grid shouldn't 
+* limit you when it comes to this requirement. The .grid__row--central class 
+* enables you to center the .grid__col elements within th .grid__row element.
+* If you'd rather not us this technique then feel free to play with the 
+* .grid__push--#-# classes that are outlined just below in the .grid__col 
+* section in this stylesheet.
+* 
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row grid__row--central">
+*         <div class="grid__col grid__col--6-12">
+*             <h1>Hey I'm centered</h1>
+*         </div>
+*     </div>
+* </div>
+*
 */
+
+.grid__row--central{
+    text-align: center;
+    .grid__col{
+        display: block;
+        float: none;
+        margin: 0 auto;
+        text-align: left;
+        &:before{
+            display: table;
+            clear: both;
+            content: '';
+        }
+    }
+}
+
+/**
+*
+* .grid__row--tiled-{#}-col - tiled column layout
+* -----------------------------------------------------------------------
+*
+* It is common for a project to have a tiled layout required in which you have 
+* multple .grid__col within a row that exceed the 1 row. To cater for this you 
+* can utilise the .grid__row--tiled-{#}-col class (the {#} is where your count 
+* goes, with options of either 2, 3 or 4). It is a very simple and useful
+* class to add, as shown in the below.
+* 
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row grid__row--tiled-3-col">
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+
+@for $i from 2 through 4{
+    .grid__row--tiled-#{$i}-col .grid__col:nth-child(#{$i}n){
+        padding-right: 0;
+    }
+    .grid__row--tiled-#{$i}-col .grid__col:nth-child(#{$i}n+1){
+        clear: left;
+        padding-left: 0;
+        &:before{
+            content:'';
+            width: 100%;
+            clear: left;
+        }
+    }
+    @if $i == 2{
+        .grid__row--tiled-#{$i}-col .grid__col:last-child:nth-child(odd){
+            padding-right: $spacer !important;
+            @include respond-to(mobile){
+                padding-right: 0 !important;
+            }
+        }
+    }
+    @if $i == 3{
+        .grid__row--tiled-#{$i}-col .grid__col:last-child:nth-child(odd):not(.grid_col:nth-child(3n)){
+            padding-right: $spacer !important;
+            @include respond-to(mobile){
+                padding-right: 0 !important;
+            }
+        }
+    }
+    @if $i == 4{
+        .grid__row--tiled-#{$i}-col .grid__col:last-child:nth-child(odd){
+            padding-right: $spacer !important;
+            @include respond-to(mobile){
+                padding-right: 0 !important;
+            }
+        }
+    }
+}
+
+/**
+*
+* .grid__col
+* ----------
+* The .grid__col is the most important class for the Frontly grid system 
+* (suprise!). You may notice that the .grid__col class utilises the Sass
+* @for control directive. This enables the grid system to be customised by the
+* number of columns that are required and dictated with the $grid-column-count
+* variable in the _tools.grid.scss file. This is set as 12 by default and I
+* would recommend that you don't go higher than 16 if you really need to alter
+* it.
+* 
+* The .grid__col class also utilises the grid_col @mixin which is also 
+* declared in the _tools.grid.scss file.
+*
+*/
+
 .grid__col{
     display: block;
     float: left;
@@ -83,39 +233,121 @@ Grid Columns
     }
 }
 
+/**
+*
+* .grid__push
+* -----------
+* Sometimes you may wish to push elements around a little. This is easier 
+* achieved using the classes below. The .grid__push is similar to the way it
+*  works as the .grid__col class but rather than having the width dictated you 
+* have the margin-left dictated. The class is also set up by utilising the 
+* Sass @for control directive and the $gird-column-count variable. The 
+* grid_push @mixin that helps with this class can also be found in the 
+* _tools.grid.scss file.
+*
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row">
+*         <div class="grid__col grid__col--6-12 grid__push--3-12">
+*             <h3>.grid__col--6-12 pushed by 3-12</h3>
+*         </div>
+*         <div class="grid__col grid__col--3-12">
+*             <h3>.grid__col--3-12</h3>
+*         </div>
+*     </div>
+* </div>
+*
+*/
 
-// Helper Classes
-// ------------
-
-.pull-right{
-    float: right;
+@for $i from 1 through $grid-column-count{
+    .grid__push--#{$i}-#{$grid-column-count}{
+        @include grid_push($i);
+        @include respond-to(mobile){
+            margin-left: 0;
+        }
+    }
 }
 
-.pull-left{
-    float: right;
+.grid-box{
+    @include remCalc(padding, $spacer--dbl);
+    background: #f6f6f6;
+    text-align: center;
+    width: 100%;
+    float: left;
+    @extend %smooth;
 }
 
-.no-gutters{
+
+/**
+*
+* .no-gutters
+* -----------
+* This grid system has some default gutters. This is a common practise but 
+* some designers and front-end developers prefer to use a grid that doesn't
+* have these gutters. To cater for this preference you can use the class below 
+* by adding it to the .grid__row element. This will remove any gutters that 
+* are used on the .grid__col elements that are decendants of that .grid__row 
+* element.
+*
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row .no-gutters">
+*         <div class="grid__col grid__col--6-12">
+*             <h3>no-gutters on .grid__col</h3>
+*         </div>
+*         <div class="grid__col grid__col--6-12">
+*             <h3>no-gutters on .grid__col</h3>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+
+.grid__row--no-gutters .grid__col{
     padding: 0;
 }
 
-// Responsive Styling
-// ------------------
+/**
+*
+* Tablet Styling
+* --------------
+* The frontly grid has some presets for tablets. Below are a number of classes
+* that will enable you to alter the struture of the grid based on the viewport 
+* being at the tablet breakpoint.
+*
+*/
 
-img{
-    float: left;
-    max-width: 100%;
-}
+@include respond-to(tablet){
 
-.show-on-phone{
-    display: none;
-}
+    /**
+    *
+    * .full-width-tablet
+    *
+    * You may wish to alter the width of a .grid__col that you have set in 
+    * your grid when it reaches the tablet viewport breakpoint and that's a 
+    * common requirement. The class below caters for this requirement as shown
+    * in the usage example where the .grid__col is set to half width on 
+    * desktop but full width on tablet.
+    *
+    * [!] Usage Example
+    * -----------------
+    * <div class="grid">
+    *     <div class="grid__row .no-gutters">
+    *         <div class="grid__col grid__col--6-12 full-width-tablet">
+    *             <h3>This will be full width on tablet devices</h3>
+    *         </div>
+    *         <div class="grid__col grid__col--6-12 full-width-tablet">
+    *             <h3>This will be full width on tablet devices</h3>
+    *         </div>
+    *     </div>
+    * </div>
+    *
+    */
 
-// Tablet
-
-@media screen and (max-width: $break-large){
     .full-width-tablet{
-        width: 100% !important;
+        width: 100%;
         &:first-child{
             padding-right: 0;
         }
@@ -124,30 +356,74 @@ img{
         }
     }
 
+    /**
+    *
+    * .half-width-tablet
+    *
+    * You may wish to alter the width of a .grid__col that you have set in 
+    * your grid when it reaches the tablet viewport breakpoint and that's a 
+    * common requirement. The class below caters for this requirement as shown
+    * in the usage example where the .grid__col is set to a third of the  
+    * width on desktop but half width on tablet.
+    *
+    * [!] Usage Example
+    * -----------------
+    * <div class="grid">
+    *     <div class="grid__row .no-gutters">
+    *         <div class="grid__col grid__col--4-12 half-width-tablet">
+    *             <h3>This will be half width on tablet devices</h3>
+    *         </div>
+    *     </div>
+    * </div>
+    *
+    */
+    
     .half-width-tablet{
-        width: 50% !important;
+        width: 50%;
     }
 
+    /**
+    *
+    * .align-center-tablet
+    *
+    * You may wish to alter text alignment to be centered on a tablet device.
+    * By using the class below this can be achieved.
+    *
+    * [!] Usage Example
+    * -----------------
+    * <div class="grid">
+    *     <div class="grid__row .no-gutters">
+    *         <div class="grid__col grid__col--6-12 half-width-tablet">
+    *             <h3>This text is centrally aligned on tablet devices</h3>
+    *         </div>
+    *         <div class="grid__col grid__col--6-12 half-width-tablet">
+    *             <h3>This text is centrally aligned on tablet devices</h3>
+    *         </div>
+    *     </div>
+    * </div>
+    *
+    */
+
     .align-center-tablet{
-        text-align: center !important;
+        text-align: center;
     }
 }
 
 // Phone
 
-@media screen and (max-width: $break-mid){
+@include respond-to(mobile){
     .grid__row{
-        padding-right: emCalc(20px) !important;
-        padding-left: emCalc(20px) !important;
+        @include remCalc(padding-right, $spacer--dbl);
+        @include remCalc(padding-left, $spacer--dbl);
     }
 
     .grid__col{
-        width: 100% !important;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
         & > .grid__row{
-            padding-right: 0 !important;
-            padding-left: 0 !important;
+            padding-right: 0;
+            padding-left: 0;
         }
     }
 

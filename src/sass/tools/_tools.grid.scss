@@ -22,3 +22,7 @@ $grid-column-count: 12;
 @mixin grid_col($col-size){
 	width:((100 / $grid-column-count) * $col-size)*1%;
 }
+
+@mixin grid_push($col-size){
+	margin-left:((100 / $grid-column-count) * $col-size)*1%;
+}

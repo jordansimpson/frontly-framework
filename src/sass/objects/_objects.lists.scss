@@ -9,7 +9,7 @@ LISTS
 Remove all styling from lists by adding the .no-points class below
 */
 
-.no-points{
+.list--unstyled{
 	list-style-type: none;
 	padding-left: 0;
 }
@@ -46,7 +46,7 @@ below that can be added by assiging a class.
 // Inline Lists
 
 .list--inline{
-	@extend .no-points;
+	@extend .list--unstyled;
 	float: left;
 	width: 100%;
 	li{
@@ -55,11 +55,11 @@ below that can be added by assiging a class.
 }
 
 .list--pills{
-	@extend .no-points;
+	@extend .list--unstyled;
 	@extend .list--inline;
 	margin-bottom: 0;
 	li a{
-		@include remCalc(margin-right, $spacer);
+		@include remCalc(margin-right, $spacer--small);
 		@include remCalc(margin-bottom, $spacer);
 		@include remCalc(padding, $spacer);
 		background: #eee;
@@ -70,7 +70,7 @@ below that can be added by assiging a class.
 }
 
 .list--stacked{
-	@extend .no-points;
+	@extend .list--unstyled;
 	li{
 		display: block;
 		a{

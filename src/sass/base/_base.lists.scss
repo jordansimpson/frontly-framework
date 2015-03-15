@@ -22,7 +22,3 @@ dt{
 	font-weight: $weight-heavy;
 }
 
-dd{
-	@include remCalc(padding-left, $spacer--dbl);
-}
-

@@ -1,0 +1,46 @@
+/* 
+------------
+COMPONENTS.
+BADGES
+------------ 
+*/
+
+.badge{
+	@extend %btn;
+	@include remCalc(padding, $spacer--small);
+	font-size: 70%;
+	margin-right:0;
+	font-weight: bold;
+}
+
+.badge--smooth{
+	border-radius: 5px;
+}
+
+.badge--rounded{
+	border-radius: 50px;
+}
+
+.badge--success{
+	background: $success-clr;
+	color: #fff;
+	border: none;
+}
+
+.badge--error{
+	background: $error-clr;
+	color: #fff;
+	border: none;
+}
+
+.badge--attention{
+	background: $attention-clr;
+	color: #fff;
+	border: none;
+}
+
+.badge--neutral{
+	background: $neutral-clr;
+	color: #fff;
+	border: none;
+}

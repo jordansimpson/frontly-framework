@@ -14,7 +14,7 @@
 ------------
 SETTINGS.
 ------------
-The settings files are build up of numerous global variables to be used within a range of different situations. From setting the border colors of inputs by using the or altering the $border-clr variable or by adding a padding by using one of the $spacer variables. Feel free to amend the variables values as you see fit or add you own.
+The settings files are built up of numerous global variables to be used within a range of different situations. From setting the border colors of inputs by using the or altering the $border-clr variable or by adding a padding by using one of the $spacer variables. Feel free to amend the variables values as you see fit or add you own.
 ------------ 
 */
 /* 
@@ -50,6 +50,8 @@ Z-INDEX
 /* 
 ------------
 TOOLS.
+------------ 
+The tools files consist of a number of useful functions and mixins that are used throughout the framework and can be utilised to build new components.
 ------------ 
 */
 /* 
@@ -91,7 +93,7 @@ MIXINS
 *
 * Usage example:
 * .class{
-    width: 25%;
+*   width: 25%;
 *   @include respond-to(tablet){
 *       width: 50%; 
 *   }
@@ -101,9 +103,63 @@ MIXINS
 * }
 *  
 */
+/**
+*
+* PLACEHOLDERS
+*
+* If you are new to Sass then you may not know what placeholders are so below
+* is a basis overview. 
+*
+* A placeholder is something that can be utilised with the @extend directive 
+* and extends pre-existing styling within a new class. This can be done using 
+* a class (@extend .class) but this can have sometimes not give the affect you 
+* wanted in the output.
+*
+* If you wish to find out more I recommend visiting the
+* sass way website - 
+* http://thesassway.com/intermediate/understanding-placeholder-selectors
+*
+*/
+/**
+*
+* %btn placholder
+*
+* This placeholder provides a basis button styling to an <a> tag.
+*
+*/
+.badge, .btn, .frontly-form__checkbox--btn input[type="checkbox"] + label, .frontly-form__radio--btn input[type="radio"] + label {
+  padding: 10px;
+  padding: 0.625rem;
+  margin-right: 10px;
+  margin-right: 0.625rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  border: 1px solid #e5e5e5;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background: #f6f6f6;
+  text-align: center;
+  letter-spacing: 0.05rem;
+  text-decoration: none;
+  display: inline-block; }
+
+/**
+*
+* %smooth placholder
+*
+* This placeholder provides a smoother corner effect.
+*
+*/
+.grid-box, .btn--smooth, .frontly-form--smooth input:not([type="submit"]), .frontly-form--smooth textarea, .frontly-form--smooth select, .frontly-form__checkbox--btn input[type="checkbox"] + label, .frontly-form__radio--btn input[type="radio"] + label, .tooltip {
+  border-radius: 5px; }
+
 /* 
 ------------
 GENERIC.
+------------ 
+The generic files are what they say on the tin. They are the basic starting generic stylings that set the basis of the framework, starting with the css reset to remove browser specific styling.
 ------------ 
 */
 /* 
@@ -182,6 +238,8 @@ html, body {
 ------------
 BASE.
 ------------ 
+The base files consist of the general styling that has been set after the generic files have done their job. This helps to set things back in a more structured and globally consistant manor.
+------------ 
 */
 /* 
 ------------
@@ -191,15 +249,17 @@ FORMS
 */
 label, legend {
   display: block;
-  cursor: point;
+  cursor: pointer;
   margin-bottom: 5px;
   margin-bottom: 0.3125rem; }
 
 input:not([type=button]):not([type=reset]):not([type=submit]), select, textarea {
   vertical-align: middle;
-  border: 1px solid #ddd;
+  border: 1px solid #e5e5e5;
   margin-bottom: 10px;
-  margin-bottom: 0.625rem; }
+  margin-bottom: 0.625rem;
+  font-size: 16px;
+  font-size: 1rem; }
 
 input[type=email], input[type=file], input[type=password], input[type=search], input[type=tel], input[type=text] {
   -webkit-appearance: none;
@@ -215,10 +275,11 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   vertical-align: middle;
-  border: none;
   cursor: pointer;
-  padding: 10px;
-  padding: 0.625rem; }
+  float: left;
+  letter-spacing: 0;
+  font-size: 16px;
+  font-size: 1rem; }
 
 select, option {
   cursor: pointer;
@@ -229,8 +290,8 @@ textarea {
   width: 100%;
   max-width: 100%;
   vertical-align: top;
-  padding: 5px;
-  padding: 0.3125rem; }
+  padding: 10px;
+  padding: 0.625rem; }
 
 /* 
 ------------
@@ -260,7 +321,7 @@ figure img {
   width: 100%; }
 
 figcaption {
-  border-bottom: 1px dotted #ddd;
+  border-bottom: 1px dotted #e5e5e5;
   float: left;
   width: 100%;
   padding-top: 10px;
@@ -286,10 +347,6 @@ dl {
 
 dt {
   font-weight: 700; }
-
-dd {
-  padding-left: 20px;
-  padding-left: 1.25rem; }
 
 /* 
 ------------
@@ -389,7 +446,7 @@ blockquote {
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
   line-height: 1.4;
-  border-left: 1px solid #ddd; }
+  border-left: 1px solid #e5e5e5; }
   blockquote small {
     font-style: normal;
     display: block;
@@ -416,11 +473,22 @@ abbr {
   text-transform: uppercase; }
 
 mark {
-  background: #FFF9B7; }
+  background: #fff9B7; }
+
+pre {
+  background: #f6f6f6;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+  float: left;
+  display: block;
+  padding: 10px;
+  overflow: scroll; }
 
 /* 
 ------------
 OBJECTS.
+------------ 
+The object files consist of styling for non specific UI blocks e.g. lists. These help to enable you to create customised components with useful present structure.
 ------------ 
 */
 /* 
@@ -436,11 +504,9 @@ DROPDOWNS
   .dropdown ul, .frontly-dropdown ul {
     display: none;
     position: absolute;
+    background: #fff;
     left: 0;
     z-index: 1; }
-  .dropdown:hover > ul, .frontly-dropdown:hover > ul, .dropdown:after:hover > ul, .frontly-dropdown:after:hover > ul {
-    display: block;
-    position: absolute; }
   .dropdown li, .frontly-dropdown li {
     width: 100%;
     float: left;
@@ -450,15 +516,50 @@ DROPDOWNS
       position: absolute;
       left: 100%;
       top: 0; }
+  .dropdown:hover > ul, .frontly-dropdown:hover > ul {
+    display: block;
+    position: absolute; }
 
 /* 
 ------------
-BASE.
+OBJECT.
 GRID
 ------------ 
 */
-/* 
-Grid Row
+/**
+*
+* The Frontly grid is a great basis for any project. The layout of a design is 
+* important and there isn't any better way than a grid.
+* 
+* So how does it work?
+* --------------------
+* Well if you'd like to find see examples of the grid then visit 
+* http://frontly.co.uk/grid and you will be able to see it in illustrated in 
+* action.
+* 
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row">
+*         <div class="grid__col grid__col--12-12">
+*             <h1>Frontly grid</h1>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+/**
+*
+* .grid (a.k.a container, wrapper etc...)
+* ---------------------------------------
+* To get you started you will need to wrap your grid elements in a div or 
+* section with the class of .grid as this will be your wrapper, container,
+* whatever you may call it. The naming choice has been made to make it easier 
+* to assciate it with what it is you're trying to acheive. The maximum width 
+* of the .grid element is set as the $break-extra-large in the 
+* _settings.breakpoints.scss field which will set the max-width value of your 
+* website.
+*
 */
 .grid {
   width: 100%;
@@ -472,8 +573,12 @@ Grid Row
   .grid:after {
     clear: both; }
 
-/* 
-Grid Row
+/**
+*
+* .grid__row
+* ----------
+* The .grid__row element is required to wrap the .grid__col elements.
+*
 */
 .grid__row {
   display: block;
@@ -486,25 +591,145 @@ Grid Row
     .grid__row .grid__col .grid__row .grid__col:first-child {
       padding-left: 0; }
     .grid__row .grid__col .grid__row .grid__col:last-child {
-      padding-right: 0;
-      padding-bottom: 0; }
-  .grid__row--central {
-    text-align: center; }
-    .grid__row--central .grid__col {
-      display: block;
-      float: none;
-      margin: 0 auto;
-      text-align: left; }
-      .grid__row--central .grid__col:before {
-        display: table;
-        clear: both;
-        content: ''; }
-  .grid__row--no-gutters {
-    padding-right: 0;
-    padding-left: 0; }
+      padding-right: 0; }
 
-/*
-Grid Columns
+/**
+*
+* .grid__row--central - Centering .grid_col within the .grid__row element
+* -----------------------------------------------------------------------
+* Some projects require you to have centered elements and a grid shouldn't 
+* limit you when it comes to this requirement. The .grid__row--central class 
+* enables you to center the .grid__col elements within th .grid__row element.
+* If you'd rather not us this technique then feel free to play with the 
+* .grid__push--#-# classes that are outlined just below in the .grid__col 
+* section in this stylesheet.
+* 
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row grid__row--central">
+*         <div class="grid__col grid__col--6-12">
+*             <h1>Hey I'm centered</h1>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+.grid__row--central {
+  text-align: center; }
+  .grid__row--central .grid__col {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    text-align: left; }
+    .grid__row--central .grid__col:before {
+      display: table;
+      clear: both;
+      content: ''; }
+
+/**
+*
+* .grid__row--tiled-{#}-col - tiled column layout
+* -----------------------------------------------------------------------
+*
+* It is common for a project to have a tiled layout required in which you have 
+* multple .grid__col within a row that exceed the 1 row. To cater for this you 
+* can utilise the .grid__row--tiled-{#}-col class (the {#} is where your count 
+* goes, with options of either 2, 3 or 4). It is a very simple and useful
+* class to add, as shown in the below.
+* 
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row grid__row--tiled-3-col">
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*         <div class="grid__col grid__col--4-12">
+*             <h1>Hey I'm tiled</h1>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+.grid__row--tiled-2-col .grid__col:nth-child(2n) {
+  padding-right: 0; }
+
+.grid__row--tiled-2-col .grid__col:nth-child(2n+1) {
+  clear: left;
+  padding-left: 0; }
+  .grid__row--tiled-2-col .grid__col:nth-child(2n+1):before {
+    content: '';
+    width: 100%;
+    clear: left; }
+
+.grid__row--tiled-2-col .grid__col:last-child:nth-child(odd) {
+  padding-right: 10px !important; }
+  @media only screen and (max-width: 400px) {
+    .grid__row--tiled-2-col .grid__col:last-child:nth-child(odd) {
+      padding-right: 0 !important; } }
+
+.grid__row--tiled-3-col .grid__col:nth-child(3n) {
+  padding-right: 0; }
+
+.grid__row--tiled-3-col .grid__col:nth-child(3n+1) {
+  clear: left;
+  padding-left: 0; }
+  .grid__row--tiled-3-col .grid__col:nth-child(3n+1):before {
+    content: '';
+    width: 100%;
+    clear: left; }
+
+.grid__row--tiled-3-col .grid__col:last-child:nth-child(odd):not(.grid_col:nth-child(3n)) {
+  padding-right: 10px !important; }
+  @media only screen and (max-width: 400px) {
+    .grid__row--tiled-3-col .grid__col:last-child:nth-child(odd):not(.grid_col:nth-child(3n)) {
+      padding-right: 0 !important; } }
+
+.grid__row--tiled-4-col .grid__col:nth-child(4n) {
+  padding-right: 0; }
+
+.grid__row--tiled-4-col .grid__col:nth-child(4n+1) {
+  clear: left;
+  padding-left: 0; }
+  .grid__row--tiled-4-col .grid__col:nth-child(4n+1):before {
+    content: '';
+    width: 100%;
+    clear: left; }
+
+.grid__row--tiled-4-col .grid__col:last-child:nth-child(odd) {
+  padding-right: 10px !important; }
+  @media only screen and (max-width: 400px) {
+    .grid__row--tiled-4-col .grid__col:last-child:nth-child(odd) {
+      padding-right: 0 !important; } }
+
+/**
+*
+* .grid__col
+* ----------
+* The .grid__col is the most important class for the Frontly grid system 
+* (suprise!). You may notice that the .grid__col class utilises the Sass
+* @for control directive. This enables the grid system to be customised by the
+* number of columns that are required and dictated with the $grid-column-count
+* variable in the _tools.grid.scss file. This is set as 12 by default and I
+* would recommend that you don't go higher than 16 if you really need to alter
+* it.
+* 
+* The .grid__col class also utilises the grid_col @mixin which is also 
+* declared in the _tools.grid.scss file.
+*
 */
 .grid__col {
   display: block;
@@ -547,49 +772,244 @@ Grid Columns
 .grid__col--12-12 {
   width: 100%; }
 
-.pull-right {
-  float: right; }
+/**
+*
+* .grid__push
+* -----------
+* Sometimes you may wish to push elements around a little. This is easier 
+* achieved using the classes below. The .grid__push is similar to the way it
+*  works as the .grid__col class but rather than having the width dictated you 
+* have the margin-left dictated. The class is also set up by utilising the 
+* Sass @for control directive and the $gird-column-count variable. The 
+* grid_push @mixin that helps with this class can also be found in the 
+* _tools.grid.scss file.
+*
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row">
+*         <div class="grid__col grid__col--6-12 grid__push--3-12">
+*             <h3>.grid__col--6-12 pushed by 3-12</h3>
+*         </div>
+*         <div class="grid__col grid__col--3-12">
+*             <h3>.grid__col--3-12</h3>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+.grid__push--1-12 {
+  margin-left: 8.33333%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--1-12 {
+      margin-left: 0; } }
 
-.pull-left {
-  float: right; }
+.grid__push--2-12 {
+  margin-left: 16.66667%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--2-12 {
+      margin-left: 0; } }
 
-.no-gutters {
+.grid__push--3-12 {
+  margin-left: 25%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--3-12 {
+      margin-left: 0; } }
+
+.grid__push--4-12 {
+  margin-left: 33.33333%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--4-12 {
+      margin-left: 0; } }
+
+.grid__push--5-12 {
+  margin-left: 41.66667%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--5-12 {
+      margin-left: 0; } }
+
+.grid__push--6-12 {
+  margin-left: 50%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--6-12 {
+      margin-left: 0; } }
+
+.grid__push--7-12 {
+  margin-left: 58.33333%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--7-12 {
+      margin-left: 0; } }
+
+.grid__push--8-12 {
+  margin-left: 66.66667%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--8-12 {
+      margin-left: 0; } }
+
+.grid__push--9-12 {
+  margin-left: 75%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--9-12 {
+      margin-left: 0; } }
+
+.grid__push--10-12 {
+  margin-left: 83.33333%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--10-12 {
+      margin-left: 0; } }
+
+.grid__push--11-12 {
+  margin-left: 91.66667%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--11-12 {
+      margin-left: 0; } }
+
+.grid__push--12-12 {
+  margin-left: 100%; }
+  @media only screen and (max-width: 400px) {
+    .grid__push--12-12 {
+      margin-left: 0; } }
+
+.grid-box {
+  padding: 20px;
+  padding: 1.25rem;
+  background: #f6f6f6;
+  text-align: center;
+  width: 100%;
+  float: left; }
+
+/**
+*
+* .no-gutters
+* -----------
+* This grid system has some default gutters. This is a common practise but 
+* some designers and front-end developers prefer to use a grid that doesn't
+* have these gutters. To cater for this preference you can use the class below 
+* by adding it to the .grid__row element. This will remove any gutters that 
+* are used on the .grid__col elements that are decendants of that .grid__row 
+* element.
+*
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+*     <div class="grid__row .no-gutters">
+*         <div class="grid__col grid__col--6-12">
+*             <h3>no-gutters on .grid__col</h3>
+*         </div>
+*         <div class="grid__col grid__col--6-12">
+*             <h3>no-gutters on .grid__col</h3>
+*         </div>
+*     </div>
+* </div>
+*
+*/
+.grid__row--no-gutters .grid__col {
   padding: 0; }
 
-img {
-  float: left;
-  max-width: 100%; }
-
-.show-on-phone {
-  display: none; }
-
-@media screen and (max-width: 960px) {
+/**
+*
+* Tablet Styling
+* --------------
+* The frontly grid has some presets for tablets. Below are a number of classes
+* that will enable you to alter the struture of the grid based on the viewport 
+* being at the tablet breakpoint.
+*
+*/
+@media only screen and (min-width: 401px) and (max-width: 959px) {
+  /**
+    *
+    * .full-width-tablet
+    *
+    * You may wish to alter the width of a .grid__col that you have set in 
+    * your grid when it reaches the tablet viewport breakpoint and that's a 
+    * common requirement. The class below caters for this requirement as shown
+    * in the usage example where the .grid__col is set to half width on 
+    * desktop but full width on tablet.
+    *
+    * [!] Usage Example
+    * -----------------
+    * <div class="grid">
+    *     <div class="grid__row .no-gutters">
+    *         <div class="grid__col grid__col--6-12 full-width-tablet">
+    *             <h3>This will be full width on tablet devices</h3>
+    *         </div>
+    *         <div class="grid__col grid__col--6-12 full-width-tablet">
+    *             <h3>This will be full width on tablet devices</h3>
+    *         </div>
+    *     </div>
+    * </div>
+    *
+    */
   .full-width-tablet {
-    width: 100% !important; }
+    width: 100%; }
     .full-width-tablet:first-child {
       padding-right: 0; }
     .full-width-tablet:last-child {
       padding-left: 0; }
 
+  /**
+    *
+    * .half-width-tablet
+    *
+    * You may wish to alter the width of a .grid__col that you have set in 
+    * your grid when it reaches the tablet viewport breakpoint and that's a 
+    * common requirement. The class below caters for this requirement as shown
+    * in the usage example where the .grid__col is set to a third of the  
+    * width on desktop but half width on tablet.
+    *
+    * [!] Usage Example
+    * -----------------
+    * <div class="grid">
+    *     <div class="grid__row .no-gutters">
+    *         <div class="grid__col grid__col--4-12 half-width-tablet">
+    *             <h3>This will be half width on tablet devices</h3>
+    *         </div>
+    *     </div>
+    * </div>
+    *
+    */
   .half-width-tablet {
-    width: 50% !important; }
+    width: 50%; }
 
+  /**
+    *
+    * .align-center-tablet
+    *
+    * You may wish to alter text alignment to be centered on a tablet device.
+    * By using the class below this can be achieved.
+    *
+    * [!] Usage Example
+    * -----------------
+    * <div class="grid">
+    *     <div class="grid__row .no-gutters">
+    *         <div class="grid__col grid__col--6-12 half-width-tablet">
+    *             <h3>This text is centrally aligned on tablet devices</h3>
+    *         </div>
+    *         <div class="grid__col grid__col--6-12 half-width-tablet">
+    *             <h3>This text is centrally aligned on tablet devices</h3>
+    *         </div>
+    *     </div>
+    * </div>
+    *
+    */
   .align-center-tablet {
-    text-align: center !important; }
+    text-align: center; }
  }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 400px) {
   .grid__row {
-    padding-right: emCalc(20px) !important;
-    padding-left: emCalc(20px) !important; }
+    padding-right: 20px;
+    padding-right: 1.25rem;
+    padding-left: 20px;
+    padding-left: 1.25rem; }
 
   .grid__col {
-    width: 100% !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important; }
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0; }
     .grid__col > .grid__row {
-      padding-right: 0 !important;
-      padding-left: 0 !important; }
+      padding-right: 0;
+      padding-left: 0; }
 
   .align-center-phone {
     text-align: center !important; }
@@ -604,7 +1024,7 @@ LISTS
 /*
 Remove all styling from lists by adding the .no-points class below
 */
-.no-points, .list--inline, .list--pills, .list--stacked {
+.list--unstyled, .list--inline, .list--pills, .list--stacked {
   list-style-type: none;
   padding-left: 0; }
 
@@ -639,8 +1059,8 @@ below that can be added by assiging a class.
 .list--pills {
   margin-bottom: 0; }
   .list--pills li a {
-    margin-right: 10px;
-    margin-right: 0.625rem;
+    margin-right: 5px;
+    margin-right: 0.3125rem;
     margin-bottom: 10px;
     margin-bottom: 0.625rem;
     padding: 10px;
@@ -660,7 +1080,7 @@ below that can be added by assiging a class.
   margin-top: 0.3125rem;
   margin-bottom: 5px;
   margin-bottom: 0.3125rem;
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px solid #e5e5e5; }
 .list--stacked .title {
   padding: 5px;
   padding: 0.3125rem;
@@ -678,27 +1098,58 @@ TABLES
 */
 th, td {
   padding: 10px;
-  border: 1px solid #ddd; }
+  border: 1px solid #e5e5e5; }
 
 caption {
   margin-bottom: 10px;
   margin-bottom: 0.625rem; }
 
-.table-wrap {
-  float: left;
-  width: 100%;
-  overflow-x: scroll;
-  box-shadow: inset -10px 0 5px -5px #ddd;
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem; }
-  .table-wrap table {
-    margin-bottom: 0; }
-
 /* 
 ------------
 COMPONENTS.
 ------------ 
+The components files are the UI styling files. You can create UI blocks with more specificty within this collect of files e.g. you may wish to create a new set of buttons for your project. You can either do this by adding a new class within the buttons.scss file or by creating a new file that is for a specific UI component on your website.
+------------
 */
+/* 
+------------
+COMPONENTS.
+BADGES
+------------ 
+*/
+.badge {
+  padding: 5px;
+  padding: 0.3125rem;
+  font-size: 70%;
+  margin-right: 0;
+  font-weight: bold; }
+
+.badge--smooth {
+  border-radius: 5px; }
+
+.badge--rounded {
+  border-radius: 50px; }
+
+.badge--success {
+  background: #68d68d;
+  color: #fff;
+  border: none; }
+
+.badge--error {
+  background: #ff5666;
+  color: #fff;
+  border: none; }
+
+.badge--attention {
+  background: #ff6F59;
+  color: #fff;
+  border: none; }
+
+.badge--neutral {
+  background: #5DA9E9;
+  color: #fff;
+  border: none; }
+
 /* 
 ------------
 COMPONENTS.
@@ -716,22 +1167,6 @@ BUTTONS
 *
 */
 .btn {
-  padding: 10px;
-  padding: 0.625rem;
-  margin-right: 10px;
-  margin-right: 0.625rem;
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
-  border: 1px solid #ddd;
-  -moz-transition: 0.25s;
-  -o-transition: 0.25s;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-  background: #f6f6f6;
-  text-align: center;
-  letter-spacing: 0.05rem;
-  text-decoration: none;
-  display: inline-block;
   float: left; }
   .btn:hover {
     background: #ddd; }
@@ -750,7 +1185,8 @@ BUTTONS
 * physically e.g. the example below sets the button as disabled, preventing a 
 * user from clicking it.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <a class="btn btn--disabled">Button</a>
 *
@@ -774,17 +1210,14 @@ BUTTONS
   padding: 40px;
   padding: 2.5rem; }
 
-.btn--full-width {
+.btn--block {
   width: 100%; }
-
-.btn--smooth {
-  border-radius: 5px; }
 
 .btn--rounded {
   border-radius: 50px; }
 
 .btn--bordered, .btn-group--bordered .btn {
-  background: #fff;
+  background: none;
   border: 3px solid #ddd; }
 
 .btn--disabled {
@@ -804,7 +1237,8 @@ BUTTONS
 * while keeping them within a cluster. This is particularly handy for 
 * pagination.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <div class="btn-group">
 * 	<a class="btn">Button</a>
@@ -834,7 +1268,8 @@ BUTTONS
 * below would provide you with the smooth corners on the .btn-group apposed to 
 * each individual .btn element.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <div class="btn-group btn-group--smooth">
 * 	<a class="btn">Button</a>
@@ -874,14 +1309,15 @@ BUTTONS
 * _settings.colors.scss file and it is recommended that if you wish to create 
 * a custom .btn that you create a variable in that file to call where required.
 *
-* Example:
+* [!] Usage Example
+* -----------------
 *
 * <a class="btn btn--success">Button</a>
 *
 *
 */
 .btn--success {
-  background: #68D68D;
+  background: #68d68d;
   border-color: #40cb6f;
   color: #fff; }
   .btn--success:hover {
@@ -889,15 +1325,15 @@ BUTTONS
     color: #fff; }
 
 .btn--success.btn--bordered, .btn-group--bordered .btn--success.btn, .btn--bordered.btn--success, .btn-group--bordered .btn--success.btn {
-  border-color: #68D68D;
-  color: #68D68D;
+  border-color: #68d68d;
+  color: #68d68d;
   background: none; }
   .btn--success.btn--bordered:hover, .btn-group--bordered .btn--success.btn:hover, .btn--bordered.btn--success:hover, .btn-group--bordered .btn--success.btn:hover {
-    background: #68D68D;
+    background: #68d68d;
     color: #fff; }
 
 .btn--error {
-  background: #FF5666;
+  background: #ff5666;
   border-color: #ff2338;
   color: #fff; }
   .btn--error:hover {
@@ -905,15 +1341,15 @@ BUTTONS
     color: #fff; }
 
 .btn--error.btn--bordered, .btn-group--bordered .btn--error.btn, .btn--bordered.btn--error, .btn-group--bordered .btn--error.btn {
-  border-color: #FF5666;
-  color: #FF5666;
+  border-color: #ff5666;
+  color: #ff5666;
   background: none; }
   .btn--error.btn--bordered:hover, .btn-group--bordered .btn--error.btn:hover, .btn--bordered.btn--error:hover, .btn-group--bordered .btn--error.btn:hover {
-    background: #FF5666;
+    background: #ff5666;
     color: #fff; }
 
 .btn--attention {
-  background: #FF6F59;
+  background: #ff6F59;
   border-color: #ff4326;
   color: #fff; }
   .btn--attention:hover {
@@ -921,11 +1357,27 @@ BUTTONS
     color: #fff; }
 
 .btn--attention.btn--bordered, .btn-group--bordered .btn--attention.btn, .btn--bordered.btn--attention, .btn-group--bordered .btn--attention.btn {
-  border-color: #FF6F59;
-  color: #FF6F59;
+  border-color: #ff6F59;
+  color: #ff6F59;
   background: none; }
   .btn--attention.btn--bordered:hover, .btn-group--bordered .btn--attention.btn:hover, .btn--bordered.btn--attention:hover, .btn-group--bordered .btn--attention.btn:hover {
-    background: #FF6F59;
+    background: #ff6F59;
+    color: #fff; }
+
+.btn--neutral {
+  background: #5DA9E9;
+  border-color: #3091e3;
+  color: #fff; }
+  .btn--neutral:hover {
+    background: #3091e3;
+    color: #fff; }
+
+.btn--neutral.btn--bordered, .btn-group--bordered .btn--neutral.btn, .btn--bordered.btn--neutral, .btn-group--bordered .btn--neutral.btn {
+  border-color: #5DA9E9;
+  color: #5DA9E9;
+  background: none; }
+  .btn--neutral.btn--bordered:hover, .btn-group--bordered .btn--neutral.btn:hover, .btn--bordered.btn--neutral:hover, .btn-group--bordered .btn--neutral.btn:hover {
+    background: #5DA9E9;
     color: #fff; }
 
 /* 
@@ -940,7 +1392,7 @@ DROPDOWNS
   background: #ddd; }
 .frontly-dropdown ul {
   width: 200px;
-  border: 1px solid #ddd; }
+  border: 1px solid #e5e5e5; }
   .frontly-dropdown ul li a {
     padding: 10px;
     width: 100%;
@@ -964,9 +1416,6 @@ FRONTLY FORM
 ------------ 
 */
 .frontly-form {
-  background: #f6f6f6;
-  padding: 20px;
-  padding: 1.25rem;
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
   float: left;
@@ -982,33 +1431,178 @@ FRONTLY FORM
     float: right; }
 
 .frontly-form input:not([type="submit"]), .frontly-form textarea, .frontly-form select {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   padding: 10px;
   padding: 0.625rem;
-  margin-bottom: 5px;
-  margin-bottom: 0.3125rem;
-  border-radius: 5px;
-  background: #fff;
-  float: left;
-  position: relative;
   -moz-transition: all ease 0.25s;
   -o-transition: all ease 0.25s;
   -webkit-transition: all ease 0.25s;
-  transition: all ease 0.25s; }
+  transition: all ease 0.25s;
+  background: #fff;
+  float: left;
+  position: relative; }
+  .frontly-form input:not([type="submit"]):hover, .frontly-form textarea:hover, .frontly-form select:hover {
+    border-color: #a2a2a2; }
+  .frontly-form input:not([type="submit"]):focus, .frontly-form textarea:focus, .frontly-form select:focus {
+    outline: none;
+    border-color: #222; }
 
-.frontly-form--inline input {
-  display: inline-block;
-  float: none;
-  width: auto; }
+.frontly-form select {
+  width: 100%; }
+
+.frontly-form--padded {
+  background: #f6f6f6;
+  padding: 20px;
+  padding: 1.25rem; }
+
+.frontly-form .grid__col {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.frontly-form__group {
+  display: block;
+  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.frontly-form__group--underlined {
+  border-bottom: 1px solid #e5e5e5; }
+
+/**
+* Frontly Form - Checkbox & Radio Buttons
+* ---------------------------------------
+*
+* The Frontly form comes with some custom checkbox & radio button styling.
+* These styles utilise the :check psuedo element and as Frontly is intended to 
+* support IE8 the styling is dependant on the use of the Selectivizr script 
+* which is included in the Frontly HTML template so make sure that this is 
+* included if you aren't using the Frontly HTML template file.
+*
+*
+* [!] Usage Example
+* -----------------
+* <div class="grid">
+* <fieldset class="frontly-form__checkbox">
+*     <legend>Example Checkbox</legend>
+*     <input type="checkbox" id="check1-1" checked="checked">
+*     <label for="check1-1">Checkboxes</label>
+* </fieldset>
+*
+*/
+.frontly-form__checkbox input[type="checkbox"], .frontly-form__radio input[type="radio"] {
+  position: absolute;
+  left: -200%; }
+
+/**
+* Checkboxes
+* ----------
+*/
+.frontly-form__checkbox input[type="checkbox"] + label {
+  margin-right: 10px;
+  margin-right: 0.625rem;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  width: auto;
+  position: relative; }
+  .frontly-form__checkbox input[type="checkbox"] + label:before {
+    font-family: 'fontawesome';
+    content: '\f096';
+    position: absolute;
+    left: 0;
+    top: 0;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    color: #a2a2a2; }
+  .frontly-form__checkbox input[type="checkbox"] + label:hover {
+    border-color: #a2a2a2; }
+    .frontly-form__checkbox input[type="checkbox"] + label:hover:before {
+      color: #a2a2a2; }
+
+.frontly-form__checkbox input[type="checkbox"]:checked + label:before {
+  content: '\f046';
+  color: #222; }
+
+.frontly-form__checkbox--btn input[type="checkbox"] + label {
+  padding-left: 35px;
+  padding-left: 2.1875rem;
+  background: #fff; }
+  .frontly-form__checkbox--btn input[type="checkbox"] + label:before {
+    font-family: 'fontawesome';
+    content: '\f096';
+    position: absolute;
+    left: 10px;
+    top: 10px; }
+
+.frontly-form__checkbox--btn input[type="checkbox"]:checked + label {
+  border-color: #222; }
+
+.frontly-form__checkbox--btn input[type="checkbox"]:checked + label:before {
+  color: #222; }
+
+/**
+* Radio Buttons
+* -------------
+*/
+.frontly-form__radio input[type="radio"] + label {
+  margin-right: 10px;
+  margin-right: 0.625rem;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  width: auto;
+  position: relative;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s; }
+  .frontly-form__radio input[type="radio"] + label:before {
+    font-family: 'fontawesome';
+    content: '\f10c';
+    width: 15px;
+    width: 0.9375rem;
+    height: 15px;
+    height: 0.9375rem;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    color: #a2a2a2; }
+
+.frontly-form__radio input[type="radio"]:checked + label:before {
+  content: '\f192';
+  color: #222; }
+
+.frontly-form__radio--btn input[type="radio"] + label {
+  padding-left: 35px;
+  padding-left: 2.1875rem;
+  background: #fff; }
+  .frontly-form__radio--btn input[type="radio"] + label:before {
+    font-family: 'fontawesome';
+    content: '\f10c';
+    width: 15px;
+    width: 0.9375rem;
+    height: 15px;
+    height: 0.9375rem;
+    position: absolute;
+    left: 10px;
+    top: 10px; }
+  .frontly-form__radio--btn input[type="radio"] + label:hover {
+    border-color: #a2a2a2; }
+
+.frontly-form__radio--btn input[type="radio"]:checked + label {
+  border-color: #222; }
+
+.frontly-form__radio--btn input[type="radio"]:checked + label:before {
+  color: #222; }
 
 /**
 *
 * Frontly Form - Search
-*
-* Some input fields have a specific input type. You can specify the data that
-* you wish the user to input using the label tag but you can accompany this 
-* with an input prepend or append. Below there are a number of classes that
-* enable you to assign a prepend or append icon to the input fields to help
-* users identify what is required.
 *
 * [!] Usage Example
 * -----------------
@@ -1021,17 +1615,15 @@ FRONTLY FORM
 *
 *
 */
-.frontly-form .frontly-form__search {
-  width: 100%;
+.frontly-form.frontly-form--inline {
   float: left; }
-  .frontly-form .frontly-form__search input {
-    width: 75%;
-    border-radius: 5px 0 0 5px; }
-  .frontly-form .frontly-form__search button, .frontly-form .frontly-form__search .btn {
+  .frontly-form.frontly-form--inline .frontly-form__append, .frontly-form.frontly-form--inline .frontly-form__prepend {
+    width: auto;
+    margin-right: 5px; }
+  .frontly-form.frontly-form--inline button, .frontly-form.frontly-form--inline .btn {
     margin: 0;
     float: left;
-    width: 25%;
-    border-radius: 0 5px 5px 0;
+    width: 15%;
     border-left: 0; }
 
 /**
@@ -1063,10 +1655,11 @@ FRONTLY FORM
     font-family: "fontawesome";
     color: #ddd;
     position: absolute;
-    top: 10px;
+    top: 12px;
     left: 10px; }
   .frontly-form .frontly-form__prepend input {
-    padding-left: 30px; }
+    padding-left: 30px;
+    padding-left: 1.875rem; }
 
 .frontly-form .frontly-form__append {
   position: relative;
@@ -1076,10 +1669,11 @@ FRONTLY FORM
     font-family: "fontawesome";
     color: #ddd;
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 10px; }
   .frontly-form .frontly-form__append input {
-    padding-right: 30px; }
+    padding-right: 30px;
+    padding-right: 1.875rem; }
 
 .frontly-form__append--address:after, .frontly-form__prepend--address:after {
   content: '\f041'; }
@@ -1117,20 +1711,17 @@ COMPONENTS.
 FRONTLY NAV
 ------------ 
 */
-/* 
-.frontly-nav 
------------- 
+/** 
+* .frontly-nav 
+* ------------ 
 * This is the default navigation block of the frontly framework.
 * The colors that are set for the default browser are set in the 
 * settings.colors.scss file and assigned to $nav-clr.
 * 
 */
 .frontly-nav {
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
   float: left;
-  width: 100%;
-  background: #f6f6f6; }
+  width: 100%; }
   .frontly-nav ul {
     margin: 0;
     padding: 0;
@@ -1144,13 +1735,12 @@ FRONTLY NAV
     float: left; }
     @media only screen and (max-width: 400px) {
       .frontly-nav ul li {
-        width: 100%; } }
+        width: 100%;
+        border-top: 1px solid #e5e5e5; } }
   .frontly-nav ul li a, .frontly-nav a {
     padding: 10px;
     padding: 0.625rem;
-    font-size: 16px;
-    font-size: 1rem;
-    color: #909090;
+    color: #222;
     display: block;
     float: left;
     text-decoration: none;
@@ -1164,9 +1754,9 @@ FRONTLY NAV
         .frontly-nav ul li a.frontly-nav__menu-link, .frontly-nav a.frontly-nav__menu-link {
           width: auto; } }
     .frontly-nav ul li a:hover, .frontly-nav a:hover {
-      background: #c3c3c3; }
+      background: #e5e5e5; }
   .frontly-nav .frontly-dropdown:hover > a {
-    background: #c3c3c3; }
+    background: #e5e5e5; }
   .frontly-nav .frontly-dropdown a {
     padding-right: 20px; }
   @media only screen and (max-width: 400px) {
@@ -1174,80 +1764,92 @@ FRONTLY NAV
       display: none; }
  }
   .frontly-nav .frontly-dropdown ul {
-    -moz-transition: all ease 2s;
-    -o-transition: all ease 2s;
-    -webkit-transition: all ease 2s;
-    transition: all ease 2s;
+    -moz-transition: all ease 0.25s;
+    -o-transition: all ease 0.25s;
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
     top: 36px;
     border: none;
-    background: #d0d0d0; }
+    background: #f6f6f6; }
     @media only screen and (max-width: 400px) {
       .frontly-nav .frontly-dropdown ul {
         display: none; } }
     .frontly-nav .frontly-dropdown ul li:hover > a {
-      background: #c3c3c3; }
+      background: #e5e5e5; }
   .frontly-nav .frontly-dropdown a {
     padding-right: 20px;
     padding-right: 1.25rem; }
   .frontly-nav .frontly-dropdown:after {
     right: 5px;
     top: 35%;
-    color: #909090; }
+    color: #888888; }
 
-.frontly-nav--basic {
-  background: none; }
-  .frontly-nav--basic ul li a, .frontly-nav--basic a {
-    padding: 10px;
-    padding: 0.625rem;
-    font-size: 16px;
-    font-size: 1rem;
-    color: #222;
-    display: block;
-    float: left;
-    text-decoration: none;
-    -moz-transition: all ease 0.25s;
-    -o-transition: all ease 0.25s;
-    -webkit-transition: all ease 0.25s;
-    transition: all ease 0.25s; }
-    .frontly-nav--basic ul li a:hover, .frontly-nav--basic a:hover {
-      background: #c3c3c3; }
-
-/* 
-.frontly-nav--branded 
---------------------- 
-The branded frontly nav is a great way to incorporate your brands colors into
-the naviagtions style. It utilises the $brand-clr variable that is set in the
-setting.colors.scss file.
+/** 
+* .frontly-nav--branded 
+* --------------------- 
+* The branded frontly nav is a great way to incorporate your brands colors into
+* the naviagtions style. It utilises the $brand-clr variable that is set in the
+* setting.colors.scss file.
+*
 */
-.frontly-nav--branded {
-  background: #ED4466; }
-  .frontly-nav--branded ul li a, .frontly-nav--branded a {
-    color: #5c091a; }
-    .frontly-nav--branded ul li a:hover, .frontly-nav--branded a:hover {
-      background: #b91233; }
-  .frontly-nav--branded .frontly-dropdown:hover > a {
-    background: #b91233; }
-  .frontly-nav--branded .frontly-dropdown ul {
-    background: #d0143a; }
-    .frontly-nav--branded .frontly-dropdown ul li:hover > a {
-      background: #b91233; }
-  .frontly-nav--branded .frontly-dropdown:after {
-    color: #5c091a; }
-
-.frontly-nav--big ul li a, .frontly-nav--big .frontly-nav__text, .frontly-nav--big a {
+.frontly-nav--big ul li a, .frontly-nav--big a {
   padding: 20px;
   padding: 1.25rem; }
+.frontly-nav--big .frontly-nav__text {
+  padding-top: 20px;
+  padding-top: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem; }
 .frontly-nav--big .frontly-dropdown:after {
   right: 20px;
   top: 40%; }
 .frontly-nav--big .frontly-dropdown a {
   padding-right: 40px; }
 .frontly-nav--big .frontly-dropdown ul {
-  top: 56px; }
+  top: 56px;
+  top: 3.5rem; }
 
-/* 
-.frontly-nav--right
---------------------- 
+/** 
+* .frontly-nav--bordered
+* ---------------------- 
+* Should you wish to use a right aligned list in your navigation, this helper 
+* class enables you to do that. By assigning it to the <ul> tag you are able 
+* to pull it to the right of the frontly nav.
+* 
+*/
+.frontly-nav--bordered {
+  border: 3px solid #e5e5e5; }
+
+.frontly-nav--thin-bordered {
+  border: 1px solid #e5e5e5; }
+
+.frontly-nav.frontly-nav--bordered .frontly-nav__text, .frontly-nav.frontly-nav--thin-bordered .frontly-nav__text {
+  margin-left: 10px;
+  margin-left: 0.625rem; }
+
+.frontly-nav--big.frontly-nav--bordered .frontly-nav__text, .frontly-nav--big.frontly-nav--thin-bordered .frontly-nav__text {
+  margin-left: 20px;
+  margin-left: 1.25rem; }
+
+/** 
+* .frontly-nav--underlined
+* ------------------------ 
+* Should you wish to use a right aligned list in your navigation, this helper 
+* class enables you to do that. By assigning it to the <ul> tag you are able 
+* to pull it to the right of the frontly nav.
+* 
+*/
+.frontly-nav--underlined {
+  border-bottom: 3px solid #e5e5e5; }
+
+.frontly-nav--thin-underlined {
+  border-bottom: 1px solid #e5e5e5; }
+
+/** 
+* .frontly-nav--right
+* ------------------- 
 * Should you wish to use a right aligned list in your navigation, this helper 
 * class enables you to do that. By assigning it to the <ul> tag you are able 
 * to pull it to the right of the frontly nav.
@@ -1262,9 +1864,9 @@ ul.frontly-nav--right {
   .frontly-nav--right .frontly-dropdown ul li:hover ul {
     left: -100%; }
 
-/* 
-.frontly-nav__text
----------------------
+/** 
+* .frontly-nav__text
+* ------------------
 * A navigation may sometimes require a bit of text that isn't wrapped in an <a>
 * tag. This class enables you to do just that.
 * 
@@ -1274,8 +1876,12 @@ ul.frontly-nav--right {
   width: auto;
   margin: 0;
   font-size: 16px;
-  padding: 10px;
-  padding: 0.625rem;
+  padding-top: 10px;
+  padding-top: 0.625rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
   line-height: 16px;
   line-height: 1rem; }
 
@@ -1324,17 +1930,18 @@ PANELS
   width: 100%;
   float: left;
   clear: both;
-  border: 1px solid #ddd;
-  padding: 10px;
-  padding: 0.625rem;
+  border: 1px solid #e5e5e5;
+  background: #f6f6f6;
+  padding: 20px;
+  padding: 1.25rem;
   margin-bottom: 10px;
   margin-bottom: 0.625rem; }
   .panel > * {
     margin: 0; }
 
-.panel--mid {
-  padding: 20px;
-  padding: 1.25rem; }
+.panel--small {
+  padding: 10px;
+  padding: 0.625rem; }
 
 .panel--large {
   padding: 40px;
@@ -1345,20 +1952,26 @@ PANELS
   border: none;
   color: #fff; }
 
+.panel--hollow {
+  background: none; }
+
 .panel--error {
-  background: #FF5666;
+  background: #ff5666;
   border: none;
   color: #fff; }
 
 .panel--attention {
-  background: #FF6F59;
+  background: #ff6F59;
   border: none;
   color: #fff; }
 
 .panel--success {
-  background: #68D68D;
+  background: #68d68d;
   border: none;
   color: #fff; }
+
+.panel--smooth {
+  border-radius: 5px; }
 
 .panel--can-close {
   position: relative; }
@@ -1383,40 +1996,241 @@ TABLES
 .striped-table--branded tbody tr:nth-child(odd) {
   background: #fad0d8; }
 
+.table-wrap {
+  float: left;
+  width: 100%;
+  overflow-x: scroll;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+  .table-wrap table {
+    margin-bottom: 0; }
+
+/* 
+------------
+COMPONENTS.
+TOOLTIPS
+------------ 
+*/
+.has-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #a2a2a2; }
+  .has-tooltip:hover {
+    cursor: help; }
+    .has-tooltip:hover .tooltip, .has-tooltip:hover .tooltip--bottom {
+      display: block; }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  text-align: center;
+  bottom: 130%;
+  left: 0;
+  padding: 5px;
+  background: #bbb;
+  width: 100%; }
+  .tooltip:after {
+    font-size: 24px;
+    font-size: 1.5rem;
+    bottom: -13px;
+    position: absolute;
+    content: '\25be';
+    color: #bbb;
+    left: 45%;
+    line-height: 1; }
+
+.tooltip--bottom {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 150%;
+  left: 0;
+  padding: 5px;
+  background: #bbb;
+  border-radius: 5px;
+  width: 100%; }
+  .tooltip--bottom:after {
+    font-size: 36px;
+    font-size: 2.25rem;
+    top: -23px;
+    position: absolute;
+    content: '\25b4';
+    color: #bbb;
+    left: 45%;
+    line-height: 1; }
+
+.tooltip--error {
+  background: #ff5666;
+  color: #fff; }
+  .tooltip--error:after {
+    color: #ff5666; }
+
+.tooltip--attention {
+  background: #ff6F59;
+  color: #fff; }
+  .tooltip--attention:after {
+    color: #ff6F59; }
+
+.tooltip--success {
+  background: #68d68d;
+  color: #fff; }
+  .tooltip--success:after {
+    color: #68d68d; }
+
+.tooltip--neutral {
+  background: #5DA9E9;
+  color: #fff; }
+  .tooltip--neutral:after {
+    color: #5DA9E9; }
+
 /* 
 ------------
 VETOS.
+------------
+The vetos files, a.k.a the naughty files, consist of the additional overriding classes that you may need to utilise or add should you need a specific class changed based on a certain sitiation e.g. you can utilise the .float--right veto class to float a .btn element to the right within having to create a 
+.btn--right class and causing duplication of a styling method.
 ------------ 
 */
-/* ------------ *\
-	HELPERS
-\* ------------ */
-.pull--left {
+/* 
+------------
+VETOS.
+HELPERS
+
+a.k.a
+THE 
+GUILTY FILE
+------------ 
+*/
+/**
+*
+* This is the guilty file that keeps all the little helper classes contained.
+* These classes enable you to override any pre-existing styling where required.
+*
+* They shouldn't be used where the styling can be added to an element within a 
+* css file but we all know that we don't live in an ideal world and quick 
+* protoyping can be important, so adding a little classes temporarily can be 
+* useful.
+*
+*/
+/**
+*
+* Floats
+* ----------
+* Floating elements should be set within your CSS but this can't always be 
+* possible. The classes below enable you to set the float of an element.
+* 
+*/
+.float--left {
   float: left !important; }
 
-.pull--right {
+.float--right {
   float: right !important; }
 
-.weight--light {
+.float--none {
+  float: none !important; }
+
+/**
+*
+* Margins & Padding
+* -----------------
+* Floating elements should be set within your CSS but this can't always be 
+* possible. The classes below enable you to set the float of an element.
+* 
+*/
+/**
+* Directions Sass List
+*/
+/**
+* Margins
+*/
+.push--top {
+  margin-top: 10px;
+  margin-top: 0.625rem; }
+
+.push--right {
+  margin-right: 10px;
+  margin-right: 0.625rem; }
+
+.push--bottom {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+
+.push--left {
+  margin-left: 10px;
+  margin-left: 0.625rem; }
+
+/**
+* Padding
+*/
+.pad--top {
+  padding-top: 10px;
+  padding-top: 0.625rem; }
+
+.pad--right {
+  padding-right: 10px;
+  padding-right: 0.625rem; }
+
+.pad--bottom {
+  padding-bottom: 10px;
+  padding-bottom: 0.625rem; }
+
+.pad--left {
+  padding-left: 10px;
+  padding-left: 0.625rem; }
+
+/**
+*
+* Font Weights
+* ------------
+* The font weight over classes below can sometimes become quite useful, as 
+* shown in the example below:
+*
+* [!] Usage Example
+* -----------------
+* <h1>Font Weight <span class="font-weight--normal">override</span></h1>
+* 
+*/
+.font-weight--light {
   font-weight: 100 !important; }
 
-.weight--normal {
+.font-weight--normal {
   font-weight: 400 !important; }
 
-.weight--heavy {
+.font-weight--heavy {
   font-weight: 700 !important; }
 
+/**
+*
+* Hidding Elements
+* ----------------
+* Hiding elements can be useful when working with a repsonsive design. It 
+* enables you to add and remove elements depending on the viewport easily.
+* The classes below enable you to do just that, as shown in the example below:
+*
+* [!] Usage Example
+* -----------------
+* <div class="hidden display--tablet">
+*     <p>Hey, you can only see me on a tablet device!</p>
+* </div>
+* 
+*/
 .hidden {
   display: none !important; }
 
+/**
+* Hide or display elements on tablet devices
+*/
 @media only screen and (min-width: 401px) and (max-width: 959px) {
   .display--tablet {
     display: block !important; }
 
-  .hidden--talet {
+  .hidden--tablet {
     display: none !important; }
  }
 
+/**
+* Hide or display elements on mobile devices
+*/
 @media only screen and (max-width: 400px) {
   .display--mobile {
     display: block !important; }
@@ -1424,6 +2238,3 @@ VETOS.
   .hidden--mobile {
     display: none !important; }
  }
-
-.active {
-  color: green; }
