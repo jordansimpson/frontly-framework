@@ -1,9 +1,9 @@
-/* 
-------------
-TOOLS.
-MIXINS
------------- 
-*/
+// /* 
+// ------------
+// TOOLS.
+// MIXINS
+// ------------ 
+// */
 
 // As I don't include Compass in my framework I like to keep 
 // a few mixins around to help with my workflow. 
@@ -93,40 +93,39 @@ MIXINS
     filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-/**
-* Media Query mixins
-*
-* Usage example:
-* .class{
-*   width: 25%;
-*   @include respond-to(tablet){
-*       width: 50%; 
-*   }
-*   @include respond-to(mobile){
-*       width: 100%;    
-*   }
-* }
-*  
-*/
+// /**
+// * Media Query mixins
+// *
+// * Usage example:
+// * .class{
+// *   width: 25%;
+// *   @include respond-to(tablet){
+// *       width: 50%; 
+// *   }
+// *   @include respond-to(mobile){
+// *       width: 100%;    
+// *   }
+// * }
+// *  
+// */
 
 @mixin respond-to($media) {
-    @if $media == mobile{
+    @if $media == x-small-screen{
         @media only screen 
-        and (max-width: $break-small)
+        and (max-width: $break-xsmall)
         { @content; }
     }
-    @if $media == tablet{
-        @media only screen 
-        and (min-width: $break-small + 1) 
-        and (max-width: $break-large - 1)
+    @if $media == small-screen{
+        @media only screen  
+        and (max-width: $break-small - 1)
         { @content; }
     }
-    @if $media == tablet-and-below{
+    @if $media == medium-screen{
         @media only screen 
-        and (max-width: $break-large - 1)
+        and (max-width: $break-medium - 1)
         { @content; }
     }
-    @if $media == wide-screen{
+    @if $media == large-screen{
         @media only screen 
         and (min-width: $break-large)
         { @content; }
@@ -144,31 +143,24 @@ MIXINS
     }
 }
 
-/**
-*
-* PLACEHOLDERS
-*
-* If you are new to Sass then you may not know what placeholders are so below
-* is a basis overview. 
-*
-* A placeholder is something that can be utilised with the @extend directive 
-* and extends pre-existing styling within a new class. This can be done using 
-* a class (@extend .class) but this can have sometimes not give the affect you 
-* wanted in the output.
-*
-* If you wish to find out more I recommend visiting the
-* sass way website - 
-* http://thesassway.com/intermediate/understanding-placeholder-selectors
-*
-*/
+///**
+// *
+// * PLACEHOLDERS
+// *
+// * If you are new to Sass then you may not know what placeholders are so
+// * below is a basis overview. 
+// *
+// * A placeholder is something that can be utilised with the @extend directive
+// * and extends pre-existing styling within a new class. This can be done
+// * using a class (@extend .class) but this can have sometimes not give the 
+// * affect you wanted in the output.
+// *
+// * If you wish to find out more I recommend visiting the sass way website -
+// * http://thesassway.com/intermediate/understanding-placeholder-selectors
+// *
+// */
 
-/**
-*
-* %btn placholder
-*
-* This placeholder provides a basis button styling to an <a> tag.
-*
-*/
+// %btn placholder
 
 %btn{
     @include remCalc(padding, 10px);
@@ -178,18 +170,16 @@ MIXINS
     @include transition(.25s);
     background: #f6f6f6;
     text-align: center;
+    vertical-align: middle;
     letter-spacing: .05rem;
     text-decoration: none;
     display: inline-block;
 }
 
-/**
-*
-* %smooth placholder
-*
-* This placeholder provides a smoother corner effect.
-*
-*/
+
+// %smooth placholder
+//
+// This placeholder provides a smoother corner effect.
 
 %smooth{
     border-radius: 5px;

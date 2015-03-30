@@ -22,7 +22,7 @@ FRONTLY NAV
 		margin: 0;
 		padding: 0;
 		float: left;
-		@include respond-to(mobile){
+		@include respond-to(small-screen){
 			width: 100%;
 			display: none;
 		}
@@ -30,7 +30,7 @@ FRONTLY NAV
 	ul li{
 		display: block;
 		float: left;
-		@include respond-to(mobile){
+		@include respond-to(small-screen){
 			width: 100%;
 			border-top: 1px solid $nav-border-clr;
 		}
@@ -42,7 +42,7 @@ FRONTLY NAV
 		float: left;
 		text-decoration: none;
 		@include transition(all ease 0.25s);
-		@include respond-to(mobile){
+		@include respond-to(small-screen){
 			width: 100%;
 			&.frontly-nav__menu-link{
 				width: auto;
@@ -59,7 +59,7 @@ FRONTLY NAV
 		a{
 			padding-right: $spacer--dbl;
 		}
-		@include respond-to(mobile){
+		@include respond-to(small-screen){
 			&:after{
 				display: none;
 			}
@@ -70,7 +70,7 @@ FRONTLY NAV
 		top: 36px;
 		border: none;
 		background: $nav-clr;
-		@include respond-to(mobile){
+		@include respond-to(small-screen){
 			display: none;
 		}
 		li:hover > a{

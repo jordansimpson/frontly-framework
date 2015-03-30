@@ -84,7 +84,8 @@ below that can be added by assiging a class.
 		border-bottom: 1px solid $border-clr;
 	}
 	.title{
-		@include remCalc(padding, $spacer--small);
+		@include remCalc(padding-top, $spacer--small);
+		@include remCalc(padding-bottom, $spacer--small);
 		@include remCalc(font-size, $epsilon);
 		text-transform: uppercase;
 		letter-spacing: 0.15;

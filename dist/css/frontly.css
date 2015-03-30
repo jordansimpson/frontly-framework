@@ -82,51 +82,6 @@ GRID
 *
 *
 */
-/* 
-------------
-TOOLS.
-MIXINS
------------- 
-*/
-/**
-* Media Query mixins
-*
-* Usage example:
-* .class{
-*   width: 25%;
-*   @include respond-to(tablet){
-*       width: 50%; 
-*   }
-*   @include respond-to(mobile){
-*       width: 100%;    
-*   }
-* }
-*  
-*/
-/**
-*
-* PLACEHOLDERS
-*
-* If you are new to Sass then you may not know what placeholders are so below
-* is a basis overview. 
-*
-* A placeholder is something that can be utilised with the @extend directive 
-* and extends pre-existing styling within a new class. This can be done using 
-* a class (@extend .class) but this can have sometimes not give the affect you 
-* wanted in the output.
-*
-* If you wish to find out more I recommend visiting the
-* sass way website - 
-* http://thesassway.com/intermediate/understanding-placeholder-selectors
-*
-*/
-/**
-*
-* %btn placholder
-*
-* This placeholder provides a basis button styling to an <a> tag.
-*
-*/
 .badge, .btn, .frontly-form__checkbox--btn input[type="checkbox"] + label, .frontly-form__radio--btn input[type="radio"] + label {
   padding: 10px;
   padding: 0.625rem;
@@ -141,17 +96,11 @@ MIXINS
   transition: 0.25s;
   background: #f6f6f6;
   text-align: center;
+  vertical-align: middle;
   letter-spacing: 0.05rem;
   text-decoration: none;
   display: inline-block; }
 
-/**
-*
-* %smooth placholder
-*
-* This placeholder provides a smoother corner effect.
-*
-*/
 .grid-box, .btn--smooth, .frontly-form--smooth input:not([type="submit"]), .frontly-form--smooth textarea, .frontly-form--smooth select, .frontly-form__checkbox--btn input[type="checkbox"] + label, .frontly-form__radio--btn input[type="radio"] + label, .tooltip {
   border-radius: 5px; }
 
@@ -677,7 +626,7 @@ GRID
 
 .grid__row--tiled-2-col .grid__col:last-child:nth-child(odd) {
   padding-right: 10px !important; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__row--tiled-2-col .grid__col:last-child:nth-child(odd) {
       padding-right: 0 !important; } }
 
@@ -694,7 +643,7 @@ GRID
 
 .grid__row--tiled-3-col .grid__col:last-child:nth-child(odd):not(.grid_col:nth-child(3n)) {
   padding-right: 10px !important; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__row--tiled-3-col .grid__col:last-child:nth-child(odd):not(.grid_col:nth-child(3n)) {
       padding-right: 0 !important; } }
 
@@ -711,7 +660,7 @@ GRID
 
 .grid__row--tiled-4-col .grid__col:last-child:nth-child(odd) {
   padding-right: 10px !important; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__row--tiled-4-col .grid__col:last-child:nth-child(odd) {
       padding-right: 0 !important; } }
 
@@ -774,6 +723,138 @@ GRID
 
 /**
 *
+* .grid__col--(medium-screen)
+* ---------------------------
+*
+*/
+@media only screen and (max-width: 959px) {
+  .grid__col--md-1-12 {
+    width: 8.33333%; }
+
+  .grid__col--md-2-12 {
+    width: 16.66667%; }
+
+  .grid__col--md-3-12 {
+    width: 25%; }
+
+  .grid__col--md-4-12 {
+    width: 33.33333%; }
+
+  .grid__col--md-5-12 {
+    width: 41.66667%; }
+
+  .grid__col--md-6-12 {
+    width: 50%; }
+
+  .grid__col--md-7-12 {
+    width: 58.33333%; }
+
+  .grid__col--md-8-12 {
+    width: 66.66667%; }
+
+  .grid__col--md-9-12 {
+    width: 75%; }
+
+  .grid__col--md-10-12 {
+    width: 83.33333%; }
+
+  .grid__col--md-11-12 {
+    width: 91.66667%; }
+
+  .grid__col--md-12-12 {
+    width: 100%; }
+ }
+
+/**
+*
+* .grid__col--(small-screen)
+* ---------------------------
+*
+*/
+@media only screen and (max-width: 749px) {
+  .grid__col--sm-1-12 {
+    width: 8.33333%; }
+
+  .grid__col--sm-2-12 {
+    width: 16.66667%; }
+
+  .grid__col--sm-3-12 {
+    width: 25%; }
+
+  .grid__col--sm-4-12 {
+    width: 33.33333%; }
+
+  .grid__col--sm-5-12 {
+    width: 41.66667%; }
+
+  .grid__col--sm-6-12 {
+    width: 50%; }
+
+  .grid__col--sm-7-12 {
+    width: 58.33333%; }
+
+  .grid__col--sm-8-12 {
+    width: 66.66667%; }
+
+  .grid__col--sm-9-12 {
+    width: 75%; }
+
+  .grid__col--sm-10-12 {
+    width: 83.33333%; }
+
+  .grid__col--sm-11-12 {
+    width: 91.66667%; }
+
+  .grid__col--sm-12-12 {
+    width: 100%; }
+ }
+
+/**
+*
+* .grid__col--(x-small-screen)
+* ---------------------------
+*
+*/
+@media only screen and (max-width: 400px) {
+  .grid__col--xsm-1-12 {
+    width: 8.33333%; }
+
+  .grid__col--xsm-2-12 {
+    width: 16.66667%; }
+
+  .grid__col--xsm-3-12 {
+    width: 25%; }
+
+  .grid__col--xsm-4-12 {
+    width: 33.33333%; }
+
+  .grid__col--xsm-5-12 {
+    width: 41.66667%; }
+
+  .grid__col--xsm-6-12 {
+    width: 50%; }
+
+  .grid__col--xsm-7-12 {
+    width: 58.33333%; }
+
+  .grid__col--xsm-8-12 {
+    width: 66.66667%; }
+
+  .grid__col--xsm-9-12 {
+    width: 75%; }
+
+  .grid__col--xsm-10-12 {
+    width: 83.33333%; }
+
+  .grid__col--xsm-11-12 {
+    width: 91.66667%; }
+
+  .grid__col--xsm-12-12 {
+    width: 100%; }
+ }
+
+/**
+*
 * .grid__push
 * -----------
 * Sometimes you may wish to push elements around a little. This is easier 
@@ -800,73 +881,73 @@ GRID
 */
 .grid__push--1-12 {
   margin-left: 8.33333%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--1-12 {
       margin-left: 0; } }
 
 .grid__push--2-12 {
   margin-left: 16.66667%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--2-12 {
       margin-left: 0; } }
 
 .grid__push--3-12 {
   margin-left: 25%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--3-12 {
       margin-left: 0; } }
 
 .grid__push--4-12 {
   margin-left: 33.33333%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--4-12 {
       margin-left: 0; } }
 
 .grid__push--5-12 {
   margin-left: 41.66667%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--5-12 {
       margin-left: 0; } }
 
 .grid__push--6-12 {
   margin-left: 50%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--6-12 {
       margin-left: 0; } }
 
 .grid__push--7-12 {
   margin-left: 58.33333%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--7-12 {
       margin-left: 0; } }
 
 .grid__push--8-12 {
   margin-left: 66.66667%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--8-12 {
       margin-left: 0; } }
 
 .grid__push--9-12 {
   margin-left: 75%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--9-12 {
       margin-left: 0; } }
 
 .grid__push--10-12 {
   margin-left: 83.33333%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--10-12 {
       margin-left: 0; } }
 
 .grid__push--11-12 {
   margin-left: 91.66667%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--11-12 {
       margin-left: 0; } }
 
 .grid__push--12-12 {
   margin-left: 100%; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .grid__push--12-12 {
       margin-left: 0; } }
 
@@ -915,7 +996,7 @@ GRID
 * being at the tablet breakpoint.
 *
 */
-@media only screen and (min-width: 401px) and (max-width: 959px) {
+@media only screen and (max-width: 959px) {
   /**
     *
     * .full-width-tablet
@@ -996,7 +1077,7 @@ GRID
     text-align: center; }
  }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 749px) {
   .grid__row {
     padding-right: 20px;
     padding-right: 1.25rem;
@@ -1082,8 +1163,10 @@ below that can be added by assiging a class.
   margin-bottom: 0.3125rem;
   border-bottom: 1px solid #e5e5e5; }
 .list--stacked .title {
-  padding: 5px;
-  padding: 0.3125rem;
+  padding-top: 5px;
+  padding-top: 0.3125rem;
+  padding-bottom: 5px;
+  padding-bottom: 0.3125rem;
   font-size: 18px;
   font-size: 1.125rem;
   text-transform: uppercase;
@@ -1473,8 +1556,8 @@ FRONTLY FORM
   border-bottom: 1px solid #e5e5e5; }
 
 /**
-* Frontly Form - Checkbox & Radio Buttons
-* ---------------------------------------
+* Frontly Form - Checkboxes & Radio Buttons
+* -----------------------------------------
 *
 * The Frontly form comes with some custom checkbox & radio button styling.
 * These styles utilise the :check psuedo element and as Frontly is intended to 
@@ -1726,14 +1809,14 @@ FRONTLY NAV
     margin: 0;
     padding: 0;
     float: left; }
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 749px) {
       .frontly-nav ul {
         width: 100%;
         display: none; } }
   .frontly-nav ul li {
     display: block;
     float: left; }
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 749px) {
       .frontly-nav ul li {
         width: 100%;
         border-top: 1px solid #e5e5e5; } }
@@ -1748,7 +1831,7 @@ FRONTLY NAV
     -o-transition: all ease 0.25s;
     -webkit-transition: all ease 0.25s;
     transition: all ease 0.25s; }
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 749px) {
       .frontly-nav ul li a, .frontly-nav a {
         width: 100%; }
         .frontly-nav ul li a.frontly-nav__menu-link, .frontly-nav a.frontly-nav__menu-link {
@@ -1759,7 +1842,7 @@ FRONTLY NAV
     background: #e5e5e5; }
   .frontly-nav .frontly-dropdown a {
     padding-right: 20px; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 749px) {
     .frontly-nav .frontly-dropdown:after {
       display: none; }
  }
@@ -1771,7 +1854,7 @@ FRONTLY NAV
     top: 36px;
     border: none;
     background: #f6f6f6; }
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 749px) {
       .frontly-nav .frontly-dropdown ul {
         display: none; } }
     .frontly-nav .frontly-dropdown ul li:hover > a {
@@ -2220,7 +2303,7 @@ GUILTY FILE
 /**
 * Hide or display elements on tablet devices
 */
-@media only screen and (min-width: 401px) and (max-width: 959px) {
+@media only screen and (max-width: 959px) {
   .display--tablet {
     display: block !important; }
 
@@ -2231,7 +2314,7 @@ GUILTY FILE
 /**
 * Hide or display elements on mobile devices
 */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 749px) {
   .display--mobile {
     display: block !important; }
 

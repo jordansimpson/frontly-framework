@@ -44,7 +44,7 @@ GRID
 
 .grid{
     width: 100%;
-    max-width: $break-extra-large; // Set in _settings.breakpoints.scss
+    max-width: $break-large; // Set in _settings.breakpoints.scss
     margin: 0 auto;
     padding: $spacer 0;
     &:before,&:after{
@@ -181,7 +181,7 @@ GRID
     @if $i == 2{
         .grid__row--tiled-#{$i}-col .grid__col:last-child:nth-child(odd){
             padding-right: $spacer !important;
-            @include respond-to(mobile){
+            @include respond-to(small-screen){
                 padding-right: 0 !important;
             }
         }
@@ -189,7 +189,7 @@ GRID
     @if $i == 3{
         .grid__row--tiled-#{$i}-col .grid__col:last-child:nth-child(odd):not(.grid_col:nth-child(3n)){
             padding-right: $spacer !important;
-            @include respond-to(mobile){
+            @include respond-to(small-screen){
                 padding-right: 0 !important;
             }
         }
@@ -197,7 +197,7 @@ GRID
     @if $i == 4{
         .grid__row--tiled-#{$i}-col .grid__col:last-child:nth-child(odd){
             padding-right: $spacer !important;
-            @include respond-to(mobile){
+            @include respond-to(small-screen){
                 padding-right: 0 !important;
             }
         }
@@ -235,6 +235,53 @@ GRID
 
 /**
 *
+* .grid__col--(medium-screen)
+* ---------------------------
+*
+*/
+
+
+@include respond-to(medium-screen){
+    @for $i from 1 through $grid-column-count{
+        .grid__col--md-#{$i}-#{$grid-column-count}{
+            @include grid_col($i);
+        }
+    }
+}
+
+/**
+*
+* .grid__col--(small-screen)
+* ---------------------------
+*
+*/
+
+@include respond-to(small-screen){
+    @for $i from 1 through $grid-column-count{
+        .grid__col--sm-#{$i}-#{$grid-column-count}{
+            @include grid_col($i);
+        }
+    }
+}
+
+/**
+*
+* .grid__col--(x-small-screen)
+* ---------------------------
+*
+*/
+
+@include respond-to(x-small-screen){
+    @for $i from 1 through $grid-column-count{
+        .grid__col--xsm-#{$i}-#{$grid-column-count}{
+            @include grid_col($i);
+        }
+    }
+}
+
+
+/**
+*
 * .grid__push
 * -----------
 * Sometimes you may wish to push elements around a little. This is easier 
@@ -263,7 +310,7 @@ GRID
 @for $i from 1 through $grid-column-count{
     .grid__push--#{$i}-#{$grid-column-count}{
         @include grid_push($i);
-        @include respond-to(mobile){
+        @include respond-to(small-screen){
             margin-left: 0;
         }
     }
@@ -319,7 +366,7 @@ GRID
 *
 */
 
-@include respond-to(tablet){
+@include respond-to(medium-screen){
 
     /**
     *
@@ -411,7 +458,7 @@ GRID
 
 // Phone
 
-@include respond-to(mobile){
+@include respond-to(small-screen){
     .grid__row{
         @include remCalc(padding-right, $spacer--dbl);
         @include remCalc(padding-left, $spacer--dbl);

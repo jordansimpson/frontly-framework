@@ -128,7 +128,7 @@ $directions:('top','right','bottom','left');
 * Hide or display elements on tablet devices
 */
 
-@include respond-to(tablet){
+@include respond-to(medium-screen){
 	.display--tablet{
 		display: block !important;
 	}
@@ -141,7 +141,7 @@ $directions:('top','right','bottom','left');
 * Hide or display elements on mobile devices
 */
 
-@include respond-to(mobile){
+@include respond-to(small-screen){
 	.display--mobile{
 		display: block !important;
 	}
