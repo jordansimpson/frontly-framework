@@ -5,7 +5,8 @@ BUTTONS
 ------------ 
 */
 
-/*
+
+/**
 *
 * The Button (.btn) Class
 * -----------------------
@@ -31,7 +32,8 @@ BUTTONS
 	}
 }
 
-/*
+
+/**
 *
 * Button Display Styles
 * ---------------------
@@ -89,7 +91,8 @@ BUTTONS
 	}
 }
 
-/*
+
+/**
 *
 * Button Groups
 * -------------
@@ -118,7 +121,8 @@ BUTTONS
 	@include remCalc(margin-right, $spacer);
 }
 
-/*
+
+/**
 *
 * Button Group Styles
 * -------------------
@@ -174,7 +178,50 @@ BUTTONS
 	}
 }
 
-/*
+
+/**
+*
+* Button Centered
+* ---------------
+* Centering a button can be quite useful and to help cater for that Frontly 
+* has the class below:
+*
+* [!] Usage Example
+* -----------------
+* <div class="btn--centered">
+*     <a class="btn">Button Centered</a>
+* </div>
+*
+* - or -
+*
+* <div class="btn--centered">
+*     <div class="btn-group">
+*         <a class="btn">Button Centered</a>
+*         <a class="btn">Button Centered</a>
+*         <a class="btn">Button Centered</a>
+*     </div>
+* </div>
+*
+*/
+
+.btn--centered{
+	text-align: center;
+	display: block;
+	.btn-group{
+		float: none;
+		margin: 0 auto;
+		.btn{
+			float: left;
+		}
+	}
+	.btn{
+		float: none;
+		margin-right: 0;
+	}
+}
+
+
+/**
 *
 * Buttons Colors
 * --------------
