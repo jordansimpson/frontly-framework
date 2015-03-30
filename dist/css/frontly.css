@@ -2320,6 +2320,29 @@ GUILTY FILE
 
 /**
 *
+* Text Alignment
+* --------------
+* The alignment of text set by a parent class/style sometimes needs to be
+* overridden. You can achieve that by using once of the classes below:
+*
+* [!] Usage Example
+* -----------------
+* <p class="align--right">Text aligned right</p>
+* <p class="align--center">Text aligned center</p>
+* <p class="align--left">Text aligned left</p>
+* 
+*/
+.align--left {
+  text-align: left !important; }
+
+.align--center {
+  text-align: center !important; }
+
+.align--right {
+  text-align: right !important; }
+
+/**
+*
 * Hidding Elements
 * ----------------
 * Hiding elements can be useful when working with a repsonsive design. It 
