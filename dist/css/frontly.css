@@ -2217,12 +2217,12 @@ HELPERS
 
 a.k.a
 THE 
-GUILTY FILE
+NAUGHTY FILE
 ------------ 
 */
 /**
 *
-* This is the guilty file that keeps all the little helper classes contained.
+* This is the naughty file that keeps all the little helper classes contained.
 * These classes enable you to override any pre-existing styling where required.
 *
 * They shouldn't be used where the styling can be added to an element within a 
@@ -2252,9 +2252,21 @@ GUILTY FILE
 *
 * Margins & Padding
 * -----------------
-* Floating elements should be set within your CSS but this can't always be 
-* possible. The classes below enable you to set the float of an element.
+* Margins and padding should be applied within a class but should you be
+* needing to add a little margin or padding to an element while quickly 
+* prototyping then the helper classes below should be useful. You can set the
+* margin or padding around the whole element, as shown in the examples below,
+* or you can set directions, which is also illustrated below.
 * 
+* [!] Usage Example
+* -----------------
+*
+* <div class="pad">Padded all around.</div>
+* <div class="pad--right">Padding added to the right.</div>
+*
+* <div class="margin">Margin pushing all around.</div>
+* <div class="margin--left">Margin added to the left.</div>
+*
 */
 /**
 * Directions Sass List
@@ -2262,6 +2274,10 @@ GUILTY FILE
 /**
 * Margins
 */
+.push {
+  margin: 10px;
+  margin: 0.625rem; }
+
 .push--top {
   margin-top: 10px;
   margin-top: 0.625rem; }
@@ -2281,6 +2297,10 @@ GUILTY FILE
 /**
 * Padding
 */
+.pad {
+  padding: 10px;
+  padding: 0.625rem; }
+
 .pad--top {
   padding-top: 10px;
   padding-top: 0.625rem; }
@@ -2342,6 +2362,32 @@ GUILTY FILE
   text-align: right !important; }
 
 /**
+* Clear fixing
+* ------------
+* Sometimes you may wish to add a simple clear fix to an element, maybe to 
+* cater for an older browser? Argh, when will they learn? Any way, to make 
+* your job a little easier frontly includes a simple clearing class.
+* 
+* The example below illustrates that the clear will ensure elements clear
+* each other correctly should you include a 
+*
+* [!] Usage Example
+* -----------------
+* <div>I'm floated left and only 50% wide</div>
+* <span class="clearfix">I've just made sure the element below doesn't slide into the available 50% next to it and floats underneath.</span>
+* <div>I'm floated left and only 20% wide</div>
+*
+*/
+.clearfix {
+  clear: both !important; }
+
+.clearfix--left {
+  clear: left !important; }
+
+.clearfix--right {
+  clear: right !important; }
+
+/**
 *
 * Hidding Elements
 * ----------------
@@ -2363,10 +2409,10 @@ GUILTY FILE
 * Hide or display elements on tablet devices
 */
 @media only screen and (max-width: 959px) {
-  .display--tablet {
+  .display--medium-screen {
     display: block !important; }
 
-  .hidden--tablet {
+  .hidden--medium-screen {
     display: none !important; }
  }
 
@@ -2374,9 +2420,9 @@ GUILTY FILE
 * Hide or display elements on mobile devices
 */
 @media only screen and (max-width: 749px) {
-  .display--mobile {
+  .display--small-screen {
     display: block !important; }
 
-  .hidden--mobile {
+  .hidden--small-screen {
     display: none !important; }
  }

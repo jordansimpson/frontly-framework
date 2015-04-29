@@ -56,8 +56,8 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('src/sass/*.scss', ['sass', 'browser-sync']);
-    gulp.watch('src/scripts/*.js', ['lint', 'scripts']);
+    gulp.watch('src/sass/**/*.scss', ['sass', 'browser-sync']);
+    gulp.watch('src/scripts/**/*.js', ['lint', 'scripts']);
 });
 
 // Default Task
